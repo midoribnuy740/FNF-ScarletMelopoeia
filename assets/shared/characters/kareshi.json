@@ -1,0 +1,95 @@
+{
+	"animations": [
+		{
+			"offsets": [-3, 5],
+			"loop": false,
+			"fps": 24,
+			"anim": "hey",
+			"indices": [],
+			"name": "BF HEY"
+		},
+		{
+			"loop": false,
+			"offsets": [-6, -8],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "kareshi-left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [-30, -44],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "kareshi-down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [-46, 9],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "kareshi-up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [-55, 4],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "kareshi-right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [21, 53],
+			"anim": "singLEFTmiss",
+			"fps": 24,
+			"name": "kareshi-missleft",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [21, 53],
+			"anim": "singDOWNmiss",
+			"fps": 24,
+			"name": "kareshi-missdown",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [21, 53],
+			"anim": "singUPmiss",
+			"fps": 24,
+			"name": "kareshi-missup",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [21, 53],
+			"anim": "singRIGHTmiss",
+			"fps": 24,
+			"name": "kareshi-missright",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [-5, 0],
+			"anim": "idle",
+			"fps": 24,
+			"name": "kareshi-idle",
+			"indices": []
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": false,
+	"image": "characters/sm-kareshi",
+	"position": [70, 310],
+	"healthicon": "bf",
+	"flip_x": true,
+	"healthbar_colors": [49, 176, 209],
+	"camera_position": [0, 0],
+	"sing_duration": 4,
+	"scale": 1,
+	"_editor_isPlayer": true
+}

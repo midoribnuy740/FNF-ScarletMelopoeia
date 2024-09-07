@@ -100,18 +100,8 @@ class VSlice
 		var stage:String = metadata.playData.stage;
 		switch(stage) //Psych and VSlice use different names for some stages
 		{
-			case 'mainStage':
-				stage = 'stage';
-			case 'spookyMansion':
-				stage = 'spooky';
-			case 'phillyTrain':
-				stage = 'philly';
-			case 'limoRide':
-				stage = 'limo';
-			case 'mallXmas':
-				stage = 'mall';
-			case 'tankmanBattlefield':
-				stage = 'tank';
+			case 'shrine':
+				stage = 'shrine';
 		}
 		var lastNoteTime:Float = 0;
 		var notesMap:Map<String, Dynamic> = [];

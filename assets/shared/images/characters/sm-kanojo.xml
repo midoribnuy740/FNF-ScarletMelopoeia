@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="sm-kanojo.png">
+	<!-- Created with Adobe Animate version 18.0.1.115 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="kanojo-down0000" x="0" y="0" width="249" height="416"/>
+	<SubTexture name="kanojo-down0001" x="0" y="0" width="249" height="416"/>
+	<SubTexture name="kanojo-down0002" x="249" y="0" width="249" height="405" frameX="0" frameY="-11" frameWidth="249" frameHeight="416"/>
+	<SubTexture name="kanojo-down0003" x="249" y="0" width="249" height="405" frameX="0" frameY="-11" frameWidth="249" frameHeight="416"/>
+	<SubTexture name="kanojo-down0004" x="498" y="0" width="249" height="413" frameX="0" frameY="-3" frameWidth="249" frameHeight="416"/>
+	<SubTexture name="kanojo-down0005" x="498" y="0" width="249" height="413" frameX="0" frameY="-3" frameWidth="249" frameHeight="416"/>
+	<SubTexture name="kanojo-down0006" x="498" y="0" width="249" height="413" frameX="0" frameY="-3" frameWidth="249" frameHeight="416"/>
+	<SubTexture name="kanojo-down0007" x="498" y="0" width="249" height="413" frameX="0" frameY="-3" frameWidth="249" frameHeight="416"/>
+	<SubTexture name="kanojo-down0008" x="498" y="0" width="249" height="413" frameX="0" frameY="-3" frameWidth="249" frameHeight="416"/>
+	<SubTexture name="kanojo-down0009" x="498" y="0" width="249" height="413" frameX="0" frameY="-3" frameWidth="249" frameHeight="416"/>
+	<SubTexture name="kanojo-down0010" x="498" y="0" width="249" height="413" frameX="0" frameY="-3" frameWidth="249" frameHeight="416"/>
+	<SubTexture name="kanojo-down0011" x="498" y="0" width="249" height="413" frameX="0" frameY="-3" frameWidth="249" frameHeight="416"/>
+	<SubTexture name="kanojo-idle0000" x="747" y="0" width="249" height="442" frameX="0" frameY="-4" frameWidth="249" frameHeight="448"/>
+	<SubTexture name="kanojo-idle0001" x="747" y="0" width="249" height="442" frameX="0" frameY="-4" frameWidth="249" frameHeight="448"/>
+	<SubTexture name="kanojo-idle0002" x="747" y="0" width="249" height="442" frameX="0" frameY="-4" frameWidth="249" frameHeight="448"/>
+	<SubTexture name="kanojo-idle0003" x="996" y="0" width="249" height="433" frameX="0" frameY="-13" frameWidth="249" frameHeight="448"/>
+	<SubTexture name="kanojo-idle0004" x="996" y="0" width="249" height="433" frameX="0" frameY="-13" frameWidth="249" frameHeight="448"/>
+	<SubTexture name="kanojo-idle0005" x="996" y="0" width="249" height="433" frameX="0" frameY="-13" frameWidth="249" frameHeight="448"/>
+	<SubTexture name="kanojo-idle0006" x="1245" y="0" width="249" height="431" frameX="0" frameY="-14" frameWidth="249" frameHeight="448"/>
+	<SubTexture name="kanojo-idle0007" x="1245" y="0" width="249" height="431" frameX="0" frameY="-14" frameWidth="249" frameHeight="448"/>
+	<SubTexture name="kanojo-idle0008" x="1245" y="0" width="249" height="431" frameX="0" frameY="-14" frameWidth="249" frameHeight="448"/>
+	<SubTexture name="kanojo-idle0009" x="1494" y="0" width="249" height="438" frameX="0" frameY="-7" frameWidth="249" frameHeight="448"/>
+	<SubTexture name="kanojo-idle0010" x="1494" y="0" width="249" height="438" frameX="0" frameY="-7" frameWidth="249" frameHeight="448"/>
+	<SubTexture name="kanojo-idle0011" x="1494" y="0" width="249" height="438" frameX="0" frameY="-7" frameWidth="249" frameHeight="448"/>
+	<SubTexture name="kanojo-idle0012" x="1743" y="0" width="249" height="448"/>
+	<SubTexture name="kanojo-idle0013" x="1743" y="0" width="249" height="448"/>
+	<SubTexture name="kanojo-idle0014" x="1743" y="0" width="249" height="448"/>
+	<SubTexture name="kanojo-left0000" x="0" y="448" width="301" height="430" frameX="0" frameY="-1" frameWidth="301" frameHeight="432"/>
+	<SubTexture name="kanojo-left0001" x="0" y="448" width="301" height="430" frameX="0" frameY="-1" frameWidth="301" frameHeight="432"/>
+	<SubTexture name="kanojo-left0002" x="301" y="448" width="301" height="432"/>
+	<SubTexture name="kanojo-left0003" x="301" y="448" width="301" height="432"/>
+	<SubTexture name="kanojo-left0004" x="602" y="448" width="297" height="430" frameX="-4" frameY="-2" frameWidth="301" frameHeight="432"/>
+	<SubTexture name="kanojo-left0005" x="602" y="448" width="297" height="430" frameX="-4" frameY="-2" frameWidth="301" frameHeight="432"/>
+	<SubTexture name="kanojo-left0006" x="602" y="448" width="297" height="430" frameX="-4" frameY="-2" frameWidth="301" frameHeight="432"/>
+	<SubTexture name="kanojo-left0007" x="602" y="448" width="297" height="430" frameX="-4" frameY="-2" frameWidth="301" frameHeight="432"/>
+	<SubTexture name="kanojo-left0008" x="602" y="448" width="297" height="430" frameX="-4" frameY="-2" frameWidth="301" frameHeight="432"/>
+	<SubTexture name="kanojo-left0009" x="602" y="448" width="297" height="430" frameX="-4" frameY="-2" frameWidth="301" frameHeight="432"/>
+	<SubTexture name="kanojo-left0010" x="602" y="448" width="297" height="430" frameX="-4" frameY="-2" frameWidth="301" frameHeight="432"/>
+	<SubTexture name="kanojo-left0011" x="602" y="448" width="297" height="430" frameX="-4" frameY="-2" frameWidth="301" frameHeight="432"/>
+	<SubTexture name="kanojo-missdown0000" x="899" y="448" width="309" height="463"/>
+	<SubTexture name="kanojo-missdown0001" x="899" y="448" width="309" height="463"/>
+	<SubTexture name="kanojo-missdown0002" x="1208" y="448" width="304" height="456" frameX="-2" frameY="-7" frameWidth="309" frameHeight="463"/>
+	<SubTexture name="kanojo-missdown0003" x="1208" y="448" width="304" height="456" frameX="-2" frameY="-7" frameWidth="309" frameHeight="463"/>
+	<SubTexture name="kanojo-missdown0004" x="1512" y="448" width="304" height="456" frameX="-2" frameY="-7" frameWidth="309" frameHeight="463"/>
+	<SubTexture name="kanojo-missdown0005" x="1512" y="448" width="304" height="456" frameX="-2" frameY="-7" frameWidth="309" frameHeight="463"/>
+	<SubTexture name="kanojo-missdown0006" x="1512" y="448" width="304" height="456" frameX="-2" frameY="-7" frameWidth="309" frameHeight="463"/>
+	<SubTexture name="kanojo-missdown0007" x="1512" y="448" width="304" height="456" frameX="-2" frameY="-7" frameWidth="309" frameHeight="463"/>
+	<SubTexture name="kanojo-missdown0008" x="1512" y="448" width="304" height="456" frameX="-2" frameY="-7" frameWidth="309" frameHeight="463"/>
+	<SubTexture name="kanojo-missdown0009" x="1512" y="448" width="304" height="456" frameX="-2" frameY="-7" frameWidth="309" frameHeight="463"/>
+	<SubTexture name="kanojo-missdown0010" x="1512" y="448" width="304" height="456" frameX="-2" frameY="-7" frameWidth="309" frameHeight="463"/>
+	<SubTexture name="kanojo-missdown0011" x="1512" y="448" width="304" height="456" frameX="-2" frameY="-7" frameWidth="309" frameHeight="463"/>
+	<SubTexture name="kanojo-missleft0000" x="0" y="911" width="326" height="460" frameX="0" frameY="0" frameWidth="326" frameHeight="461"/>
+	<SubTexture name="kanojo-missleft0001" x="0" y="911" width="326" height="460" frameX="0" frameY="0" frameWidth="326" frameHeight="461"/>
+	<SubTexture name="kanojo-missleft0002" x="326" y="911" width="323" height="454" frameX="0" frameY="-7" frameWidth="326" frameHeight="461"/>
+	<SubTexture name="kanojo-missleft0003" x="326" y="911" width="323" height="454" frameX="0" frameY="-7" frameWidth="326" frameHeight="461"/>
+	<SubTexture name="kanojo-missleft0004" x="649" y="911" width="319" height="454" frameX="-4" frameY="-7" frameWidth="326" frameHeight="461"/>
+	<SubTexture name="kanojo-missleft0005" x="649" y="911" width="319" height="454" frameX="-4" frameY="-7" frameWidth="326" frameHeight="461"/>
+	<SubTexture name="kanojo-missleft0006" x="649" y="911" width="319" height="454" frameX="-4" frameY="-7" frameWidth="326" frameHeight="461"/>
+	<SubTexture name="kanojo-missleft0007" x="649" y="911" width="319" height="454" frameX="-4" frameY="-7" frameWidth="326" frameHeight="461"/>
+	<SubTexture name="kanojo-missleft0008" x="649" y="911" width="319" height="454" frameX="-4" frameY="-7" frameWidth="326" frameHeight="461"/>
+	<SubTexture name="kanojo-missleft0009" x="649" y="911" width="319" height="454" frameX="-4" frameY="-7" frameWidth="326" frameHeight="461"/>
+	<SubTexture name="kanojo-missleft0010" x="649" y="911" width="319" height="454" frameX="-4" frameY="-7" frameWidth="326" frameHeight="461"/>
+	<SubTexture name="kanojo-missleft0011" x="649" y="911" width="319" height="454" frameX="-4" frameY="-7" frameWidth="326" frameHeight="461"/>
+	<SubTexture name="kanojo-missright0000" x="968" y="911" width="309" height="464"/>
+	<SubTexture name="kanojo-missright0001" x="968" y="911" width="309" height="464"/>
+	<SubTexture name="kanojo-missright0002" x="1277" y="911" width="304" height="457" frameX="-2" frameY="-7" frameWidth="309" frameHeight="464"/>
+	<SubTexture name="kanojo-missright0003" x="1277" y="911" width="304" height="457" frameX="-2" frameY="-7" frameWidth="309" frameHeight="464"/>
+	<SubTexture name="kanojo-missright0004" x="1581" y="911" width="304" height="456" frameX="-2" frameY="-7" frameWidth="309" frameHeight="464"/>
+	<SubTexture name="kanojo-missright0005" x="1581" y="911" width="304" height="456" frameX="-2" frameY="-7" frameWidth="309" frameHeight="464"/>
+	<SubTexture name="kanojo-missright0006" x="1581" y="911" width="304" height="456" frameX="-2" frameY="-7" frameWidth="309" frameHeight="464"/>
+	<SubTexture name="kanojo-missright0007" x="1581" y="911" width="304" height="456" frameX="-2" frameY="-7" frameWidth="309" frameHeight="464"/>
+	<SubTexture name="kanojo-missright0008" x="1581" y="911" width="304" height="456" frameX="-2" frameY="-7" frameWidth="309" frameHeight="464"/>
+	<SubTexture name="kanojo-missright0009" x="1581" y="911" width="304" height="456" frameX="-2" frameY="-7" frameWidth="309" frameHeight="464"/>
+	<SubTexture name="kanojo-missright0010" x="1581" y="911" width="304" height="456" frameX="-2" frameY="-7" frameWidth="309" frameHeight="464"/>
+	<SubTexture name="kanojo-missright0011" x="1581" y="911" width="304" height="456" frameX="-2" frameY="-7" frameWidth="309" frameHeight="464"/>
+	<SubTexture name="kanojo-missup0000" x="0" y="1375" width="309" height="472" frameX="0" frameY="-2" frameWidth="309" frameHeight="475"/>
+	<SubTexture name="kanojo-missup0001" x="0" y="1375" width="309" height="472" frameX="0" frameY="-2" frameWidth="309" frameHeight="475"/>
+	<SubTexture name="kanojo-missup0002" x="309" y="1375" width="304" height="475" frameX="-2" frameY="0" frameWidth="309" frameHeight="475"/>
+	<SubTexture name="kanojo-missup0003" x="309" y="1375" width="304" height="475" frameX="-2" frameY="0" frameWidth="309" frameHeight="475"/>
+	<SubTexture name="kanojo-missup0004" x="613" y="1375" width="304" height="460" frameX="-2" frameY="-14" frameWidth="309" frameHeight="475"/>
+	<SubTexture name="kanojo-missup0005" x="613" y="1375" width="304" height="460" frameX="-2" frameY="-14" frameWidth="309" frameHeight="475"/>
+	<SubTexture name="kanojo-missup0006" x="613" y="1375" width="304" height="460" frameX="-2" frameY="-14" frameWidth="309" frameHeight="475"/>
+	<SubTexture name="kanojo-missup0007" x="613" y="1375" width="304" height="460" frameX="-2" frameY="-14" frameWidth="309" frameHeight="475"/>
+	<SubTexture name="kanojo-missup0008" x="613" y="1375" width="304" height="460" frameX="-2" frameY="-14" frameWidth="309" frameHeight="475"/>
+	<SubTexture name="kanojo-missup0009" x="613" y="1375" width="304" height="460" frameX="-2" frameY="-14" frameWidth="309" frameHeight="475"/>
+	<SubTexture name="kanojo-missup0010" x="613" y="1375" width="304" height="460" frameX="-2" frameY="-14" frameWidth="309" frameHeight="475"/>
+	<SubTexture name="kanojo-missup0011" x="613" y="1375" width="304" height="460" frameX="-2" frameY="-14" frameWidth="309" frameHeight="475"/>
+	<SubTexture name="kanojo-right0000" x="917" y="1375" width="249" height="442" frameX="0" frameY="0" frameWidth="251" frameHeight="442"/>
+	<SubTexture name="kanojo-right0001" x="917" y="1375" width="249" height="442" frameX="0" frameY="0" frameWidth="251" frameHeight="442"/>
+	<SubTexture name="kanojo-right0002" x="1166" y="1375" width="251" height="436" frameX="0" frameY="-6" frameWidth="251" frameHeight="442"/>
+	<SubTexture name="kanojo-right0003" x="1166" y="1375" width="251" height="436" frameX="0" frameY="-6" frameWidth="251" frameHeight="442"/>
+	<SubTexture name="kanojo-right0004" x="1417" y="1375" width="249" height="436" frameX="0" frameY="-5" frameWidth="251" frameHeight="442"/>
+	<SubTexture name="kanojo-right0005" x="1417" y="1375" width="249" height="436" frameX="0" frameY="-5" frameWidth="251" frameHeight="442"/>
+	<SubTexture name="kanojo-right0006" x="1417" y="1375" width="249" height="436" frameX="0" frameY="-5" frameWidth="251" frameHeight="442"/>
+	<SubTexture name="kanojo-right0007" x="1417" y="1375" width="249" height="436" frameX="0" frameY="-5" frameWidth="251" frameHeight="442"/>
+	<SubTexture name="kanojo-right0008" x="1417" y="1375" width="249" height="436" frameX="0" frameY="-5" frameWidth="251" frameHeight="442"/>
+	<SubTexture name="kanojo-right0009" x="1417" y="1375" width="249" height="436" frameX="0" frameY="-5" frameWidth="251" frameHeight="442"/>
+	<SubTexture name="kanojo-right0010" x="1417" y="1375" width="249" height="436" frameX="0" frameY="-5" frameWidth="251" frameHeight="442"/>
+	<SubTexture name="kanojo-right0011" x="1417" y="1375" width="249" height="436" frameX="0" frameY="-5" frameWidth="251" frameHeight="442"/>
+	<SubTexture name="kanojo-up0000" x="1666" y="1375" width="249" height="472" frameX="0" frameY="-2" frameWidth="249" frameHeight="475"/>
+	<SubTexture name="kanojo-up0001" x="1666" y="1375" width="249" height="472" frameX="0" frameY="-2" frameWidth="249" frameHeight="475"/>
+	<SubTexture name="kanojo-up0002" x="0" y="1850" width="249" height="475"/>
+	<SubTexture name="kanojo-up0003" x="0" y="1850" width="249" height="475"/>
+	<SubTexture name="kanojo-up0004" x="249" y="1850" width="249" height="460" frameX="0" frameY="-14" frameWidth="249" frameHeight="475"/>
+	<SubTexture name="kanojo-up0005" x="249" y="1850" width="249" height="460" frameX="0" frameY="-14" frameWidth="249" frameHeight="475"/>
+	<SubTexture name="kanojo-up0006" x="249" y="1850" width="249" height="460" frameX="0" frameY="-14" frameWidth="249" frameHeight="475"/>
+	<SubTexture name="kanojo-up0007" x="249" y="1850" width="249" height="460" frameX="0" frameY="-14" frameWidth="249" frameHeight="475"/>
+	<SubTexture name="kanojo-up0008" x="249" y="1850" width="249" height="460" frameX="0" frameY="-14" frameWidth="249" frameHeight="475"/>
+	<SubTexture name="kanojo-up0009" x="249" y="1850" width="249" height="460" frameX="0" frameY="-14" frameWidth="249" frameHeight="475"/>
+	<SubTexture name="kanojo-up0010" x="249" y="1850" width="249" height="460" frameX="0" frameY="-14" frameWidth="249" frameHeight="475"/>
+	<SubTexture name="kanojo-up0011" x="249" y="1850" width="249" height="460" frameX="0" frameY="-14" frameWidth="249" frameHeight="475"/>
+</TextureAtlas>
