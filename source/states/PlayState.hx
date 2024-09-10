@@ -20,6 +20,7 @@ import openfl.events.KeyboardEvent;
 import haxe.Json;
 
 import cutscenes.DialogueBoxPsych;
+import flixel.addons.display.FlxBackdrop;
 
 import states.StoryMenuState;
 import states.FreeplayState;
@@ -160,7 +161,12 @@ class PlayState extends MusicBeatState
 	public var health(default, set):Float = 1;
 	public var combo:Int = 0;
 
+	public var strumEnemyBG:FlxBackdrop;
+	public var strumPlayerBG:FlxBackdrop;
+
 	public var healthBar:Bar;
+	public var overlayBar:FlxSprite;
+
 	public var timeBar:Bar;
 	var songPercent:Float = 0;
 
@@ -437,8 +443,9 @@ class PlayState extends MusicBeatState
 		uiGroup = new FlxSpriteGroup();
 		comboGroup = new FlxSpriteGroup();
 		noteGroup = new FlxTypedGroup<FlxBasic>();
-		add(comboGroup);
+		
 		add(uiGroup);
+		add(comboGroup);
 		add(noteGroup);
 
 		Conductor.songPosition = -Conductor.crochet * 5 + Conductor.offset;
@@ -451,6 +458,21 @@ class PlayState extends MusicBeatState
 		timeTxt.visible = updateTime = showTime;
 		if(ClientPrefs.data.downScroll) timeTxt.y = FlxG.height - 44;
 		if(ClientPrefs.data.timeBarType == 'Song Name') timeTxt.text = SONG.song;
+
+		strumEnemyBG = new FlxBackdrop(Paths.image('ui/strumBG'), Y, 0, 0);
+		strumEnemyBG.x = 50;
+		strumEnemyBG.scrollFactor.set();
+		strumEnemyBG.alpha = 0.5;
+		strumEnemyBG.blend = MULTIPLY;
+
+		strumPlayerBG = new FlxBackdrop(Paths.image('ui/strumBG'), Y, 0, 0);
+		strumPlayerBG.x = 690;
+		strumPlayerBG.scrollFactor.set();
+		strumPlayerBG.alpha = 0.5;
+		strumPlayerBG.blend = MULTIPLY;
+
+		uiGroup.add(strumEnemyBG);
+		uiGroup.add(strumPlayerBG);
 
 		timeBar = new Bar(0, timeTxt.y + (timeTxt.height / 4), 'timeBar', function() return songPercent, 0, 1);
 		timeBar.scrollFactor.set();
@@ -490,7 +512,7 @@ class PlayState extends MusicBeatState
 		FlxG.worldBounds.set(0, 0, FlxG.width, FlxG.height);
 		moveCameraSection();
 
-		healthBar = new Bar(0, FlxG.height * (!ClientPrefs.data.downScroll ? 0.89 : 0.11), 'healthBar', function() return health, 0, 2);
+		healthBar = new Bar(0, FlxG.height * (!ClientPrefs.data.downScroll ? 0.85 : 0.15), 'ui/healthBar', function() return health, 0, 2);
 		healthBar.screenCenter(X);
 		healthBar.leftToRight = false;
 		healthBar.scrollFactor.set();
@@ -498,6 +520,14 @@ class PlayState extends MusicBeatState
 		healthBar.alpha = ClientPrefs.data.healthBarAlpha;
 		reloadHealthBarColors();
 		uiGroup.add(healthBar);
+
+		overlayBar = new FlxSprite().loadGraphic(Paths.image('ui/overlay-healthBar'));
+		overlayBar.screenCenter(X);
+		overlayBar.scrollFactor.set();
+		overlayBar.y = healthBar.y - 30;
+		overlayBar.visible = !ClientPrefs.data.hideHud;
+		overlayBar.alpha = ClientPrefs.data.healthBarAlpha;
+		uiGroup.add(overlayBar);
 
 		iconP1 = new HealthIcon(boyfriend.healthIcon, true);
 		iconP1.y = healthBar.y - 75;

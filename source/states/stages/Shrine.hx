@@ -45,6 +45,14 @@ class Shrine extends BaseStage
 		sunlight.alpha = 0.2;
 		sunlight.blend = ADD;
 		add(sunlight);
+
+		title = new BGSprite('shrine/week-intro/arrival-title', 298, -1011, 1, 1.5);
+		title.alpha = 0;
+		add(title);
+
+		quote = new BGSprite('shrine/week-intro/arrival-quote', 71, -642, 1, 1);
+		quote.alpha = 0;
+		add(quote);
 	}
 
 	override function eventCalled(eventName:String, value1:String, value2:String, flValue1:Null<Float>, flValue2:Null<Float>, strumTime:Float)
@@ -74,26 +82,8 @@ class Shrine extends BaseStage
 		}
 	}
 
-	override function eventPushed(event:objects.Note.EventNote)
-	{
-		switch (event.event)
-		{
-			case "Intro Event":
-				precacheImage('shrine/week-intro/arrival-title');
-				precacheImage('shrine/week-intro/arrival-quote');
-		}
-	}
-
 	function smWeekIntro():Void
 	{
-		title = new BGSprite('shrine/week-intro/arrival-title', 298, -1011, 1, 1.5);
-		title.alpha = 0;
-		add(title);
-
-		quote = new BGSprite('shrine/week-intro/arrival-quote', 71, -642, 1, 1);
-		quote.alpha = 0;
-		add(quote);
-
 		FlxTween.tween(title, {alpha: 1}, 1.5, {ease: FlxEase.linear});
 		FlxTween.tween(quote, {alpha: 1}, 1.5, {ease: FlxEase.linear});
 
