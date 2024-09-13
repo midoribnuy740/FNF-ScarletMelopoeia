@@ -18,8 +18,24 @@
 		},
 		{
 			"loop": false,
+			"offsets": [-6, -8],
+			"anim": "singLEFT-hold",
+			"fps": 24,
+			"name": "kareshi-left",
+			"indices": []
+		},
+		{
+			"loop": false,
 			"offsets": [-30, -44],
 			"anim": "singDOWN",
+			"fps": 24,
+			"name": "kareshi-down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [-30, -44],
+			"anim": "singDOWN-hold",
 			"fps": 24,
 			"name": "kareshi-down",
 			"indices": []
@@ -34,8 +50,24 @@
 		},
 		{
 			"loop": false,
+			"offsets": [-46, 9],
+			"anim": "singUP-hold",
+			"fps": 24,
+			"name": "kareshi-up",
+			"indices": []
+		},
+		{
+			"loop": false,
 			"offsets": [-55, 4],
 			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "kareshi-right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [-55, 4],
+			"anim": "singRIGHT-hold",
 			"fps": 24,
 			"name": "kareshi-right",
 			"indices": []
@@ -85,9 +117,9 @@
 	"no_antialiasing": false,
 	"image": "characters/sm-kareshi",
 	"position": [70, 310],
-	"healthicon": "bf",
+	"healthicon": "kareshi",
 	"flip_x": true,
-	"healthbar_colors": [49, 176, 209],
+	"healthbar_colors": [47, 135, 213],
 	"camera_position": [0, 0],
 	"sing_duration": 4,
 	"scale": 1,

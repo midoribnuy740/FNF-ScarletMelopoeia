@@ -6,7 +6,7 @@ class HealthIcon extends FlxSprite
 	private var isPlayer:Bool = false;
 	private var char:String = '';
 
-	public function new(char:String = 'face', isPlayer:Bool = false, ?allowGPU:Bool = true)
+	public function new(char:String = 'base', isPlayer:Bool = false, ?allowGPU:Bool = true)
 	{
 		super();
 		this.isPlayer = isPlayer;
@@ -27,7 +27,7 @@ class HealthIcon extends FlxSprite
 		if(this.char != char) {
 			var name:String = 'icons/' + char;
 			if(!Paths.fileExists('images/' + name + '.png', IMAGE)) name = 'icons/icon-' + char; //Older versions of psych engine's support
-			if(!Paths.fileExists('images/' + name + '.png', IMAGE)) name = 'icons/icon-face'; //Prevents crash from missing icon
+			if(!Paths.fileExists('images/' + name + '.png', IMAGE)) name = 'icons/icon-base'; //Prevents crash from missing icon
 			
 			var graphic = Paths.image(name, allowGPU);
 			loadGraphic(graphic, true, Math.floor(graphic.width / 2), Math.floor(graphic.height));

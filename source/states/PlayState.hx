@@ -167,7 +167,6 @@ class PlayState extends MusicBeatState
 	public var healthBar:Bar;
 	public var overlayBar:FlxSprite;
 
-	public var timeBar:Bar;
 	var songPercent:Float = 0;
 
 	public var ratingsData:Array<Rating> = Rating.loadDefault();
@@ -203,7 +202,7 @@ class PlayState extends MusicBeatState
 	public var songHits:Int = 0;
 	public var songMisses:Int = 0;
 	public var scoreTxt:FlxText;
-	var timeTxt:FlxText;
+	public var timeTxt:Alphabet;
 	var scoreTxtTween:FlxTween;
 
 	public static var campaignScore:Int = 0;
@@ -449,15 +448,6 @@ class PlayState extends MusicBeatState
 		add(noteGroup);
 
 		Conductor.songPosition = -Conductor.crochet * 5 + Conductor.offset;
-		var showTime:Bool = (ClientPrefs.data.timeBarType != 'Disabled');
-		timeTxt = new FlxText(STRUM_X + (FlxG.width / 2) - 248, 19, 400, "", 32);
-		timeTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		timeTxt.scrollFactor.set();
-		timeTxt.alpha = 0;
-		timeTxt.borderSize = 2;
-		timeTxt.visible = updateTime = showTime;
-		if(ClientPrefs.data.downScroll) timeTxt.y = FlxG.height - 44;
-		if(ClientPrefs.data.timeBarType == 'Song Name') timeTxt.text = SONG.song;
 
 		strumEnemyBG = new FlxBackdrop(Paths.image('ui/strumBG'), Y, 0, 0);
 		strumEnemyBG.x = 50;
@@ -474,21 +464,7 @@ class PlayState extends MusicBeatState
 		uiGroup.add(strumEnemyBG);
 		uiGroup.add(strumPlayerBG);
 
-		timeBar = new Bar(0, timeTxt.y + (timeTxt.height / 4), 'timeBar', function() return songPercent, 0, 1);
-		timeBar.scrollFactor.set();
-		timeBar.screenCenter(X);
-		timeBar.alpha = 0;
-		timeBar.visible = showTime;
-		uiGroup.add(timeBar);
-		uiGroup.add(timeTxt);
-
 		noteGroup.add(strumLineNotes);
-
-		if(ClientPrefs.data.timeBarType == 'Song Name')
-		{
-			timeTxt.size = 24;
-			timeTxt.y += 3;
-		}
 
 		generateSong();
 
@@ -512,7 +488,7 @@ class PlayState extends MusicBeatState
 		FlxG.worldBounds.set(0, 0, FlxG.width, FlxG.height);
 		moveCameraSection();
 
-		healthBar = new Bar(0, FlxG.height * (!ClientPrefs.data.downScroll ? 0.85 : 0.15), 'ui/healthBar', function() return health, 0, 2);
+		healthBar = new Bar(0, FlxG.height * (!ClientPrefs.data.downScroll ? 0.87 : 0.13), 'ui/healthBar', function() return health, 0, 2);
 		healthBar.screenCenter(X);
 		healthBar.leftToRight = false;
 		healthBar.scrollFactor.set();
@@ -529,19 +505,32 @@ class PlayState extends MusicBeatState
 		overlayBar.alpha = ClientPrefs.data.healthBarAlpha;
 		uiGroup.add(overlayBar);
 
+		var showTime:Bool = (ClientPrefs.data.timeVisible != 'Disabled');
+		timeTxt = new Alphabet(0, healthBar.y - 100, "", true, 'timer-alphabet');
+		timeTxt.screenCenter(X);
+		timeTxt.scrollFactor.set();
+		timeTxt.alpha = 0;
+		timeTxt.setAlignmentFromString('center');
+		timeTxt.visible = updateTime = showTime;
+		uiGroup.add(timeTxt);
+		if(ClientPrefs.data.downScroll)
+			timeTxt.y = healthBar.y + healthBar.height + 100;
+
 		iconP1 = new HealthIcon(boyfriend.healthIcon, true);
+		iconP1.x = healthBar.x + healthBar.width + 15;
 		iconP1.y = healthBar.y - 75;
 		iconP1.visible = !ClientPrefs.data.hideHud;
 		iconP1.alpha = ClientPrefs.data.healthBarAlpha;
 		uiGroup.add(iconP1);
 
 		iconP2 = new HealthIcon(dad.healthIcon, false);
+		iconP2.x = healthBar.x - iconP2.width - 15;
 		iconP2.y = healthBar.y - 75;
 		iconP2.visible = !ClientPrefs.data.hideHud;
 		iconP2.alpha = ClientPrefs.data.healthBarAlpha;
 		uiGroup.add(iconP2);
 
-		scoreTxt = new FlxText(0, healthBar.y + 40, FlxG.width, "", 20);
+		scoreTxt = new FlxText(0, healthBar.y + 60, FlxG.width, "", 20);
 		scoreTxt.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		scoreTxt.scrollFactor.set();
 		scoreTxt.borderSize = 1.25;
@@ -549,14 +538,15 @@ class PlayState extends MusicBeatState
 		updateScore(false);
 		uiGroup.add(scoreTxt);
 
-		botplayTxt = new FlxText(400, timeBar.y + 55, FlxG.width - 800, Language.getPhrase("Botplay").toUpperCase(), 32);
+		botplayTxt = new FlxText(0, 100, FlxG.width - 800, Language.getPhrase("Botplay").toUpperCase(), 32);
 		botplayTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		botplayTxt.screenCenter(X);
 		botplayTxt.scrollFactor.set();
 		botplayTxt.borderSize = 1.25;
 		botplayTxt.visible = cpuControlled;
 		uiGroup.add(botplayTxt);
 		if(ClientPrefs.data.downScroll)
-			botplayTxt.y = timeBar.y - 78;
+			botplayTxt.y = FlxG.height - 100;
 
 		uiGroup.cameras = [camHUD];
 		noteGroup.cameras = [camHUD];
@@ -613,6 +603,7 @@ class PlayState extends MusicBeatState
 		if(ClientPrefs.data.hitsoundVolume > 0) Paths.sound('hitsound');
 		if(!ClientPrefs.data.ghostTapping) for (i in 1...4) Paths.sound('missnote$i');
 		Paths.image('alphabet');
+		Paths.image('timer-alphabet');
 
 		if (PauseSubState.songName != null)
 			Paths.music(PauseSubState.songName);
@@ -1241,7 +1232,6 @@ class PlayState extends MusicBeatState
 
 		// Song duration in a float, useful for the time left feature
 		songLength = FlxG.sound.music.length;
-		FlxTween.tween(timeBar, {alpha: 1}, 0.5, {ease: FlxEase.circOut});
 		FlxTween.tween(timeTxt, {alpha: 1}, 0.5, {ease: FlxEase.circOut});
 
 		#if DISCORD_ALLOWED
@@ -1684,9 +1674,6 @@ class PlayState extends MusicBeatState
 		if (healthBar.bounds.max != null && health > healthBar.bounds.max)
 			health = healthBar.bounds.max;
 
-		updateIconsScale(elapsed);
-		updateIconsPosition();
-
 		if (startedCountdown && !paused)
 		{
 			Conductor.songPosition += elapsed * 1000 * playbackRate;
@@ -1712,13 +1699,11 @@ class PlayState extends MusicBeatState
 			songPercent = (curTime / songLength);
 
 			var songCalc:Float = (songLength - curTime);
-			if(ClientPrefs.data.timeBarType == 'Time Elapsed') songCalc = curTime;
 
 			var secondsTotal:Int = Math.floor(songCalc / 1000);
 			if(secondsTotal < 0) secondsTotal = 0;
 
-			if(ClientPrefs.data.timeBarType != 'Song Name')
-				timeTxt.text = FlxStringUtil.formatTime(secondsTotal, false);
+			timeTxt.text = '${secondsTotal}';
 		}
 
 		if (camZooming)
@@ -1835,23 +1820,6 @@ class PlayState extends MusicBeatState
 	}
 
 	// Health icon updaters
-	public dynamic function updateIconsScale(elapsed:Float)
-	{
-		var mult:Float = FlxMath.lerp(1, iconP1.scale.x, Math.exp(-elapsed * 9 * playbackRate));
-		iconP1.scale.set(mult, mult);
-		iconP1.updateHitbox();
-
-		var mult:Float = FlxMath.lerp(1, iconP2.scale.x, Math.exp(-elapsed * 9 * playbackRate));
-		iconP2.scale.set(mult, mult);
-		iconP2.updateHitbox();
-	}
-
-	public dynamic function updateIconsPosition()
-	{
-		var iconOffset:Int = 26;
-		iconP1.x = healthBar.barCenter + (150 * iconP1.scale.x - 150) / 2 - iconOffset;
-		iconP2.x = healthBar.barCenter - (150 * iconP2.scale.x) / 2 - iconOffset * 2;
-	}
 
 	var iconsAnimations:Bool = true;
 	function set_health(value:Float):Float // You can alter how icon animations work here
@@ -2368,7 +2336,6 @@ class PlayState extends MusicBeatState
 			}
 		}
 
-		timeBar.visible = false;
 		timeTxt.visible = false;
 		canPause = false;
 		endingSong = true;
@@ -3166,9 +3133,6 @@ class PlayState extends MusicBeatState
 
 		if (generatedMusic)
 			notes.sort(FlxSort.byY, ClientPrefs.data.downScroll ? FlxSort.ASCENDING : FlxSort.DESCENDING);
-
-		iconP1.scale.set(1.2, 1.2);
-		iconP2.scale.set(1.2, 1.2);
 
 		iconP1.updateHitbox();
 		iconP2.updateHitbox();

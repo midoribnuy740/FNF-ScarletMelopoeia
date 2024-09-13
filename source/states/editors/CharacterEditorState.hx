@@ -407,11 +407,11 @@ class CharacterEditorState extends MusicBeatState implements PsychUIEventHandler
 				],
 				no_antialiasing: false,
 				flip_x: false,
-				healthicon: 'face',
+				healthicon: 'base',
 				image: 'characters/kareshi',
 				sing_duration: 4,
 				scale: 1,
-				healthbar_colors: [161, 161, 161],
+				healthbar_colors: [132, 132, 132],
 				camera_position: [0, 0],
 				position: [0, 0],
 				vocals_file: null

@@ -44,7 +44,7 @@ class Character extends FlxSprite
 	/**
 	 * In case a character is missing, it will use this on its place
 	**/
-	public static final DEFAULT_CHARACTER:String = 'bf';
+	public static final DEFAULT_CHARACTER:String = 'kareshi';
 
 	public var animOffsets:Map<String, Array<Dynamic>>;
 	public var debugMode:Bool = false;
@@ -63,7 +63,7 @@ class Character extends FlxSprite
 	public var danceIdle:Bool = false; //Character use "danceLeft" and "danceRight" instead of "idle"
 	public var skipDance:Bool = false;
 
-	public var healthIcon:String = 'face';
+	public var healthIcon:String = 'base';
 	public var animationsArray:Array<AnimArray> = [];
 
 	public var positionArray:Array<Float> = [0, 0];
@@ -82,7 +82,7 @@ class Character extends FlxSprite
 	public var originalFlipX:Bool = false;
 	public var editorIsPlayer:Null<Bool> = null;
 
-	public function new(x:Float, y:Float, ?character:String = 'bf', ?isPlayer:Bool = false)
+	public function new(x:Float, y:Float, ?character:String = 'kareshi', ?isPlayer:Bool = false)
 	{
 		super(x, y);
 
