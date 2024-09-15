@@ -214,7 +214,19 @@ class Alphabet extends FlxSpriteGroup
 				{
 					if (consecutiveSpaces > 0)
 					{
-						xPos += 28 * consecutiveSpaces * scaleX;
+						switch(image)
+						{
+							case 'bgm-alphabet':
+								xPos += 20 * consecutiveSpaces * scaleX;
+							case 'timer-alphabet':
+								xPos += 23 * consecutiveSpaces * scaleX;
+							case 'score-alphabet':
+								xPos += 25 * consecutiveSpaces * scaleX;
+							default:
+								xPos += 28 * consecutiveSpaces * scaleX;
+						}
+						
+							
 						rowData[rows] = xPos;
 						if (!bold && xPos >= FlxG.width * 0.65)
 						{

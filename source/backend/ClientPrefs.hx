@@ -26,10 +26,10 @@ import states.TitleState;
 	public var hideHud:Bool = false;
 	public var noteOffset:Int = 0;
 	public var arrowRGB:Array<Array<FlxColor>> = [
-		[0xFFC24B99, 0xFFFFFFFF, 0xFF3C1F56],
-		[0xFF00FFFF, 0xFFFFFFFF, 0xFF1542B7],
-		[0xFF12FA05, 0xFFFFFFFF, 0xFF0A4447],
-		[0xFFF9393F, 0xFFFFFFFF, 0xFF651038]];
+		[0xFFFFE129, 0xFFFFFEB3, 0xFF54490B],
+		[0xFFF03535, 0xFFFFDEDE, 0xFF7E1515],
+		[0xFF44FF7A, 0xFFD7FFE5, 0xFF18472E],
+		[0xFF308DF0, 0xFFE9F1FF, 0xFF0E0449]];
 	public var arrowRGBPixel:Array<Array<FlxColor>> = [
 		[0xFFE276FF, 0xFFFFF9FF, 0xFF60008D],
 		[0xFF3DCAFF, 0xFFF4FFFF, 0xFF003060],

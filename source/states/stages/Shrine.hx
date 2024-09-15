@@ -1,11 +1,15 @@
 package states.stages;
 
 import states.stages.objects.*;
+import objects.*;
 
 class Shrine extends BaseStage
 {
 	var title:BGSprite;
 	var quote:BGSprite;
+
+	var orbBack:FlxSprite;
+	var orbFront:FlxSprite;
 
 	var dropZoom:FlxTween;
 
@@ -37,10 +41,32 @@ class Shrine extends BaseStage
 		var karShadow:BGSprite = new BGSprite('shrine/shadows/shrine-shadow-kar', 864, 800, 1, 1);
 		karShadow.alpha = 0.6;
 		add(karShadow);
+
+		orbBack = new FlxSprite().loadGraphic(Paths.image('shrine/orb-back'));
+		orbBack.x = 359;
+		orbBack.y = 577;
+		orbBack.angularVelocity = 200;
+		orbBack.visible = false;
+		add(orbBack);
 	}
 
 	override function createPost()
 	{
+		if (isStoryMode)
+		{
+			game.strumEnemyBG.alpha = 0;
+			game.strumPlayerBG.alpha = 0;
+			game.camFollow.x = 650;
+			game.camFollow.y = -1000;
+		}
+
+		orbFront = new FlxSprite().loadGraphic(Paths.image('shrine/orb-front'));
+		orbFront.x = 5;
+		orbFront.y = 608;
+		orbFront.visible = false;
+		orbFront.angularVelocity = -200;
+		add(orbFront);
+		
 		var sunlight:BGSprite = new BGSprite('shrine/shrine-sunlight', -677, -411, 0, 0);
 		sunlight.alpha = 0.2;
 		sunlight.blend = ADD;
@@ -50,7 +76,7 @@ class Shrine extends BaseStage
 		title.alpha = 0;
 		add(title);
 
-		quote = new BGSprite('shrine/week-intro/arrival-quote', 71, -642, 1, 1);
+		quote = new BGSprite('shrine/week-intro/arrival-quote', 71, -642, 1, 1.45);
 		quote.alpha = 0;
 		add(quote);
 	}
@@ -63,6 +89,9 @@ class Shrine extends BaseStage
 				if (isStoryMode)
 				{
 					smWeekIntro();
+					game.isCameraOnForcedPos = true;
+					game.camFollow.x = 650;
+					game.camFollow.y = -400;
 				}
 
 			case "Generic Event":
@@ -79,6 +108,30 @@ class Shrine extends BaseStage
 					default:
 						FlxG.camera.zoom = 0.8;
 				}
+
+			case "Spell Card":
+				orbBack.visible = true;
+				orbFront.visible = true;
+
+				var char:Character = game.dad;
+				var powerup:FlxSprite = new FlxSprite().loadGraphic(Paths.image('powerup'));
+				powerup.x = char.x + (char.width / 2) - (powerup.width / 2);
+				powerup.y = char.y - 50;
+				powerup.alpha = 1;
+				add(powerup);
+
+				FlxTween.tween(powerup, {y: powerup.y - 30, alpha: 0}, 1.5, {
+					ease: FlxEase.quadOut,
+					onComplete: function(twn:FlxTween)
+					{
+						remove(powerup);
+						powerup.destroy();
+					}
+				});
+
+				FlxG.sound.play(Paths.sound('spell'), 0.5);
+				char.color = 0xFFFFE1E1;
+				FlxTween.color(char, 0.5, 0xFFFFE1E1, 0xFFFFFFFF, {ease: FlxEase.circOut});
 		}
 	}
 
@@ -89,8 +142,18 @@ class Shrine extends BaseStage
 
 		FlxTween.tween(title, {alpha: 0}, 1.5, {ease: FlxEase.linear, startDelay: 6});
 		FlxTween.tween(quote, {alpha: 0}, 1.5, {ease: FlxEase.circIn, startDelay: 6});
+
+		FlxTween.tween(game.camFollow, {y: 525}, 2, {ease: FlxEase.circInOut, startDelay: 6});
+
+		FlxTween.tween(game.strumEnemyBG, {alpha: 0.5}, 1, {ease: FlxEase.linear, startDelay: 7});
+		FlxTween.tween(game.strumPlayerBG, {alpha: 0.5}, 1, {ease: FlxEase.linear, startDelay: 7});
 	}
 }
+
+
+
+
+
 
 //                                   @@@                                                                      @@@@@@@@@@                                 
 //                               @@@@@@@@@@@@@                                                             @@@@@@@@@@@@@@@@@                             

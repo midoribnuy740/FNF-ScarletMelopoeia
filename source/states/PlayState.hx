@@ -201,9 +201,11 @@ class PlayState extends MusicBeatState
 	public var songScore:Int = 0;
 	public var songHits:Int = 0;
 	public var songMisses:Int = 0;
-	public var scoreTxt:FlxText;
+	public var scoreTxt:Alphabet;
 	public var timeTxt:Alphabet;
-	var scoreTxtTween:FlxTween;
+
+	public var bgmText:Alphabet;
+	public var bgmSong:String;
 
 	public static var campaignScore:Int = 0;
 	public static var campaignMisses:Int = 0;
@@ -373,7 +375,6 @@ class PlayState extends MusicBeatState
 			if(SONG.gfVersion == null || SONG.gfVersion.length < 1) SONG.gfVersion = 'gf'; //Fix for the Chart Editor
 			gf = new Character(0, 0, SONG.gfVersion);
 			startCharacterPos(gf);
-			gfGroup.scrollFactor.set(0.95, 0.95);
 			gfGroup.add(gf);
 		}
 
@@ -488,7 +489,7 @@ class PlayState extends MusicBeatState
 		FlxG.worldBounds.set(0, 0, FlxG.width, FlxG.height);
 		moveCameraSection();
 
-		healthBar = new Bar(0, FlxG.height * (!ClientPrefs.data.downScroll ? 0.87 : 0.13), 'ui/healthBar', function() return health, 0, 2);
+		healthBar = new Bar(0, FlxG.height * (!ClientPrefs.data.downScroll ? 0.84 : 0.17), 'ui/healthBar', function() return health, 0, 2);
 		healthBar.screenCenter(X);
 		healthBar.leftToRight = false;
 		healthBar.scrollFactor.set();
@@ -505,6 +506,22 @@ class PlayState extends MusicBeatState
 		overlayBar.alpha = ClientPrefs.data.healthBarAlpha;
 		uiGroup.add(overlayBar);
 
+		// BGM Song Corner Text thingies
+
+		switch(songName)
+		{
+			case 'crimson-dream':
+				bgmSong = 'Crimson Dream';
+		}
+
+		bgmText = new Alphabet(FlxG.width, 0, 'BGM: $bgmSong', true, 'bgm-alphabet');
+		bgmText.y = FlxG.height - bgmText.height- 30;
+		bgmText.scrollFactor.set();
+		bgmText.setScale(0.75, 0.75);
+		uiGroup.add(bgmText);
+
+		//
+
 		var showTime:Bool = (ClientPrefs.data.timeVisible != 'Disabled');
 		timeTxt = new Alphabet(0, healthBar.y - 100, "", true, 'timer-alphabet');
 		timeTxt.screenCenter(X);
@@ -514,7 +531,7 @@ class PlayState extends MusicBeatState
 		timeTxt.visible = updateTime = showTime;
 		uiGroup.add(timeTxt);
 		if(ClientPrefs.data.downScroll)
-			timeTxt.y = healthBar.y + healthBar.height + 100;
+			timeTxt.y = healthBar.y + healthBar.height + 20;
 
 		iconP1 = new HealthIcon(boyfriend.healthIcon, true);
 		iconP1.x = healthBar.x + healthBar.width + 15;
@@ -530,13 +547,15 @@ class PlayState extends MusicBeatState
 		iconP2.alpha = ClientPrefs.data.healthBarAlpha;
 		uiGroup.add(iconP2);
 
-		scoreTxt = new FlxText(0, healthBar.y + 60, FlxG.width, "", 20);
-		scoreTxt.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		scoreTxt = new Alphabet(960, -3, "", true, 'score-alphabet');
 		scoreTxt.scrollFactor.set();
-		scoreTxt.borderSize = 1.25;
+		scoreTxt.setScale(0.75, 0.75);
+		scoreTxt.setAlignmentFromString('center');
 		scoreTxt.visible = !ClientPrefs.data.hideHud;
 		updateScore(false);
 		uiGroup.add(scoreTxt);
+		if(ClientPrefs.data.downScroll)
+			scoreTxt.y = FlxG.height - 40;
 
 		botplayTxt = new FlxText(0, 100, FlxG.width - 800, Language.getPhrase("Botplay").toUpperCase(), 32);
 		botplayTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -604,6 +623,8 @@ class PlayState extends MusicBeatState
 		if(!ClientPrefs.data.ghostTapping) for (i in 1...4) Paths.sound('missnote$i');
 		Paths.image('alphabet');
 		Paths.image('timer-alphabet');
+		Paths.image('score-alphabet');
+		Paths.image('bgm-alphabet');
 
 		if (PauseSubState.songName != null)
 			Paths.music(PauseSubState.songName);
@@ -718,7 +739,6 @@ class PlayState extends MusicBeatState
 			case 2:
 				if(gf != null && !gfMap.exists(newCharacter)) {
 					var newGf:Character = new Character(0, 0, newCharacter);
-					newGf.scrollFactor.set(0.95, 0.95);
 					gfMap.set(newCharacter, newGf);
 					gfGroup.add(newGf);
 					startCharacterPos(newGf);
@@ -801,7 +821,6 @@ class PlayState extends MusicBeatState
 	function startCharacterPos(char:Character, ?gfCheck:Bool = false) {
 		if(gfCheck && char.curCharacter.startsWith('gf')) { //IF DAD IS GIRLFRIEND, HE GOES TO HER POSITION
 			char.setPosition(GF_X, GF_Y);
-			char.scrollFactor.set(0.95, 0.95);
 			char.danceEveryNumBeats = 2;
 		}
 		char.x += char.positionArray[0];
@@ -999,15 +1018,12 @@ class PlayState extends MusicBeatState
 						FlxG.sound.play(Paths.sound('intro3' + introSoundsSuffix), 0.6);
 						tick = THREE;
 					case 1:
-						countdownReady = createCountdownSprite(introAlts[0], antialias);
 						FlxG.sound.play(Paths.sound('intro2' + introSoundsSuffix), 0.6);
 						tick = TWO;
 					case 2:
-						countdownSet = createCountdownSprite(introAlts[1], antialias);
 						FlxG.sound.play(Paths.sound('intro1' + introSoundsSuffix), 0.6);
 						tick = ONE;
 					case 3:
-						countdownGo = createCountdownSprite(introAlts[2], antialias);
 						FlxG.sound.play(Paths.sound('introGo' + introSoundsSuffix), 0.6);
 						tick = GO;
 					case 4:
@@ -1124,12 +1140,8 @@ class PlayState extends MusicBeatState
 		}
 
 		var tempScore:String;
-		if(!instakillOnMiss) tempScore = Language.getPhrase('score_text', 'Score: {1} | Misses: {2} | Rating: {3}', [songScore, songMisses, str]);
-		else tempScore = Language.getPhrase('score_text_instakill', 'Score: {1} | Rating: {2}', [songScore, str]);
+		tempScore = Language.getPhrase('score_text', 'Score   {1}', [songScore]);
 		scoreTxt.text = tempScore;
-
-		if (!miss && !cpuControlled)
-			doScoreBop();
 
 		callOnScripts('onUpdateScore', [miss]);
 	}
@@ -1152,22 +1164,6 @@ class PlayState extends MusicBeatState
 			if (songMisses < 10) ratingFC = 'SDCB';
 			else ratingFC = 'Clear';
 		}
-	}
-
-	public function doScoreBop():Void {
-		if(!ClientPrefs.data.scoreZoom)
-			return;
-
-		if(scoreTxtTween != null)
-			scoreTxtTween.cancel();
-
-		scoreTxt.scale.x = 1.075;
-		scoreTxt.scale.y = 1.075;
-		scoreTxtTween = FlxTween.tween(scoreTxt.scale, {x: 1, y: 1}, 0.2, {
-			onComplete: function(twn:FlxTween) {
-				scoreTxtTween = null;
-			}
-		});
 	}
 
 	public function setSongTime(time:Float)
@@ -1233,6 +1229,14 @@ class PlayState extends MusicBeatState
 		// Song duration in a float, useful for the time left feature
 		songLength = FlxG.sound.music.length;
 		FlxTween.tween(timeTxt, {alpha: 1}, 0.5, {ease: FlxEase.circOut});
+
+		FlxTween.tween(bgmText, {x: FlxG.width - bgmText.width - 20}, 1, {ease: FlxEase.circOut});
+		FlxTween.tween(bgmText, {y: FlxG.height + 30}, 1.5, {ease: FlxEase.quadIn, startDelay: 5,
+			onComplete: function(twn:FlxTween)
+			{
+				remove(bgmText);
+				bgmText.destroy();
+			}});
 
 		#if DISCORD_ALLOWED
 		// Updating Discord Rich Presence (with Time Left)

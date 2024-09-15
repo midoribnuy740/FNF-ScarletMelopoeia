@@ -553,9 +553,9 @@ class TitleState extends MusicBeatState
 				case 14:
 					addMoreText('FNF x Touhou');
 				case 15:
-					addMoreText('Scarlet');
+					addMoreText('~');
 				case 16:
-					addMoreText('Melopoeia'); // credTextShit.text += '\nFunkin';
+					addMoreText('Scarlet Melopoeia'); // credTextShit.text += '\nFunkin';
 
 				case 17:
 					skipIntro();
