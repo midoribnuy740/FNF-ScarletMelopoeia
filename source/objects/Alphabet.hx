@@ -27,12 +27,16 @@ class Alphabet extends FlxSpriteGroup
 	public var scaleY(default, set):Float = 1;
 	public var rows:Int = 0;
 
+	public var image:String = "alphabet";
+
 	public var distancePerItem:FlxPoint = new FlxPoint(20, 120);
 	public var startPosition:FlxPoint = new FlxPoint(0, 0); //for the calculations
 
-	public function new(x:Float, y:Float, text:String = "", ?bold:Bool = true)
+	public function new(x:Float, y:Float, text:String = "", ?bold:Bool = true, ?imageName:String = "alphabet")
 	{
 		super(x, y);
+
+		image = imageName;
 
 		this.startPosition.x = x;
 		this.startPosition.y = y;
@@ -219,6 +223,7 @@ class Alphabet extends FlxSpriteGroup
 					consecutiveSpaces = 0;
 
 					var letter:AlphaCharacter = cast recycle(AlphaCharacter, true);
+					letter.image = image;
 					letter.scale.x = scaleX;
 					letter.scale.y = scaleY;
 					letter.rowWidth = 0;
@@ -281,13 +286,13 @@ class AlphaCharacter extends FlxSprite
 
 	public static function loadAlphabetData(request:String = 'alphabet')
 	{
-		var path:String = Paths.getPath('images/$request.json');
+		var path:String = Paths.getPath('images/alphabets/$request.json');
 		#if MODS_ALLOWED
 		if(!FileSystem.exists(path))
 		#else
 		if(!Assets.exists(path, TEXT))
 		#end
-			path = Paths.getPath('images/alphabet.json');
+			path = Paths.getPath('images/alphabets/alphabet.json');
 
 		allLetters = new Map<String, Null<Letter>>();
 		try
@@ -413,7 +418,7 @@ class AlphaCharacter extends FlxSprite
 		if(frames == null) //first setup
 		{
 			image = name;
-			frames = Paths.getSparrowAtlas(name);
+			frames = Paths.getSparrowAtlas('alphabets/$image');
 			return name;
 		}
 
@@ -423,9 +428,9 @@ class AlphaCharacter extends FlxSprite
 			lastAnim = animation.name;
 		}
 		image = name;
-		frames = Paths.getSparrowAtlas(name);
-		this.scale.x = parent.scaleX;
-		this.scale.y = parent.scaleY;
+		frames = Paths.getSparrowAtlas('alphabets/$image');
+		// this.scale.x = parent.scaleX;
+		// this.scale.y = parent.scaleY;
 		alignOffset = 0;
 		
 		if (lastAnim != null)

@@ -92,11 +92,11 @@ class VisualsSettingsSubState extends BaseOptionsMenu
 			BOOL);
 		addOption(option);
 		
-		var option:Option = new Option('Time Bar:',
-			"What should the Time Bar display?",
-			'timeBarType',
+		var option:Option = new Option('Timer:',
+			"Should the Time Bar be visible?",
+			'timeVisible',
 			STRING,
-			['Time Left', 'Time Elapsed', 'Song Name', 'Disabled']);
+			['Enabled', 'Disabled']);
 		addOption(option);
 
 		var option:Option = new Option('Flashing Lights',

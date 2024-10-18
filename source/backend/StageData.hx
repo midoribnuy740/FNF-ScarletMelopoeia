@@ -94,24 +94,11 @@ class StageData {
 	{
 		switch (songName)
 		{
-			case 'spookeez' | 'south' | 'monster':
-				return 'spooky';
-			case 'pico' | 'blammed' | 'philly' | 'philly-nice':
-				return 'philly';
-			case 'milf' | 'satin-panties' | 'high':
-				return 'limo';
-			case 'cocoa' | 'eggnog':
-				return 'mall';
-			case 'winter-horrorland':
-				return 'mallEvil';
-			case 'senpai' | 'roses':
-				return 'school';
-			case 'thorns':
-				return 'schoolEvil';
-			case 'ugh' | 'guns' | 'stress':
-				return 'tank';
+			case 'crimson-dream':
+				return 'shrine';
+
 		}
-		return 'stage';
+		return 'shrine';
 	}
 
 	public static var reservedNames:Array<String> = ['gf', 'gfGroup', 'dad', 'dadGroup', 'boyfriend', 'boyfriendGroup']; //blocks these names from being used on stage editor's name input text
