@@ -1,7 +1,6 @@
 package states.editors;
 
 import flixel.graphics.FlxGraphic;
-import flixel.graphics.frames.FlxAtlasFrames;
 
 import flixel.system.debug.interaction.tools.Pointer.GraphicCursorCross;
 import flixel.util.FlxDestroyUtil;
@@ -68,7 +67,8 @@ class CharacterEditorState extends MusicBeatState implements PsychUIEventHandler
 
 	override function create()
 	{
-		if(ClientPrefs.data.cacheOnGPU) Paths.clearStoredMemory();
+		Paths.clearStoredMemory();
+		Paths.clearUnusedMemory();
 
 		FlxG.sound.music.stop();
 		camEditor = initPsychCamera();
@@ -399,19 +399,19 @@ class CharacterEditorState extends MusicBeatState implements PsychUIEventHandler
 			final _template:CharacterFile =
 			{
 				animations: [
-					newAnim('idle', 'kareshi-idle'),
-					newAnim('singLEFT', 'kareshi-left'),
-					newAnim('singDOWN', 'kareshi-down'),
-					newAnim('singUP', 'kareshi-up'),
-					newAnim('singRIGHT', 'kareshi-right')
+					newAnim('idle', 'BF idle dance'),
+					newAnim('singLEFT', 'BF NOTE LEFT0'),
+					newAnim('singDOWN', 'BF NOTE DOWN0'),
+					newAnim('singUP', 'BF NOTE UP0'),
+					newAnim('singRIGHT', 'BF NOTE RIGHT0')
 				],
 				no_antialiasing: false,
 				flip_x: false,
-				healthicon: 'base',
-				image: 'characters/kareshi',
+				healthicon: 'face',
+				image: 'characters/BOYFRIEND',
 				sing_duration: 4,
 				scale: 1,
-				healthbar_colors: [132, 132, 132],
+				healthbar_colors: [161, 161, 161],
 				camera_position: [0, 0],
 				position: [0, 0],
 				vocals_file: null
@@ -815,22 +815,7 @@ class CharacterEditorState extends MusicBeatState implements PsychUIEventHandler
 		}
 		else
 		{
-			var split:Array<String> = character.imageFile.split(',');
-			var charFrames:FlxAtlasFrames = Paths.getAtlas(split[0].trim());
-			
-			if(split.length > 1)
-			{
-				var original:FlxAtlasFrames = charFrames;
-				charFrames = new FlxAtlasFrames(charFrames.parent);
-				charFrames.addAtlas(original, true);
-				for (i in 1...split.length)
-				{
-					var extraFrames:FlxAtlasFrames = Paths.getAtlas(split[i].trim());
-					if(extraFrames != null)
-						charFrames.addAtlas(extraFrames, true);
-				}
-			}
-			character.frames = charFrames;
+			character.frames = Paths.getMultiAtlas(character.imageFile.split(','));
 		}
 
 		for (anim in anims) {
@@ -1065,7 +1050,6 @@ class CharacterEditorState extends MusicBeatState implements PsychUIEventHandler
 		}
 		else if(FlxG.keys.justPressed.ESCAPE)
 		{
-			FlxG.mouse.visible = false;
 			if(!_goToPlayState)
 			{
 				if(!unsavedProgress)
@@ -1075,7 +1059,11 @@ class CharacterEditorState extends MusicBeatState implements PsychUIEventHandler
 				}
 				else openSubState(new ExitConfirmationPrompt());
 			}
-			else MusicBeatState.switchState(new PlayState());
+			else
+			{
+				FlxG.mouse.visible = false;
+				MusicBeatState.switchState(new PlayState());
+			}
 			return;
 		}
 	}
@@ -1089,7 +1077,20 @@ class CharacterEditorState extends MusicBeatState implements PsychUIEventHandler
 		/////////////
 		// bg data //
 		/////////////
+		#if !BASE_GAME_FILES
 		camEditor.bgColor = 0xFF666666;
+		#else
+		var bg:BGSprite = new BGSprite('stageback', -600, -200, 0.9, 0.9);
+		add(bg);
+
+		var stageFront:BGSprite = new BGSprite('stagefront', -650, 600, 0.9, 0.9);
+		stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
+		stageFront.updateHitbox();
+		add(stageFront);
+		#end
+
+		dadPosition.set(100, 100);
+		bfPosition.set(770, 100);
 		/////////////
 
 		Paths.currentLevel = lastLoaded;

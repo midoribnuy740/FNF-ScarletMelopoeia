@@ -2,8 +2,6 @@ package objects;
 
 import backend.animation.PsychAnimationController;
 
-import flixel.graphics.frames.FlxAtlasFrames;
-
 import flixel.util.FlxSort;
 import flixel.util.FlxDestroyUtil;
 
@@ -12,6 +10,7 @@ import openfl.utils.Assets;
 import haxe.Json;
 
 import backend.Song;
+import states.stages.objects.TankmenBG;
 
 typedef CharacterFile = {
 	var animations:Array<AnimArray>;
@@ -44,7 +43,7 @@ class Character extends FlxSprite
 	/**
 	 * In case a character is missing, it will use this on its place
 	**/
-	public static final DEFAULT_CHARACTER:String = 'kareshi';
+	public static final DEFAULT_CHARACTER:String = 'bf';
 
 	public var animOffsets:Map<String, Array<Dynamic>>;
 	public var debugMode:Bool = false;
@@ -63,7 +62,7 @@ class Character extends FlxSprite
 	public var danceIdle:Bool = false; //Character use "danceLeft" and "danceRight" instead of "idle"
 	public var skipDance:Bool = false;
 
-	public var healthIcon:String = 'base';
+	public var healthIcon:String = 'face';
 	public var animationsArray:Array<AnimArray> = [];
 
 	public var positionArray:Array<Float> = [0, 0];
@@ -82,7 +81,7 @@ class Character extends FlxSprite
 	public var originalFlipX:Bool = false;
 	public var editorIsPlayer:Null<Bool> = null;
 
-	public function new(x:Float, y:Float, ?character:String = 'kareshi', ?isPlayer:Bool = false)
+	public function new(x:Float, y:Float, ?character:String = 'bf', ?isPlayer:Bool = false)
 	{
 		super(x, y);
 
@@ -91,6 +90,16 @@ class Character extends FlxSprite
 		animOffsets = new Map<String, Array<Dynamic>>();
 		this.isPlayer = isPlayer;
 		changeCharacter(character);
+		
+		switch(curCharacter)
+		{
+			case 'pico-speaker':
+				skipDance = true;
+				loadMappedAnims();
+				playAnim("shoot1");
+			case 'pico-blazin', 'darnell-blazin':
+				skipDance = true;
+		}
 	}
 
 	public function changeCharacter(character:String)
@@ -147,21 +156,7 @@ class Character extends FlxSprite
 
 		if(!isAnimateAtlas)
 		{
-			var split:Array<String> = json.image.split(',');
-			var charFrames:FlxAtlasFrames = Paths.getAtlas(split[0].trim());
-			if(split.length > 1)
-			{
-				var original:FlxAtlasFrames = charFrames;
-				charFrames = new FlxAtlasFrames(charFrames.parent);
-				charFrames.addAtlas(original, true);
-				for (i in 1...split.length)
-				{
-					var extraFrames:FlxAtlasFrames = Paths.getAtlas(split[i].trim());
-					if(extraFrames != null)
-						charFrames.addAtlas(extraFrames, true);
-				}
-			}
-			frames = charFrames;
+			frames = Paths.getMultiAtlas(json.image.split(','));
 		}
 		#if flxanimate
 		else
@@ -275,6 +270,21 @@ class Character extends FlxSprite
 		{
 			dance();
 			finishAnimation();
+		}
+
+		switch(curCharacter)
+		{
+			case 'pico-speaker':
+				if(animationNotes.length > 0 && Conductor.songPosition > animationNotes[0][0])
+				{
+					var noteData:Int = 1;
+					if(animationNotes[0][1] > 2) noteData = 3;
+
+					noteData += FlxG.random.int(0, 1);
+					playAnim('shoot' + noteData, true);
+					animationNotes.shift();
+				}
+				if(isAnimationFinished()) playAnim(getAnimationName(), false, false, animation.curAnim.frames.length - 3);
 		}
 
 		if (getAnimationName().startsWith('sing')) holdTimer += elapsed;
@@ -398,7 +408,23 @@ class Character extends FlxSprite
 				danced = !danced;
 		}
 	}
-	
+
+	function loadMappedAnims():Void
+	{
+		try
+		{
+			var songData:SwagSong = Song.getChart('picospeaker', Paths.formatToSongPath(Song.loadedSongName));
+			if(songData != null)
+				for (section in songData.notes)
+					for (songNotes in section.sectionNotes)
+						animationNotes.push(songNotes);
+
+			TankmenBG.animationNotes = animationNotes;
+			animationNotes.sort(sortAnims);
+		}
+		catch(e:Dynamic) {}
+	}
+
 	function sortAnims(Obj1:Array<Dynamic>, Obj2:Array<Dynamic>):Int
 	{
 		return FlxSort.byValues(FlxSort.ASCENDING, Obj1[0], Obj2[0]);
