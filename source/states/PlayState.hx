@@ -20,6 +20,7 @@ import openfl.events.KeyboardEvent;
 import haxe.Json;
 
 import cutscenes.DialogueBoxPsych;
+import flixel.addons.display.FlxBackdrop;
 
 import states.StoryMenuState;
 import states.FreeplayState;
@@ -159,8 +160,11 @@ class PlayState extends MusicBeatState
 	public var health(default, set):Float = 1;
 	public var combo:Int = 0;
 
+	public var strumEnemyBG:FlxBackdrop;
+	public var strumPlayerBG:FlxBackdrop;
+
 	public var healthBar:Bar;
-	public var timeBar:Bar;
+	public var overlayBar:FlxSprite;
 	var songPercent:Float = 0;
 
 	public var ratingsData:Array<Rating> = Rating.loadDefault();
@@ -1245,7 +1249,6 @@ class PlayState extends MusicBeatState
 
 		// Song duration in a float, useful for the time left feature
 		songLength = FlxG.sound.music.length;
-		FlxTween.tween(timeBar, {alpha: 1}, 0.5, {ease: FlxEase.circOut});
 		FlxTween.tween(timeTxt, {alpha: 1}, 0.5, {ease: FlxEase.circOut});
 
 		FlxTween.tween(bgmText, {x: FlxG.width - bgmText.width - 20}, 1, {ease: FlxEase.circOut});
@@ -1702,9 +1705,6 @@ class PlayState extends MusicBeatState
 		if (healthBar.bounds.max != null && health > healthBar.bounds.max)
 			health = healthBar.bounds.max;
 
-		updateIconsScale(elapsed);
-		updateIconsPosition();
-
 		if (startedCountdown && !paused)
 		{
 			Conductor.songPosition += elapsed * 1000 * playbackRate;
@@ -1730,13 +1730,11 @@ class PlayState extends MusicBeatState
 			songPercent = (curTime / songLength);
 
 			var songCalc:Float = (songLength - curTime);
-			if(ClientPrefs.data.timeBarType == 'Time Elapsed') songCalc = curTime;
 
 			var secondsTotal:Int = Math.floor(songCalc / 1000);
 			if(secondsTotal < 0) secondsTotal = 0;
 
-			if(ClientPrefs.data.timeBarType != 'Song Name')
-				timeTxt.text = FlxStringUtil.formatTime(secondsTotal, false);
+			timeTxt.text = '${secondsTotal}';
 		}
 
 		if (camZooming)
@@ -1851,23 +1849,6 @@ class PlayState extends MusicBeatState
 	}
 
 	// Health icon updaters
-	public dynamic function updateIconsScale(elapsed:Float)
-	{
-		var mult:Float = FlxMath.lerp(1, iconP1.scale.x, Math.exp(-elapsed * 9 * playbackRate));
-		iconP1.scale.set(mult, mult);
-		iconP1.updateHitbox();
-
-		var mult:Float = FlxMath.lerp(1, iconP2.scale.x, Math.exp(-elapsed * 9 * playbackRate));
-		iconP2.scale.set(mult, mult);
-		iconP2.updateHitbox();
-	}
-
-	public dynamic function updateIconsPosition()
-	{
-		var iconOffset:Int = 26;
-		iconP1.x = healthBar.barCenter + (150 * iconP1.scale.x - 150) / 2 - iconOffset;
-		iconP2.x = healthBar.barCenter - (150 * iconP2.scale.x) / 2 - iconOffset * 2;
-	}
 
 	var iconsAnimations:Bool = true;
 	function set_health(value:Float):Float // You can alter how icon animations work here
@@ -2389,7 +2370,6 @@ class PlayState extends MusicBeatState
 			}
 		}
 
-		timeBar.visible = false;
 		timeTxt.visible = false;
 		canPause = false;
 		endingSong = true;

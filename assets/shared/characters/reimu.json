@@ -1,48 +1,48 @@
 {
 	"animations": [
 		{
-			"offsets": [27, -7],
 			"loop": false,
-			"fps": 24,
+			"offsets": [27, -7],
 			"anim": "singLEFT",
-			"indices": [],
-			"name": "reimu-left"
+			"fps": 24,
+			"name": "reimu-left",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [-19, -12],
-			"loop": false,
-			"fps": 24,
 			"anim": "singRIGHT",
-			"indices": [],
-			"name": "reimu-right"
+			"fps": 24,
+			"name": "reimu-right",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [0, -46],
-			"loop": false,
-			"fps": 24,
 			"anim": "singDOWN",
-			"indices": [],
-			"name": "reimu-down"
+			"fps": 24,
+			"name": "reimu-down",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [8, 12],
-			"loop": false,
-			"fps": 24,
 			"anim": "singUP",
-			"indices": [],
-			"name": "reimu-up"
+			"fps": 24,
+			"name": "reimu-up",
+			"indices": []
 		},
 		{
-			"offsets": [0, 0],
 			"loop": false,
-			"fps": 24,
+			"offsets": [0, 0],
 			"anim": "idle",
-			"indices": [],
-			"name": "reimu-idle"
+			"fps": 24,
+			"name": "reimu-idle",
+			"indices": []
 		},
 		{
 			"offsets": [27, -7],
-			"indices": [4],
+			"indices": [],
 			"fps": 24,
 			"anim": "singLEFT-hold",
 			"loop": false,
@@ -50,7 +50,7 @@
 		},
 		{
 			"offsets": [-19, -12],
-			"indices": [4],
+			"indices": [],
 			"fps": 24,
 			"anim": "singRIGHT-hold",
 			"loop": false,
@@ -58,7 +58,7 @@
 		},
 		{
 			"offsets": [0, -46],
-			"indices": [4],
+			"indices": [],
 			"fps": 24,
 			"anim": "singDOWN-hold",
 			"loop": false,
@@ -66,7 +66,7 @@
 		},
 		{
 			"offsets": [8, 12],
-			"indices": [4],
+			"indices": [],
 			"fps": 24,
 			"anim": "singUP-hold",
 			"loop": false,
@@ -79,7 +79,7 @@
 	"position": [-20, 230],
 	"healthicon": "reimu",
 	"flip_x": false,
-	"healthbar_colors": [254, 69, 69],
+	"healthbar_colors": [214, 20, 38],
 	"camera_position": [0, 0],
 	"sing_duration": 4,
 	"scale": 1,

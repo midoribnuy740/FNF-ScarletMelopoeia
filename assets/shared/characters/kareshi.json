@@ -1,116 +1,116 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [-3, 5],
-			"loop": false,
-			"fps": 24,
 			"anim": "hey",
-			"indices": [],
-			"name": "BF HEY"
+			"fps": 24,
+			"name": "BF HEY",
+			"indices": []
 		},
 		{
-			"loop": false,
 			"offsets": [-6, -8],
+			"loop": false,
+			"fps": 24,
 			"anim": "singLEFT",
-			"fps": 24,
-			"name": "kareshi-left",
-			"indices": []
+			"indices": [],
+			"name": "kareshi-left"
 		},
 		{
-			"loop": false,
 			"offsets": [-6, -8],
+			"loop": false,
+			"fps": 24,
 			"anim": "singLEFT-hold",
-			"fps": 24,
-			"name": "kareshi-left",
-			"indices": []
+			"indices": [],
+			"name": "kareshi-left"
 		},
 		{
-			"loop": false,
 			"offsets": [-30, -44],
+			"loop": false,
+			"fps": 24,
 			"anim": "singDOWN",
-			"fps": 24,
-			"name": "kareshi-down",
-			"indices": []
+			"indices": [],
+			"name": "kareshi-down"
 		},
 		{
-			"loop": false,
 			"offsets": [-30, -44],
+			"loop": false,
+			"fps": 24,
 			"anim": "singDOWN-hold",
-			"fps": 24,
-			"name": "kareshi-down",
-			"indices": []
+			"indices": [],
+			"name": "kareshi-down"
 		},
 		{
-			"loop": false,
 			"offsets": [-46, 9],
+			"loop": false,
+			"fps": 24,
 			"anim": "singUP",
-			"fps": 24,
-			"name": "kareshi-up",
-			"indices": []
+			"indices": [],
+			"name": "kareshi-up"
 		},
 		{
-			"loop": false,
 			"offsets": [-46, 9],
+			"loop": false,
+			"fps": 24,
 			"anim": "singUP-hold",
-			"fps": 24,
-			"name": "kareshi-up",
-			"indices": []
+			"indices": [],
+			"name": "kareshi-up"
 		},
 		{
-			"loop": false,
 			"offsets": [-55, 4],
+			"loop": false,
+			"fps": 24,
 			"anim": "singRIGHT",
-			"fps": 24,
-			"name": "kareshi-right",
-			"indices": []
+			"indices": [],
+			"name": "kareshi-right"
 		},
 		{
-			"loop": false,
 			"offsets": [-55, 4],
+			"loop": false,
+			"fps": 24,
 			"anim": "singRIGHT-hold",
-			"fps": 24,
-			"name": "kareshi-right",
-			"indices": []
+			"indices": [],
+			"name": "kareshi-right"
 		},
 		{
-			"loop": false,
 			"offsets": [21, 53],
+			"loop": false,
+			"fps": 24,
 			"anim": "singLEFTmiss",
-			"fps": 24,
-			"name": "kareshi-missleft",
-			"indices": []
+			"indices": [],
+			"name": "kareshi-missleft"
 		},
 		{
-			"loop": false,
 			"offsets": [21, 53],
+			"loop": false,
+			"fps": 24,
 			"anim": "singDOWNmiss",
-			"fps": 24,
-			"name": "kareshi-missdown",
-			"indices": []
+			"indices": [],
+			"name": "kareshi-missdown"
 		},
 		{
-			"loop": false,
 			"offsets": [21, 53],
+			"loop": false,
+			"fps": 24,
 			"anim": "singUPmiss",
-			"fps": 24,
-			"name": "kareshi-missup",
-			"indices": []
+			"indices": [],
+			"name": "kareshi-missup"
 		},
 		{
-			"loop": false,
 			"offsets": [21, 53],
-			"anim": "singRIGHTmiss",
+			"loop": false,
 			"fps": 24,
-			"name": "kareshi-missright",
-			"indices": []
+			"anim": "singRIGHTmiss",
+			"indices": [],
+			"name": "kareshi-missright"
 		},
 		{
-			"loop": false,
 			"offsets": [-5, 0],
-			"anim": "idle",
+			"loop": false,
 			"fps": 24,
-			"name": "kareshi-idle",
-			"indices": []
+			"anim": "idle",
+			"indices": [],
+			"name": "kareshi-idle"
 		}
 	],
 	"vocals_file": "",
@@ -119,7 +119,7 @@
 	"position": [70, 310],
 	"healthicon": "kareshi",
 	"flip_x": true,
-	"healthbar_colors": [47, 135, 213],
+	"healthbar_colors": [49, 144, 218],
 	"camera_position": [0, 0],
 	"sing_duration": 4,
 	"scale": 1,
