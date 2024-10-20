@@ -366,6 +366,7 @@ class PlayState extends MusicBeatState
 		switch (curStage)
 		{
 			case 'shrine': new Shrine(); 				//Shrine
+			case 'forest': new Forest(); 				//Shrine
 		}
 		if(isPixelStage) introSoundsSuffix = '-pixel';
 
@@ -523,6 +524,8 @@ class PlayState extends MusicBeatState
 		{
 			case 'crimson-dream':
 				bgmSong = 'Crimson Dream';
+			case 'spiritual-dusk':
+				bgmSong = 'Spiritual Dusk';
 		}
 
 		bgmText = new Alphabet(FlxG.width, 0, 'BGM: $bgmSong', true, 'bgm-alphabet');
@@ -3174,9 +3177,6 @@ class PlayState extends MusicBeatState
 
 		if (generatedMusic)
 			notes.sort(FlxSort.byY, ClientPrefs.data.downScroll ? FlxSort.ASCENDING : FlxSort.DESCENDING);
-
-		iconP1.scale.set(1.2, 1.2);
-		iconP2.scale.set(1.2, 1.2);
 
 		iconP1.updateHitbox();
 		iconP2.updateHitbox();

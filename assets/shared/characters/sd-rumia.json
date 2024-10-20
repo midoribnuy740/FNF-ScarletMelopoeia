@@ -1,0 +1,119 @@
+{
+	"animations": [
+		{
+			"offsets": [0, 0],
+			"loop": true,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "rumia-idle"
+		},
+		{
+			"offsets": [70, -10],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [0, 1, 2, 3],
+			"name": "rumia-left"
+		},
+		{
+			"offsets": [70, -10],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT-hold",
+			"indices": [],
+			"name": "rumia-holdleft"
+		},
+		{
+			"offsets": [70, -12],
+			"loop": true,
+			"fps": 24,
+			"anim": "singLEFT-loop",
+			"indices": [],
+			"name": "rumia-loopleft"
+		},
+		{
+			"offsets": [-13, -50],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [0, 1, 2, 3],
+			"name": "rumia-down"
+		},
+		{
+			"offsets": [-13, -50],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN-hold",
+			"indices": [],
+			"name": "rumia-holddown"
+		},
+		{
+			"offsets": [-13, -51],
+			"loop": true,
+			"fps": 24,
+			"anim": "singDOWN-loop",
+			"indices": [],
+			"name": "rumia-loopdown"
+		},
+		{
+			"offsets": [2, 30],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [0, 1, 2, 3],
+			"name": "rumia-up"
+		},
+		{
+			"offsets": [2, 30],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP-hold",
+			"indices": [],
+			"name": "rumia-holdup"
+		},
+		{
+			"offsets": [-1, 23],
+			"loop": true,
+			"fps": 24,
+			"anim": "singUP-loop",
+			"indices": [],
+			"name": "rumia-loopup"
+		},
+		{
+			"offsets": [-50, 10],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [0, 1, 2, 3],
+			"name": "rumia-right"
+		},
+		{
+			"offsets": [-50, 10],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT-hold",
+			"indices": [],
+			"name": "rumia-holdright"
+		},
+		{
+			"offsets": [-70, 10],
+			"loop": true,
+			"fps": 24,
+			"anim": "singRIGHT-loop",
+			"indices": [],
+			"name": "rumia-loopright"
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": false,
+	"image": "characters/sm-sd-rumia",
+	"position": [0, 200],
+	"healthicon": "rumia",
+	"flip_x": false,
+	"healthbar_colors": [18, 12, 25],
+	"camera_position": [-160, 140],
+	"sing_duration": 4,
+	"scale": 1,
+	"_editor_isPlayer": false
+}

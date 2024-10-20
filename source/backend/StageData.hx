@@ -96,6 +96,8 @@ class StageData {
 		{
 			case 'crimson-dream':
 				return 'shrine';
+			case 'spiritual-dusk':
+				return 'forest';
 
 		}
 		return 'shrine';

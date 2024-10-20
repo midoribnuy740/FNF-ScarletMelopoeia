@@ -1,27 +1,36 @@
 {
+	"storyName": "Arrival",
+	"difficulties": "",
+	"hideFreeplay": false,
+	"weekBackground": "",
+	"weekBefore": "tutorial",
+	"startUnlocked": true,
+	"hideStoryMode": false,
 	"songs": [
 		[
 			"Crimson Dream",
 			"reimu",
 			[
-				89,
-				6,
+				86,
+				13,
 				0
+			]
+		],
+		[
+			"Spiritual Dusk",
+			"rumia",
+			[
+				26,
+				0,
+				33
 			]
 		]
 	],
-	"hiddenUntilUnlocked": false,
-	"hideFreeplay": false,
-	"weekBackground": "",
-	"difficulties": "",
 	"weekCharacters": [
 		"",
 		"bf",
 		""
 	],
-	"storyName": "Arrival",
-	"weekName": "Custom Week",
-	"hideStoryMode": false,
-	"weekBefore": "tutorial",
-	"startUnlocked": true
+	"hiddenUntilUnlocked": false,
+	"weekName": "Custom Week"
 }

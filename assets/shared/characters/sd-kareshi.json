@@ -1,0 +1,151 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [63, 81],
+			"anim": "singLEFTmiss",
+			"fps": 24,
+			"name": "kareshi-missleft",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [63, 81],
+			"anim": "singDOWNmiss",
+			"fps": 24,
+			"name": "kareshi-missdown",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [63, 81],
+			"anim": "singUPmiss",
+			"fps": 24,
+			"name": "kareshi-missup",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [63, 81],
+			"anim": "singRIGHTmiss",
+			"fps": 24,
+			"name": "kareshi-missright",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [12, -17],
+			"anim": "singLEFT-loop",
+			"fps": 24,
+			"name": "kareshi-loopleft",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [-5, -29],
+			"anim": "singDOWN-loop",
+			"fps": 24,
+			"name": "kareshi-loopdown",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [-6, 22],
+			"anim": "singUP-loop",
+			"fps": 24,
+			"name": "kareshi-loopup",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [-17, -5],
+			"anim": "singRIGHT-loop",
+			"fps": 24,
+			"name": "kareshi-loopright",
+			"indices": []
+		},
+		{
+			"offsets": [-5, 0],
+			"loop": true,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "kareshi-idle"
+		},
+		{
+			"loop": false,
+			"offsets": [25, -18],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "kareshi-left",
+			"indices": [0, 1, 2, 3]
+		},
+		{
+			"loop": false,
+			"offsets": [25, -18],
+			"anim": "singLEFT-hold",
+			"fps": 24,
+			"name": "kareshi-holdleft",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [-5, -30],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "kareshi-down",
+			"indices": [0, 1, 2, 3]
+		},
+		{
+			"loop": false,
+			"offsets": [-5, -30],
+			"anim": "singDOWN-hold",
+			"fps": 24,
+			"name": "kareshi-holddown",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [-8, 43],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "kareshi-up",
+			"indices": [0, 1, 2, 3]
+		},
+		{
+			"loop": false,
+			"offsets": [-6, 43],
+			"anim": "singUP-hold",
+			"fps": 24,
+			"name": "kareshi-holdup",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [-17, -5],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "kareshi-right",
+			"indices": [0, 1, 2, 3]
+		},
+		{
+			"loop": false,
+			"offsets": [-17, -5],
+			"anim": "singRIGHT-hold",
+			"fps": 24,
+			"name": "kareshi-holdright",
+			"indices": []
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": false,
+	"image": "characters/sm-sd-kareshi",
+	"position": [130, 350],
+	"healthicon": "kareshi",
+	"flip_x": true,
+	"healthbar_colors": [49, 144, 218],
+	"camera_position": [0, 0],
+	"sing_duration": 4,
+	"scale": 1,
+	"_editor_isPlayer": true
+}
