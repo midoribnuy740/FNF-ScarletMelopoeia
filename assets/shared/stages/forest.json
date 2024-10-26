@@ -15,7 +15,7 @@
 		0
 	],
 	"girlfriend": [
-		400,
+		620,
 		130
 	],
 	"_editorMeta": {
@@ -28,17 +28,17 @@
 		0
 	],
 	"boyfriend": [
-		830,
+		1110,
 		100
 	],
 	"opponent": [
-		660,
-		-280
+		900,
+		-560
 	],
 	"hide_girlfriend": false,
 	"directory": "",
 	"camera_speed": 1,
-	"defaultZoom": 0.9,
+	"defaultZoom": 0.65,
 	"stageUI": "normal",
 	"camera_boyfriend": [
 		0,
