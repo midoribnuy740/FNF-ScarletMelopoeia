@@ -81,7 +81,8 @@ class ChartingState extends MusicBeatState implements PsychUIEventHandler.PsychU
 		['Set Property', "Value 1: Variable name\nValue 2: New value"],
 		['Play Sound', "Value 1: Sound file name\nValue 2: Volume (Default: 1), ranges from 0 to 1"],
 		['Intro Event', "Plays the Week/Song Intros of Story Mode"],
-		['Spell Card', "Activates a Character's Spell Card"]
+		['Spell Card', "Activates a Character's Spell Card"],
+		['Tipsy', "Any event related to Tipsy Iizai"]
 	];
 	
 	public static var keysArray:Array<FlxKey> = [ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT]; //Used for Vortex Editor
