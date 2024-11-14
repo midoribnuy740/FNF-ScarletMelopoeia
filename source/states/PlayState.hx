@@ -202,6 +202,8 @@ class PlayState extends MusicBeatState
 	public var scoreTxt:Alphabet;
 	public var timeTxt:Alphabet;
 
+	public var exchar:Character = null;
+
 	public var bgmText:Alphabet;
 	public var bgmSong:String;
 
@@ -365,8 +367,10 @@ class PlayState extends MusicBeatState
 
 		switch (curStage)
 		{
-			case 'shrine': new Shrine(); 				//Shrine
-			case 'forest': new Forest(); 				//Shrine
+			case 'shrine': 
+				new Shrine();	//Shrine
+			case 'forest': 
+				new Forest();	//Forest
 		}
 		if(isPixelStage) introSoundsSuffix = '-pixel';
 
@@ -2065,6 +2069,8 @@ class PlayState extends MusicBeatState
 				//trace('Anim to play: ' + value1);
 				var char:Character = dad;
 				switch(value2.toLowerCase().trim()) {
+					case 'tipsy' | 'dai' | 'daiyousei' | 'spooky-remi':
+						char = exchar;
 					case 'bf' | 'boyfriend':
 						char = boyfriend;
 					case 'gf' | 'girlfriend':
@@ -2957,6 +2963,12 @@ class PlayState extends MusicBeatState
 
 			if(char != null)
 			{
+				if (note.noteType == 'Dai Note' || note.noteType == 'Spooky Remi Note')
+				{
+					exchar.playAnim(animToPlay, true);
+					exchar.holdTimer = 0;
+				}
+
 				var canPlay:Bool = true;
 				if(note.isSustainNote)
 				{

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="sd-mob-fairy-2.png">
+	<!-- Created with Adobe Animate version 18.0.1.115 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="pink-attack0000" x="0" y="0" width="329" height="405" frameX="0" frameY="-3" frameWidth="329" frameHeight="408"/>
+	<SubTexture name="pink-attack0001" x="0" y="0" width="329" height="405" frameX="0" frameY="-3" frameWidth="329" frameHeight="408"/>
+	<SubTexture name="pink-attack0002" x="329" y="0" width="309" height="408" frameX="-20" frameY="0" frameWidth="329" frameHeight="408"/>
+	<SubTexture name="pink-attack0003" x="329" y="0" width="309" height="408" frameX="-20" frameY="0" frameWidth="329" frameHeight="408"/>
+	<SubTexture name="pink-attack0004" x="638" y="0" width="309" height="408" frameX="-20" frameY="0" frameWidth="329" frameHeight="408"/>
+	<SubTexture name="pink-attack0005" x="638" y="0" width="309" height="408" frameX="-20" frameY="0" frameWidth="329" frameHeight="408"/>
+	<SubTexture name="pink-attack0006" x="0" y="408" width="309" height="406" frameX="-20" frameY="-2" frameWidth="329" frameHeight="408"/>
+	<SubTexture name="pink-attack0007" x="0" y="408" width="309" height="406" frameX="-20" frameY="-2" frameWidth="329" frameHeight="408"/>
+	<SubTexture name="pink-idle0000" x="309" y="408" width="322" height="405" frameX="0" frameY="-3" frameWidth="322" frameHeight="408"/>
+	<SubTexture name="pink-idle0001" x="309" y="408" width="322" height="405" frameX="0" frameY="-3" frameWidth="322" frameHeight="408"/>
+	<SubTexture name="pink-idle0002" x="309" y="408" width="322" height="405" frameX="0" frameY="-3" frameWidth="322" frameHeight="408"/>
+	<SubTexture name="pink-idle0003" x="309" y="408" width="322" height="405" frameX="0" frameY="-3" frameWidth="322" frameHeight="408"/>
+	<SubTexture name="pink-idle0004" x="631" y="408" width="285" height="405" frameX="-22" frameY="0" frameWidth="322" frameHeight="408"/>
+	<SubTexture name="pink-idle0005" x="631" y="408" width="285" height="405" frameX="-22" frameY="0" frameWidth="322" frameHeight="408"/>
+	<SubTexture name="pink-idle0006" x="631" y="408" width="285" height="405" frameX="-22" frameY="0" frameWidth="322" frameHeight="408"/>
+	<SubTexture name="pink-idle0007" x="631" y="408" width="285" height="405" frameX="-22" frameY="0" frameWidth="322" frameHeight="408"/>
+	<SubTexture name="pink-idle0008" x="0" y="814" width="284" height="406" frameX="-22" frameY="0" frameWidth="322" frameHeight="408"/>
+	<SubTexture name="pink-idle0009" x="0" y="814" width="284" height="406" frameX="-22" frameY="0" frameWidth="322" frameHeight="408"/>
+	<SubTexture name="pink-idle0010" x="0" y="814" width="284" height="406" frameX="-22" frameY="0" frameWidth="322" frameHeight="408"/>
+	<SubTexture name="pink-idle0011" x="0" y="814" width="284" height="406" frameX="-22" frameY="0" frameWidth="322" frameHeight="408"/>
+	<SubTexture name="pink-idle0012" x="284" y="814" width="280" height="401" frameX="-25" frameY="-2" frameWidth="322" frameHeight="408"/>
+	<SubTexture name="pink-idle0013" x="284" y="814" width="280" height="401" frameX="-25" frameY="-2" frameWidth="322" frameHeight="408"/>
+	<SubTexture name="pink-idle0014" x="284" y="814" width="280" height="401" frameX="-25" frameY="-2" frameWidth="322" frameHeight="408"/>
+	<SubTexture name="pink-idle0015" x="284" y="814" width="280" height="401" frameX="-25" frameY="-2" frameWidth="322" frameHeight="408"/>
+</TextureAtlas>

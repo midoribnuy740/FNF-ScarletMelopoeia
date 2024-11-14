@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="sm-sd-tipsy.png">
+	<!-- Created with Adobe Animate version 18.0.1.115 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="tipsy-alt-idle0000" x="0" y="0" width="396" height="447" frameX="-42" frameY="-3" frameWidth="477" frameHeight="450"/>
+	<SubTexture name="tipsy-alt-idle0001" x="0" y="0" width="396" height="447" frameX="-42" frameY="-3" frameWidth="477" frameHeight="450"/>
+	<SubTexture name="tipsy-alt-idle0002" x="396" y="0" width="436" height="446" frameX="-21" frameY="-4" frameWidth="477" frameHeight="450"/>
+	<SubTexture name="tipsy-alt-idle0003" x="396" y="0" width="436" height="446" frameX="-21" frameY="-4" frameWidth="477" frameHeight="450"/>
+	<SubTexture name="tipsy-alt-idle0004" x="0" y="447" width="412" height="450" frameX="-33" frameY="0" frameWidth="477" frameHeight="450"/>
+	<SubTexture name="tipsy-alt-idle0005" x="0" y="447" width="412" height="450" frameX="-33" frameY="0" frameWidth="477" frameHeight="450"/>
+	<SubTexture name="tipsy-alt-idle0006" x="412" y="447" width="477" height="450"/>
+	<SubTexture name="tipsy-alt-idle0007" x="412" y="447" width="477" height="450"/>
+	<SubTexture name="tipsy-alt-idle0008" x="0" y="897" width="396" height="447" frameX="-42" frameY="-3" frameWidth="477" frameHeight="450"/>
+	<SubTexture name="tipsy-alt-idle0009" x="0" y="897" width="396" height="447" frameX="-42" frameY="-3" frameWidth="477" frameHeight="450"/>
+	<SubTexture name="tipsy-alt-idle0010" x="396" y="897" width="436" height="444" frameX="-21" frameY="-6" frameWidth="477" frameHeight="450"/>
+	<SubTexture name="tipsy-alt-idle0011" x="396" y="897" width="436" height="444" frameX="-21" frameY="-6" frameWidth="477" frameHeight="450"/>
+	<SubTexture name="tipsy-alt-idle0012" x="0" y="1344" width="412" height="444" frameX="-33" frameY="-6" frameWidth="477" frameHeight="450"/>
+	<SubTexture name="tipsy-alt-idle0013" x="0" y="1344" width="412" height="444" frameX="-33" frameY="-6" frameWidth="477" frameHeight="450"/>
+	<SubTexture name="tipsy-alt-idle0014" x="412" y="1344" width="477" height="444" frameX="0" frameY="-6" frameWidth="477" frameHeight="450"/>
+	<SubTexture name="tipsy-alt-idle0015" x="412" y="1344" width="477" height="444" frameX="0" frameY="-6" frameWidth="477" frameHeight="450"/>
+	<SubTexture name="tipsy-death0000" x="0" y="1788" width="497" height="383"/>
+	<SubTexture name="tipsy-idle0000" x="497" y="1788" width="396" height="447" frameX="-42" frameY="-3" frameWidth="477" frameHeight="450"/>
+	<SubTexture name="tipsy-idle0001" x="497" y="1788" width="396" height="447" frameX="-42" frameY="-3" frameWidth="477" frameHeight="450"/>
+	<SubTexture name="tipsy-idle0002" x="0" y="2235" width="436" height="446" frameX="-21" frameY="-4" frameWidth="477" frameHeight="450"/>
+	<SubTexture name="tipsy-idle0003" x="0" y="2235" width="436" height="446" frameX="-21" frameY="-4" frameWidth="477" frameHeight="450"/>
+	<SubTexture name="tipsy-idle0004" x="436" y="2235" width="412" height="450" frameX="-33" frameY="0" frameWidth="477" frameHeight="450"/>
+	<SubTexture name="tipsy-idle0005" x="436" y="2235" width="412" height="450" frameX="-33" frameY="0" frameWidth="477" frameHeight="450"/>
+	<SubTexture name="tipsy-idle0006" x="0" y="2685" width="477" height="450"/>
+	<SubTexture name="tipsy-idle0007" x="0" y="2685" width="477" height="450"/>
+	<SubTexture name="tipsy-idle0008" x="477" y="2685" width="396" height="447" frameX="-42" frameY="-3" frameWidth="477" frameHeight="450"/>
+	<SubTexture name="tipsy-idle0009" x="477" y="2685" width="396" height="447" frameX="-42" frameY="-3" frameWidth="477" frameHeight="450"/>
+	<SubTexture name="tipsy-idle0010" x="0" y="3135" width="436" height="444" frameX="-21" frameY="-6" frameWidth="477" frameHeight="450"/>
+	<SubTexture name="tipsy-idle0011" x="0" y="3135" width="436" height="444" frameX="-21" frameY="-6" frameWidth="477" frameHeight="450"/>
+	<SubTexture name="tipsy-idle0012" x="436" y="3135" width="412" height="444" frameX="-33" frameY="-6" frameWidth="477" frameHeight="450"/>
+	<SubTexture name="tipsy-idle0013" x="436" y="3135" width="412" height="444" frameX="-33" frameY="-6" frameWidth="477" frameHeight="450"/>
+	<SubTexture name="tipsy-idle0014" x="0" y="3579" width="477" height="444" frameX="0" frameY="-6" frameWidth="477" frameHeight="450"/>
+	<SubTexture name="tipsy-idle0015" x="0" y="3579" width="477" height="444" frameX="0" frameY="-6" frameWidth="477" frameHeight="450"/>
+</TextureAtlas>

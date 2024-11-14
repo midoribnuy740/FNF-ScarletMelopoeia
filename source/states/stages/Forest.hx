@@ -1,6 +1,7 @@
 package states.stages;
 
 import states.stages.objects.*;
+import objects.Note;
 import flixel.addons.display.FlxBackdrop;
 
 class Forest extends BaseStage
@@ -11,6 +12,10 @@ class Forest extends BaseStage
 	var treesShadowLeft:FlxBackdrop;
 	var treesRight:FlxBackdrop;
 	var treesLeft:FlxBackdrop;
+
+	var tipsy:BGSprite;
+	var attacked:Bool = false;
+
 	var orb:BGSprite;
 
 	var shadows:FlxBackdrop;
@@ -20,7 +25,7 @@ class Forest extends BaseStage
 	var filter1:FlxBackdrop;
 	var filter2:FlxBackdrop;
 
-	var stageDarkness:FlxSprite;
+	var spellDarkness:FlxSprite;
 
 	var spellCardOn:Bool = false;
 	
@@ -68,6 +73,9 @@ class Forest extends BaseStage
 		treesLeft.updateHitbox();
 		treesLeft.scrollFactor.set(0.9, 0.85);
 		add(treesLeft);
+
+		tipsy = new BGSprite('characters/sm-sd-tipsy', 837, -856, 1, 1, ['tipsy-idle', 'tipsy-alt-idle', 'tipsy-death'], true);
+		add(tipsy);
 
 		filter1 = new FlxBackdrop(Paths.image('forest/spell-card-filter-1'), Y, 0, 0);
 		filter1.velocity.set(0, -250);
@@ -129,12 +137,73 @@ class Forest extends BaseStage
 		
 	}
 
+	override function goodNoteHit(note:Note)
+	{
+		if(note.noteType == 'Tipsy Attack')
+			attacked = true;
+	}
+
 	// For events
 	override function eventCalled(eventName:String, value1:String, value2:String, flValue1:Null<Float>, flValue2:Null<Float>, strumTime:Float)
 	{
 		switch(eventName)
 		{
+			case "Generic Event":
+				switch(value1)
+				{
+					case "bgChange":
+						FlxTween.tween(treesLeft, {x: -606}, 2, {ease: FlxEase.circIn});
+						FlxTween.tween(treesShadowLeft, {x: -766}, 2, {ease: FlxEase.circIn});
+
+						FlxTween.tween(treesRight, {x: 2299}, 2, {ease: FlxEase.circIn});
+						FlxTween.tween(treesShadowRight, {x: 2014}, 2, {ease: FlxEase.circIn});
+
+						FlxTween.tween(shadows, {alpha: 0}, 2, {ease: FlxEase.linear});
+					case "river":
+						river.alpha = 1;
+						river.velocity.set(0, 100);
+					case "rumia":
+						FlxTween.tween(game.dad, {y: -260}, 2, {ease: FlxEase.circOut});
+
+				}
+			case "Mob Fairies":
+				switch(value1)
+				{
+					case "blue":
+						blueFairy(value2);
+				}
 			case "Tipsy":
+				switch(value1)
+				{
+					case "in":
+						FlxTween.tween(tipsy, {y: -36}, 2, {ease: FlxEase.circOut});
+					case "attack":
+						if(attacked)
+						{
+							tipsy.animation.play('tipsy-death');
+							tipsy.offset.set(-5, -20);
+							FlxTween.tween(tipsy, {y: -126, alpha: 0}, 2, {ease: FlxEase.circOut,
+								onComplete: function(twn:FlxTween)
+									{
+										remove(tipsy);
+										tipsy.destroy();
+									}
+								});
+						}
+						else
+						{
+							tipsy.animation.play('tipsy-alt-idle');
+						}
+					case "out":
+						if(!attacked)
+						FlxTween.tween(tipsy, {y: -856}, 2, {ease: FlxEase.circIn,
+							onComplete: function(twn:FlxTween)
+								{
+									remove(tipsy);
+									tipsy.destroy();
+								}
+							});
+				}
 
 			case "Spell Card":
 				if(!spellCardOn) {
@@ -158,6 +227,39 @@ class Forest extends BaseStage
 
 				
 		}
+	}
+
+	function blueFairy(Side:String):Void
+	{
+		var fairyStartPos:Int = 0;
+		var fairyEndPos:Int = 0;
+		var fairyVelocity:Int = FlxG.random.int(200, 300);
+
+		if(Side == 'left')
+		{
+			fairyStartPos = FlxG.random.int(200, 600);
+			fairyEndPos = -600;
+		}
+		else if(Side == 'right')
+		{
+			fairyStartPos = FlxG.random.int(1200, 1600);
+			fairyEndPos = 2200;
+		}
+
+		var blueFairy:BGSprite = new BGSprite('characters/sd-mob-fairy-1', fairyStartPos, -900, 0.8, 0.8, ['blue-idle'], true);
+		blueFairy.velocity.set(0, fairyVelocity);
+		blueFairy.scale.set(0.75, 0.75);
+        addBehindGF(blueFairy);
+
+		FlxTween.tween(blueFairy, {x: fairyEndPos}, 5, {
+			ease: FlxEase.circIn, 
+			startDelay: 3, 
+			onComplete: function(twn:FlxTween)
+			{
+				remove(blueFairy);
+				blueFairy.destroy();
+			}
+		});
 	}
 }
 

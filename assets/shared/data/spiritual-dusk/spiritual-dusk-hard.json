@@ -313,7 +313,9 @@
 		},
 		{
 			"sectionBeats": 4,
-			"sectionNotes": [],
+			"sectionNotes": [
+				[40819.6721311475, 1, 0, "Tipsy Attack"]
+			],
 			"gfSection": false,
 			"altAnim": false,
 			"mustHitSection": false,
@@ -1172,9 +1174,190 @@
 			]
 		],
 		[
+			1967.2131147541,
+			[
+				["Mob Fairies", "blue", "left"]
+			]
+		],
+		[
+			7868.85245901639,
+			[
+				["Mob Fairies", "blue", "right"]
+			]
+		],
+		[
+			12786.8852459016,
+			[
+				["Mob Fairies", "blue", "left"]
+			]
+		],
+		[
+			13278.6885245902,
+			[
+				["Mob Fairies", "blue", "right"]
+			]
+		],
+		[
+			17704.9180327869,
+			[
+				["Mob Fairies", "blue", "left"]
+			]
+		],
+		[
+			18688.5245901639,
+			[
+				["Mob Fairies", "blue", "left"]
+			]
+		],
+		[
+			19180.3278688525,
+			[
+				["Mob Fairies", "blue", "left"]
+			]
+		],
+		[
+			21639.3442622951,
+			[
+				["Mob Fairies", "blue", "right"]
+			]
+		],
+		[
+			21885.2459016393,
+			[
+				["Mob Fairies", "blue", "right"]
+			]
+		],
+		[
+			22868.8524590164,
+			[
+				["Mob Fairies", "blue", "right"]
+			]
+		],
+		[
+			25573.7704918033,
+			[
+				["Mob Fairies", "blue", "left"]
+			]
+		],
+		[
+			26065.5737704918,
+			[
+				["Mob Fairies", "blue", "right"]
+			]
+		],
+		[
+			28032.7868852459,
+			[
+				["Mob Fairies", "blue", "left"]
+			]
+		],
+		[
+			28524.5901639344,
+			[
+				["Mob Fairies", "blue", "right"]
+			]
+		],
+		[
+			28770.4918032787,
+			[
+				["Mob Fairies", "blue", "left"]
+			]
+		],
+		[
+			29016.3934426229,
+			[
+				["Mob Fairies", "blue", "right"]
+			]
+		],
+		[
+			33442.6229508197,
+			[
+				["Tipsy", "in", ""]
+			]
+		],
+		[
+			40819.6721311475,
+			[
+				["Tipsy", "attack", ""]
+			]
+		],
+		[
+			41311.4754098361,
+			[
+				["Tipsy", "out", ""]
+			]
+		],
+		[
+			42295.0819672131,
+			[
+				["Mob Fairies", "blue", "left"]
+			]
+		],
+		[
+			44262.2950819672,
+			[
+				["Mob Fairies", "blue", "left"]
+			]
+		],
+		[
+			46229.5081967213,
+			[
+				["Mob Fairies", "blue", "right"]
+			]
+		],
+		[
+			46721.3114754098,
+			[
+				["Mob Fairies", "blue", "right"]
+			]
+		],
+		[
+			47704.9180327869,
+			[
+				["Mob Fairies", "blue", "right"]
+			]
+		],
+		[
+			52131.1475409836,
+			[
+				["Mob Fairies", "blue", "right"]
+			]
+		],
+		[
+			56557.3770491803,
+			[
+				["Mob Fairies", "blue", "left"]
+			]
+		],
+		[
+			59262.2950819672,
+			[
+				["Mob Fairies", "blue", "left"]
+			]
+		],
+		[
+			60491.8032786885,
+			[
+				["Mob Fairies", "blue", "left"]
+			]
+		],
+		[
+			61721.3114754099,
+			[
+				["Mob Fairies", "blue", "right"]
+			]
+		],
+		[
+			62950.8196721312,
+			[
+				["Mob Fairies", "blue", "right"]
+			]
+		],
+		[
 			64918.0327868853,
 			[
-				["Camera Follow Pos", "1100", "0"]
+				["Camera Follow Pos", "1100", "0"],
+				["Generic Event", "rumia", ""]
 			]
 		]
 	],
