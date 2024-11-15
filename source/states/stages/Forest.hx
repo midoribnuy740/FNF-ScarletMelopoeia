@@ -7,7 +7,7 @@ import flixel.addons.display.FlxBackdrop;
 class Forest extends BaseStage
 {
 	var ground:FlxBackdrop;
-	var river:BGSprite;
+	var river:FlxSprite;
 	var treesShadowRight:FlxBackdrop;
 	var treesShadowLeft:FlxBackdrop;
 	var treesRight:FlxBackdrop;
@@ -28,6 +28,9 @@ class Forest extends BaseStage
 	var spellDarkness:FlxSprite;
 
 	var spellCardOn:Bool = false;
+
+	var strumsPX:Array<Int> = [];
+	var strumsPY:Array<Int> = [];
 	
 	override function create()
 	{
@@ -38,7 +41,10 @@ class Forest extends BaseStage
 		ground.scrollFactor.set(0.65, 0.65);
 		add(ground);
 
-		river = new BGSprite('forest/forest-rive', -242, -255, 0.65, 0.65);
+		river = new FlxSprite(Paths.image('forest/forest-river'));
+		river.x = -242;
+		river.y = -1755;
+		river.scrollFactor.set(0.65, 0.65);
 		river.alpha = 0;
 		add(river);
 
@@ -130,6 +136,11 @@ class Forest extends BaseStage
 		spellDarkness.screenCenter();
 		spellDarkness.scrollFactor.set(0, 0);
 		game.uiGroup.add(spellDarkness);
+
+		for (i in 0...game.playerStrums.length) {
+			strumsPX[i] = game.playerStrums.members[i].x;
+			strumsPY[i] = game.playerStrums.members[i].y;
+		}
 	}
 
 	override function update(elapsed:Float)
@@ -140,7 +151,56 @@ class Forest extends BaseStage
 	override function goodNoteHit(note:Note)
 	{
 		if(note.noteType == 'Tipsy Attack')
+		{
 			attacked = true;
+
+			FlxG.sound.play(Paths.sound('orb-shoot'), 0.25);
+			var ofuda:FlxSprite = new FlxSprite(Paths.image('ofuda'));
+			ofuda.x = orb.x + (orb.width / 2);
+			ofuda.y = orb.y + (orb.height / 2);
+			ofuda.updateHitbox();
+			ofuda.angle = -15;
+			ofuda.scrollFactor.set(1, 1);
+			ofuda.blend = ADD;
+			add(ofuda);
+
+			FlxTween.tween(ofuda, {
+					x: tipsy.x + (tipsy.width / 2), 
+					y: tipsy.y + (tipsy.height / 2)
+				}, 0.1, {
+				ease: FlxEase.linear,
+				onComplete: function(twn:FlxTween)
+					{
+						remove(ofuda);
+						ofuda.destroy();
+
+						var impact:FlxSprite = new FlxSprite(Paths.image('forest/death-impact'));
+						impact.x = tipsy.x + (tipsy.width / 2) - (impact.width / 2);
+						impact.y = tipsy.y + (tipsy.height / 2) - (impact.height / 2);
+						impact.updateHitbox();
+						impact.alpha = 0.5;
+						impact.angularVelocity = 300;
+						impact.scrollFactor.set(1, 1);
+						impact.blend = ADD;
+						add(impact);
+
+						FlxTween.tween(impact.scale, {x: 4, y: 4}, 1, {ease: FlxEase.circOut});
+						FlxTween.tween(impact, {alpha: 0}, 1, {ease: FlxEase.linear});
+
+						tipsy.animation.play('tipsy-death');
+						FlxG.sound.play(Paths.sound('tipsy-death'), 0.5);
+						tipsy.offset.set(-5, -20);
+						FlxTween.tween(tipsy, {y: -126, alpha: 0}, 2, {
+							ease: FlxEase.circOut,
+							onComplete: function(twn:FlxTween)
+								{
+									remove(tipsy);
+									tipsy.destroy();
+								}
+						});
+					}
+			});
+		}
 	}
 
 	// For events
@@ -161,7 +221,7 @@ class Forest extends BaseStage
 						FlxTween.tween(shadows, {alpha: 0}, 2, {ease: FlxEase.linear});
 					case "river":
 						river.alpha = 1;
-						river.velocity.set(0, 100);
+						river.velocity.y = 100;
 					case "rumia":
 						FlxTween.tween(game.dad, {y: -260}, 2, {ease: FlxEase.circOut});
 
@@ -171,38 +231,47 @@ class Forest extends BaseStage
 				{
 					case "blue":
 						blueFairy(value2);
+					case "pink":
+						pinkFairy(value2);
 				}
 			case "Tipsy":
 				switch(value1)
 				{
 					case "in":
-						FlxTween.tween(tipsy, {y: -36}, 2, {ease: FlxEase.circOut});
-					case "attack":
-						if(attacked)
-						{
-							tipsy.animation.play('tipsy-death');
-							tipsy.offset.set(-5, -20);
-							FlxTween.tween(tipsy, {y: -126, alpha: 0}, 2, {ease: FlxEase.circOut,
-								onComplete: function(twn:FlxTween)
-									{
-										remove(tipsy);
-										tipsy.destroy();
-									}
+						FlxTween.tween(tipsy, {y: -36}, 2, {
+							ease: FlxEase.circOut,
+							onComplete: function(twn:FlxTween)
+							{
+								var tipsyDanmaku:FlxSprite = new FlxSprite(Paths.image('forest/tipsy-danmaku'));
+								tipsyDanmaku.x = tipsy.x - 10;
+								tipsyDanmaku.y = tipsy.y + 200;
+								tipsyDanmaku.scrollFactor.set(1, 1);
+								tipsyDanmaku.angularVelocity = 200;
+								tipsyDanmaku.alpha = 0;
+								add(tipsyDanmaku);
+
+								FlxTween.tween(tipsyDanmaku, {alpha: 1}, 2, {
+									ease: FlxEase.circOut,
+									onComplete: function(twn:FlxTween)
+										{
+											tipsyDanmaku.velocity.x = 125;
+											tipsyDanmaku.velocity.y = 250;
+										}
 								});
-						}
-						else
-						{
-							tipsy.animation.play('tipsy-alt-idle');
-						}
+							}
+						});
 					case "out":
 						if(!attacked)
-						FlxTween.tween(tipsy, {y: -856}, 2, {ease: FlxEase.circIn,
+						{
+							tipsy.animation.play('tipsy-alt-idle');
+							FlxTween.tween(tipsy, {y: -856}, 2, {ease: FlxEase.circIn,
 							onComplete: function(twn:FlxTween)
 								{
 									remove(tipsy);
 									tipsy.destroy();
 								}
 							});
+						}
 				}
 
 			case "Spell Card":
@@ -258,6 +327,80 @@ class Forest extends BaseStage
 			{
 				remove(blueFairy);
 				blueFairy.destroy();
+			}
+		});
+	}
+
+	function pinkFairy (Side:String):Void
+	{
+		var fairyStartPos:Int = 0;
+		var fairyEndPos:Int = 0;
+		var fairyVelocity:Int = FlxG.random.int(200, 300);
+
+		if(Side == 'left')
+		{
+			fairyStartPos = FlxG.random.int(200, 600);
+			fairyEndPos = -600;
+		}
+		else if(Side == 'right')
+		{
+			fairyStartPos = FlxG.random.int(1200, 1600);
+			fairyEndPos = 2200;
+		}
+
+		var pinkFairy:BGSprite = new BGSprite('characters/sd-mob-fairy-2', fairyStartPos, -900, 0.8, 0.8, ['pink-idle', 'pink-attack'], true);
+		pinkFairy.scale.set(0.8, 0.8);
+        addBehindGF(pinkFairy);
+
+		FlxTween.tween(pinkFairy, {y: FlxG.random.int(-100, 100)}, 2, {
+			ease: FlxEase.circOut, 
+			onComplete: function(twn:FlxTween)
+			{
+				pinkFairy.animation.play('pink-attack');
+				FlxG.sound.play(Paths.sound('mob-fairy-prank'), 0.25);
+
+				var prank:FlxSprite = new FlxSprite(Paths.image('forest/prank'));
+				prank.x = pinkFairy.x + (pinkFairy.width * 0.8);
+				prank.y = pinkFairy.y + (pinkFairy.height * 0.25);
+				prank.updateHitbox();
+				prank.alpha = 0.5;
+				prank.angularVelocity = -200;
+				prank.scrollFactor.set(1, 1);
+				prank.blend = ADD;
+				add(prank);
+
+				FlxTween.tween(prank.scale, {x: 3, y: 3}, 1, {ease: FlxEase.circOut});
+				FlxTween.tween(prank, {alpha: 0}, 1, {ease: FlxEase.circOut});
+
+				for (i in 0...game.playerStrums.length) {
+					switch(i)
+					{
+						case 0:
+							game.playerStrums.members[i].x -= 20;
+						case 1:
+							game.playerStrums.members[i].y += 20;
+						case 2:
+							game.playerStrums.members[i].y -= 20;
+						case 3:
+							game.playerStrums.members[i].x += 20;
+					}
+		
+					FlxTween.tween(game.playerStrums.members[i], {x: strumsPX[i], y: strumsPY[i]}, 1, {
+						ease: FlxEase.circOut,
+						onComplete: function(twn:FlxTween)
+							{
+								pinkFairy.animation.play('pink-idle');
+								FlxTween.tween(pinkFairy, {x: fairyEndPos, y: 600}, 2, {
+									ease: FlxEase.circIn, 
+									onComplete: function(twn:FlxTween)
+									{
+										remove(pinkFairy);
+										pinkFairy.destroy();
+									}
+								});
+							}
+						});
+				}
 			}
 		});
 	}

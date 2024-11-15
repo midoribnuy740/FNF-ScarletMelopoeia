@@ -222,6 +222,8 @@ class Note extends FlxSprite
 					gfNote = true;
 				case 'Tipsy Attack':
 					ignoreNote = true;
+					noAnimation = true;
+					noMissAnimation = true;
 			}
 			if (value != null && value.length > 1) NoteTypesConfig.applyNoteTypeData(this, value);
 			if (hitsound != 'hitsound' && hitsoundVolume > 0) Paths.sound(hitsound); //precache new sound for being idiot-proof
