@@ -29,6 +29,16 @@ class Forest extends BaseStage
 
 	var spellCardOn:Bool = false;
 
+	var nightBird:BGSprite;
+
+	var demarcB1:FlxBackdrop;
+	var demarcB2:FlxBackdrop;
+	var demarcG1:FlxBackdrop;
+	var demarcG2:FlxBackdrop;
+	var demarcR1:FlxBackdrop;
+	var demarcR2:FlxBackdrop;
+	//
+
 	var strumsPX:Array<Int> = [];
 	var strumsPY:Array<Int> = [];
 	
@@ -92,7 +102,7 @@ class Forest extends BaseStage
 		add(filter1);
 
 		filter2 = new FlxBackdrop(Paths.image('forest/spell-card-filter-2'), XY, -200, -300);
-		filter2.velocity.set(250, 250);
+		filter2.velocity.set(-250, 250);
 		filter2.updateHitbox();
 		filter2.scrollFactor.set(0, 0);
 		filter2.alpha = 0;
@@ -107,6 +117,21 @@ class Forest extends BaseStage
 
 		orb = new BGSprite('forest/kareshi-orb', 1243, 684, 1, 1);
 		add(orb);
+
+		// PRELOAD STUFF
+		Paths.image('characters/sd-mob-fairy-1');
+		Paths.image('characters/sd-mob-fairy-2');
+		Paths.image('forest/tipsy-danmaku');
+		Paths.image('spellcards/blue-vertical-bullet');
+		Paths.image('spellcards/green-vertical-bullet');
+		Paths.image('spellcards/red-vertical-bullet');
+		Paths.image('spellcards/sm-night-bird');
+		Paths.image('ofuda');
+
+		Paths.sound('orb-shoot');
+		Paths.sound('mob-fairy-prank');
+		Paths.sound('tipsy-death');
+		Paths.sound('spell');
 	}
 	
 	override function createPost()
@@ -128,24 +153,105 @@ class Forest extends BaseStage
 		shadows.alpha = 0.7;
 		add(shadows);
 
+		for (i in 0...game.playerStrums.length) {
+			strumsPX[i] = game.playerStrums.members[i].x;
+			strumsPY[i] = game.playerStrums.members[i].y;
+		}
+
+		nightBird = new BGSprite('spellcards/sm-night-bird', (FlxG.width / 2), (FlxG.height / 2), 0, 0, ['bird'], true);
+		nightBird.cameras = [game.camHUD];
+		nightBird.alpha = 0;
+		nightBird.updateHitbox();
+		add(nightBird);
+
+		demarcB1 = new FlxBackdrop(Paths.image('spellcards/blue-vertical-bullet'), Y, 0, -20);
+		demarcB1.x = 640;
+		demarcB1.alpha = 0;
+		demarcB1.blend = ADD;
+		demarcB1.cameras = [game.camHUD];
+		demarcB1.scale.set(0.5, 0.5);
+		demarcB1.velocity.set(0, 200);
+		demarcB1.updateHitbox();
+		demarcB1.scrollFactor.set(0, 0);
+		add(demarcB1);
+
+		demarcB2 = new FlxBackdrop(Paths.image('spellcards/blue-vertical-bullet'), Y, 0, -20);
+		demarcB2.x = 1230;
+		demarcB2.alpha = 0;
+		demarcB2.blend = ADD;
+		demarcB2.cameras = [game.camHUD];
+		demarcB2.scale.set(0.5, 0.5);
+		demarcB2.velocity.set(0, -200);
+		demarcB2.updateHitbox();
+		demarcB2.scrollFactor.set(0, 0);
+		add(demarcB2);
+
+		
+		demarcG1 = new FlxBackdrop(Paths.image('spellcards/green-vertical-bullet'), Y, 0, -20);
+		demarcG1.x = 700;
+		demarcG1.alpha = 0;
+		demarcG1.blend = ADD;
+		demarcG1.cameras = [game.camHUD];
+		demarcG1.scale.set(0.5, 0.5);
+		demarcG1.velocity.set(0, -200);
+		demarcG1.updateHitbox();
+		demarcG1.scrollFactor.set(0, 0);
+		add(demarcG1);
+
+		demarcG2 = new FlxBackdrop(Paths.image('spellcards/green-vertical-bullet'), Y, 0, -20);
+		demarcG2.x = 1170;
+		demarcG2.alpha = 0;
+		demarcG2.blend = ADD;
+		demarcG2.cameras = [game.camHUD];
+		demarcG2.scale.set(0.5, 0.5);
+		demarcG2.velocity.set(0, 200);
+		demarcG2.updateHitbox();
+		demarcG2.scrollFactor.set(0, 0);
+		add(demarcG2);
+
+		demarcR1 = new FlxBackdrop(Paths.image('spellcards/red-vertical-bullet'), Y, 0, -20);
+		demarcR1.x = 825;
+		demarcR1.alpha = 0;
+		demarcR1.blend = ADD;
+		demarcR1.cameras = [game.camHUD];
+		demarcR1.scale.set(0.5, 0.5);
+		demarcR1.velocity.set(0, 200);
+		demarcR1.updateHitbox();
+		demarcR1.scrollFactor.set(0, 0);
+		add(demarcR1);
+
+		demarcR2 = new FlxBackdrop(Paths.image('spellcards/red-vertical-bullet'), Y, 0, -20);
+		demarcR2.x = 1050;
+		demarcR2.alpha = 0;
+		demarcR2.blend = ADD;
+		demarcR2.cameras = [game.camHUD];
+		demarcR2.scale.set(0.5, 0.5);
+		demarcR2.velocity.set(0, -200);
+		demarcR2.updateHitbox();
+		demarcR2.scrollFactor.set(0, 0);
+		add(demarcR2);
+
 		spellDarkness = new FlxSprite(Paths.image('forest/spell-card-darkness'));
 		spellDarkness.alpha = 0;
+		spellDarkness.cameras = [game.camHUD];
 		spellDarkness.blend = MULTIPLY;
 		spellDarkness.scale.set(FlxG.width, FlxG.height);
 		spellDarkness.updateHitbox();
 		spellDarkness.screenCenter();
 		spellDarkness.scrollFactor.set(0, 0);
-		game.uiGroup.add(spellDarkness);
-
-		for (i in 0...game.playerStrums.length) {
-			strumsPX[i] = game.playerStrums.members[i].x;
-			strumsPY[i] = game.playerStrums.members[i].y;
-		}
+		add(spellDarkness);
 	}
 
 	override function update(elapsed:Float)
 	{
-		
+		var rotRateBird = curStep / 9.5;
+		var b_r:Float = 60;
+
+		var bird_tox = 700 + -Math.sin(rotRateBird * 2) * b_r * 0.45;
+		var bird_toy = 100 -Math.cos(rotRateBird) * b_r;
+
+		nightBird.x += (bird_tox - nightBird.x) / 12;
+		nightBird.y += (bird_toy - nightBird.y) / 12;
 	}
 
 	override function goodNoteHit(note:Note)
@@ -225,6 +331,31 @@ class Forest extends BaseStage
 					case "rumia":
 						FlxTween.tween(game.dad, {y: -260}, 2, {ease: FlxEase.circOut});
 
+						game.healthBar.alpha = 0;
+						game.overlayBar.alpha = 0;
+						game.timeTxt.alpha = 0;
+						game.iconP1.alpha = 0;
+						game.iconP2.alpha = 0;
+
+						game.healthBar.visible = true;
+						game.overlayBar.visible = true;
+						game.timeTxt.visible = true;
+						game.iconP1.visible = true;
+						game.iconP2.visible = true;
+
+						FlxTween.tween(game.healthBar, {alpha: 1}, 2, {ease: FlxEase.linear});
+						FlxTween.tween(game.overlayBar, {alpha: 1}, 2, {ease: FlxEase.linear});
+						FlxTween.tween(game.timeTxt, {alpha: 1}, 2, {ease: FlxEase.linear});
+						FlxTween.tween(game.iconP1, {alpha: 1}, 2, {ease: FlxEase.linear});
+						FlxTween.tween(game.iconP2, {alpha: 1}, 2, {ease: FlxEase.linear});
+
+						for(i in 0...game.opponentStrums.length){
+							FlxTween.tween(game.opponentStrums.members[i], {alpha: 0}, 2, {ease: FlxEase.linear, startDelay: 0.25});
+						}
+
+						if(!ClientPrefs.data.middleScroll)
+							FlxTween.tween(game.strumEnemyBG, {alpha: 0}, 2, {ease: FlxEase.linear});
+
 				}
 			case "Mob Fairies":
 				switch(value1)
@@ -277,6 +408,8 @@ class Forest extends BaseStage
 			case "Spell Card":
 				if(!spellCardOn) {
 					spellCardOn = true;
+					FlxG.sound.play(Paths.sound('spell'), 0.5);
+
 					FlxTween.tween(stageDarkness, {alpha: 0.7}, 2, {ease: FlxEase.linear});
 
 					FlxTween.tween(filter1, {alpha: 0.6}, 2, {ease: FlxEase.linear});
@@ -292,6 +425,32 @@ class Forest extends BaseStage
 					FlxTween.tween(filter2, {alpha: 0}, 2, {ease: FlxEase.linear});
 
 					FlxTween.tween(spellDarkness, {alpha: 0}, 2, {ease: FlxEase.linear});
+				}
+
+				switch(value1)
+				{
+					case "birdON":
+						FlxTween.tween(nightBird, {alpha: 1}, 1.5, {ease: FlxEase.linear});
+
+					case "birdOFF":
+						FlxTween.tween(nightBird, {alpha: 0}, 1.5, {ease: FlxEase.linear});
+
+					case "demarcON":
+						FlxTween.tween(demarcB1, {alpha: 1}, 1.5, {ease: FlxEase.linear});
+						FlxTween.tween(demarcB2, {alpha: 1}, 1.5, {ease: FlxEase.linear});
+						FlxTween.tween(demarcG1, {alpha: 1}, 1.5, {ease: FlxEase.linear});
+						FlxTween.tween(demarcG2, {alpha: 1}, 1.5, {ease: FlxEase.linear});
+						FlxTween.tween(demarcR1, {alpha: 1}, 1.5, {ease: FlxEase.linear});
+						FlxTween.tween(demarcR2, {alpha: 1}, 1.5, {ease: FlxEase.linear});
+
+					case "demarcOFF":
+						FlxTween.tween(demarcB1, {alpha: 0}, 1.5, {ease: FlxEase.linear});
+						FlxTween.tween(demarcB2, {alpha: 0}, 1.5, {ease: FlxEase.linear});
+						FlxTween.tween(demarcG1, {alpha: 0}, 1.5, {ease: FlxEase.linear});
+						FlxTween.tween(demarcG2, {alpha: 0}, 1.5, {ease: FlxEase.linear});
+						FlxTween.tween(demarcR1, {alpha: 0}, 1.5, {ease: FlxEase.linear});
+						FlxTween.tween(demarcR2, {alpha: 0}, 1.5, {ease: FlxEase.linear});
+
 				}
 
 				
