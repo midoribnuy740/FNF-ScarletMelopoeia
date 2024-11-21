@@ -37,6 +37,11 @@ class Forest extends BaseStage
 	var demarcG2:FlxBackdrop;
 	var demarcR1:FlxBackdrop;
 	var demarcR2:FlxBackdrop;
+
+	var wavyBullets:FlxSpriteGroup;
+
+	var spellTitle1:BGSprite;
+	var spellTitle2:BGSprite;
 	//
 
 	var strumsPX:Array<Int> = [];
@@ -125,13 +130,21 @@ class Forest extends BaseStage
 		Paths.image('spellcards/blue-vertical-bullet');
 		Paths.image('spellcards/green-vertical-bullet');
 		Paths.image('spellcards/red-vertical-bullet');
+		Paths.image('spellcards/wavy-bullet');
 		Paths.image('spellcards/sm-night-bird');
 		Paths.image('ofuda');
+
+		Paths.image('spellcards/titles/night-bird-title');
+		Paths.image('spellcards/titles/demarcation-title');
+
+		Paths.image('spellcards/portraits/rumia-portrait');
 
 		Paths.sound('orb-shoot');
 		Paths.sound('mob-fairy-prank');
 		Paths.sound('tipsy-death');
 		Paths.sound('spell');
+
+		wavyBullets = new FlxSpriteGroup(0, 0);
 	}
 	
 	override function createPost()
@@ -143,6 +156,12 @@ class Forest extends BaseStage
 		game.timeTxt.visible = false;
 		game.iconP1.visible = false;
 		game.iconP2.visible = false;
+						
+		game.healthBar.alpha = 0;
+		game.overlayBar.alpha = 0;
+		game.timeTxt.alpha = 0;
+		game.iconP1.alpha = 0;
+		game.iconP2.alpha = 0;
 
 		shadows = new FlxBackdrop(Paths.image('forest/forest-shadows'), Y, 0, 0);
 		shadows.x = -359;
@@ -152,11 +171,6 @@ class Forest extends BaseStage
 		shadows.blend = MULTIPLY;
 		shadows.alpha = 0.7;
 		add(shadows);
-
-		for (i in 0...game.playerStrums.length) {
-			strumsPX[i] = game.playerStrums.members[i].x;
-			strumsPY[i] = game.playerStrums.members[i].y;
-		}
 
 		nightBird = new BGSprite('spellcards/sm-night-bird', (FlxG.width / 2), (FlxG.height / 2), 0, 0, ['bird'], true);
 		nightBird.cameras = [game.camHUD];
@@ -231,6 +245,34 @@ class Forest extends BaseStage
 		demarcR2.scrollFactor.set(0, 0);
 		add(demarcR2);
 
+		for (i in 0...game.playerStrums.length) {
+			strumsPX[i] = game.playerStrums.members[i].x;
+			strumsPY[i] = game.playerStrums.members[i].y;
+
+			var wavyBullet:BGSprite = new BGSprite('spellcards/wavy-bullet', strumsPX[i], 475, 0, 0);
+			wavyBullet.alpha = 0;
+			wavyBullet.cameras = [game.camHUD];
+			wavyBullet.scale.set(0.6, 0.6);
+			wavyBullet.blend = ADD;
+			wavyBullet.updateHitbox();
+			wavyBullets.add(wavyBullet);
+		}
+
+		wavyBullets.cameras = [game.camHUD];
+		add(wavyBullets);
+
+		spellTitle1 = new BGSprite('spellcards/titles/night-bird-title', 50, 475, 0, 0);
+		spellTitle1.alpha = 0;
+		spellTitle1.cameras = [game.camHUD];
+		spellTitle1.blend = ADD;
+		add(spellTitle1);
+
+		spellTitle2 = new BGSprite('spellcards/titles/demarcation-title', 50, 475, 0, 0);
+		spellTitle2.alpha = 0;
+		spellTitle2.cameras = [game.camHUD];
+		spellTitle2.blend = ADD;
+		add(spellTitle2);
+
 		spellDarkness = new FlxSprite(Paths.image('forest/spell-card-darkness'));
 		spellDarkness.alpha = 0;
 		spellDarkness.cameras = [game.camHUD];
@@ -245,6 +287,7 @@ class Forest extends BaseStage
 	override function update(elapsed:Float)
 	{
 		var rotRateBird = curStep / 9.5;
+		
 		var b_r:Float = 60;
 
 		var bird_tox = 700 + -Math.sin(rotRateBird * 2) * b_r * 0.45;
@@ -252,6 +295,16 @@ class Forest extends BaseStage
 
 		nightBird.x += (bird_tox - nightBird.x) / 12;
 		nightBird.y += (bird_toy - nightBird.y) / 12;
+
+		for(i in 0...wavyBullets.members.length)
+		{
+			var delayOffset = i * 0.5;
+			var rotRateBullet = (curStep / 4.5) + delayOffset;
+			var wb_r:Float = 80;
+			var bullet_toy = 300 -Math.cos(rotRateBullet) * wb_r * 2;
+
+			wavyBullets.members[i].y += (bullet_toy - wavyBullets.members[i].y) / 12;
+		}
 	}
 
 	override function goodNoteHit(note:Note)
@@ -307,6 +360,15 @@ class Forest extends BaseStage
 					}
 			});
 		}
+
+		if(note.noteType == 'GF Sing'){
+			game.iconP1.changeIcon('reimu');
+			game.healthBar.setColors(null, FlxColor.fromRGB(214, 20, 38));
+		}
+		else {
+			game.iconP1.changeIcon('kareshi');
+			game.healthBar.setColors(null, FlxColor.fromRGB(49, 144, 218));
+		}
 	}
 
 	// For events
@@ -329,13 +391,9 @@ class Forest extends BaseStage
 						river.alpha = 1;
 						river.velocity.y = 100;
 					case "rumia":
-						FlxTween.tween(game.dad, {y: -260}, 2, {ease: FlxEase.circOut});
+						FlxTween.tween(game.dad, {x: 900, y: -260}, 2.5, {ease: FlxEase.circOut, startDelay: 1.5});
 
-						game.healthBar.alpha = 0;
-						game.overlayBar.alpha = 0;
-						game.timeTxt.alpha = 0;
-						game.iconP1.alpha = 0;
-						game.iconP2.alpha = 0;
+						game.set_health(1);
 
 						game.healthBar.visible = true;
 						game.overlayBar.visible = true;
@@ -343,18 +401,18 @@ class Forest extends BaseStage
 						game.iconP1.visible = true;
 						game.iconP2.visible = true;
 
-						FlxTween.tween(game.healthBar, {alpha: 1}, 2, {ease: FlxEase.linear});
-						FlxTween.tween(game.overlayBar, {alpha: 1}, 2, {ease: FlxEase.linear});
-						FlxTween.tween(game.timeTxt, {alpha: 1}, 2, {ease: FlxEase.linear});
-						FlxTween.tween(game.iconP1, {alpha: 1}, 2, {ease: FlxEase.linear});
-						FlxTween.tween(game.iconP2, {alpha: 1}, 2, {ease: FlxEase.linear});
+						FlxTween.tween(game.healthBar, {alpha: 1}, 0.25, {ease: FlxEase.circInOut});
+						FlxTween.tween(game.overlayBar, {alpha: 1}, 0.25, {ease: FlxEase.circInOut});
+						FlxTween.tween(game.timeTxt, {alpha: 1}, 0.25, {ease: FlxEase.circInOut});
+						FlxTween.tween(game.iconP1, {alpha: 1}, 0.25, {ease: FlxEase.circInOut});
+						FlxTween.tween(game.iconP2, {alpha: 1}, 0.25, {ease: FlxEase.circInOut});
 
 						for(i in 0...game.opponentStrums.length){
-							FlxTween.tween(game.opponentStrums.members[i], {alpha: 0}, 2, {ease: FlxEase.linear, startDelay: 0.25});
+							FlxTween.tween(game.opponentStrums.members[i], {alpha: 0}, 1, {ease: FlxEase.linear, startDelay: 0.25});
 						}
 
 						if(!ClientPrefs.data.middleScroll)
-							FlxTween.tween(game.strumEnemyBG, {alpha: 0}, 2, {ease: FlxEase.linear});
+							FlxTween.tween(game.strumEnemyBG, {alpha: 0}, 1, {ease: FlxEase.linear});
 
 				}
 			case "Mob Fairies":
@@ -416,6 +474,8 @@ class Forest extends BaseStage
 					FlxTween.tween(filter2, {alpha: 0.4}, 2, {ease: FlxEase.linear});
 
 					FlxTween.tween(spellDarkness, {alpha: 0.75}, 2, {ease: FlxEase.linear});
+
+					spellChar();
 				}
 				else {
 					spellCardOn = false;
@@ -430,12 +490,27 @@ class Forest extends BaseStage
 				switch(value1)
 				{
 					case "birdON":
+						spellTitle1.scale.x = 1.75;
+
+						FlxTween.tween(spellTitle1.scale, {x: 1}, 2, {ease: FlxEase.circOut});
+						FlxTween.tween(spellTitle1, {alpha: 0.75}, 1, {ease: FlxEase.linear});
+
+						FlxTween.tween(spellTitle1, {y: 70}, 2, {ease: FlxEase.circOut, startDelay: 2});
+
 						FlxTween.tween(nightBird, {alpha: 1}, 1.5, {ease: FlxEase.linear});
 
 					case "birdOFF":
+						FlxTween.tween(spellTitle1, {alpha: 0}, 1, {ease: FlxEase.linear});
 						FlxTween.tween(nightBird, {alpha: 0}, 1.5, {ease: FlxEase.linear});
 
 					case "demarcON":
+						spellTitle2.scale.x = 1.75;
+
+						FlxTween.tween(spellTitle2.scale, {x: 1}, 2, {ease: FlxEase.circOut});
+						FlxTween.tween(spellTitle2, {alpha: 0.75}, 1, {ease: FlxEase.linear});
+
+						FlxTween.tween(spellTitle2, {y: 70}, 2, {ease: FlxEase.circOut, startDelay: 2});
+
 						FlxTween.tween(demarcB1, {alpha: 1}, 1.5, {ease: FlxEase.linear});
 						FlxTween.tween(demarcB2, {alpha: 1}, 1.5, {ease: FlxEase.linear});
 						FlxTween.tween(demarcG1, {alpha: 1}, 1.5, {ease: FlxEase.linear});
@@ -443,7 +518,14 @@ class Forest extends BaseStage
 						FlxTween.tween(demarcR1, {alpha: 1}, 1.5, {ease: FlxEase.linear});
 						FlxTween.tween(demarcR2, {alpha: 1}, 1.5, {ease: FlxEase.linear});
 
+						for(i in 0...wavyBullets.members.length)
+						{
+							FlxTween.tween(wavyBullets.members[i], {alpha: 0.75}, 1.5, {ease: FlxEase.linear});
+						}
+
 					case "demarcOFF":
+						FlxTween.tween(spellTitle2, {alpha: 0}, 1, {ease: FlxEase.linear});
+
 						FlxTween.tween(demarcB1, {alpha: 0}, 1.5, {ease: FlxEase.linear});
 						FlxTween.tween(demarcB2, {alpha: 0}, 1.5, {ease: FlxEase.linear});
 						FlxTween.tween(demarcG1, {alpha: 0}, 1.5, {ease: FlxEase.linear});
@@ -451,6 +533,10 @@ class Forest extends BaseStage
 						FlxTween.tween(demarcR1, {alpha: 0}, 1.5, {ease: FlxEase.linear});
 						FlxTween.tween(demarcR2, {alpha: 0}, 1.5, {ease: FlxEase.linear});
 
+						for(i in 0...wavyBullets.members.length)
+						{
+							FlxTween.tween(wavyBullets.members[i], {alpha: 0}, 1.5, {ease: FlxEase.linear});
+						}
 				}
 
 				
@@ -562,6 +648,21 @@ class Forest extends BaseStage
 				}
 			}
 		});
+	}
+
+	function spellChar():Void
+	{
+		var spellCharacter:BGSprite = new BGSprite('spellcards/portraits/rumia-portrait', 50, 100, 0, 0);
+		spellCharacter.alpha = 0;
+		spellCharacter.updateHitbox();
+		spellCharacter.blend = ADD;
+		spellCharacter.setGraphicSize(Std.int(spellCharacter.width * 0.75));
+		spellCharacter.cameras = [game.camHUD];
+		add(spellCharacter);
+
+		FlxTween.tween(spellCharacter, {x: 100, alpha: 0.75}, 1, {ease: FlxEase.circOut});
+		FlxTween.tween(spellCharacter.scale, {x: 1.5, y: 1.5}, 1, {ease: FlxEase.linear, startDelay: 2});
+		FlxTween.tween(spellCharacter, {alpha: 0}, 1, {ease: FlxEase.linear, startDelay: 2});
 	}
 }
 
