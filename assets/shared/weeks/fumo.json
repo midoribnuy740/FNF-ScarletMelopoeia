@@ -1,0 +1,36 @@
+{
+	"storyName": "fumo",
+	"difficulties": "",
+	"hideFreeplay": false,
+	"weekBackground": "",
+	"weekBefore": "tutorial",
+	"startUnlocked": true,
+	"songs": [
+		[
+			"reymu",
+			"reymu",
+			[
+				126,
+				13,
+				40
+			]
+		],
+		[
+			"Embodiment",
+			"pelo",
+			[
+				255,
+				195,
+				235
+			]
+		]
+	],
+	"weekCharacters": [
+		"",
+		"bf",
+		""
+	],
+	"hideStoryMode": false,
+	"hiddenUntilUnlocked": false,
+	"weekName": "fumo fumo"
+}

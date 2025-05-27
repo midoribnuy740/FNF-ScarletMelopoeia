@@ -1,108 +1,108 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [0, 0],
-			"indices": [],
-			"fps": 24,
 			"anim": "idle",
-			"loop": false,
-			"name": "reimu-idle"
+			"fps": 24,
+			"name": "reimu-idle",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [130, 0],
-			"indices": [],
-			"fps": 24,
 			"anim": "singLEFT",
-			"loop": false,
-			"name": "reimu-left"
+			"fps": 24,
+			"name": "reimu-left",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [130, 0],
-			"indices": [],
-			"fps": 24,
 			"anim": "singLEFT-hold",
-			"loop": false,
-			"name": "reimu-left"
+			"fps": 24,
+			"name": "reimu-left",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [140, -50],
-			"indices": [],
-			"fps": 24,
 			"anim": "singLEFTmiss",
-			"loop": false,
-			"name": "reimu-miss-left"
+			"fps": 24,
+			"name": "reimu-miss-left",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [130, -127],
-			"indices": [],
-			"fps": 24,
 			"anim": "singDOWN",
-			"loop": false,
-			"name": "reimu-down"
+			"fps": 24,
+			"name": "reimu-down",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [130, -127],
-			"indices": [],
-			"fps": 24,
 			"anim": "singDOWN-hold",
-			"loop": false,
-			"name": "reimu-down"
+			"fps": 24,
+			"name": "reimu-down",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [131, -237],
-			"indices": [],
-			"fps": 24,
 			"anim": "singDOWNmiss",
-			"loop": false,
-			"name": "reimu-miss-down"
+			"fps": 24,
+			"name": "reimu-miss-down",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [35, 38],
-			"indices": [],
-			"fps": 24,
 			"anim": "singUP",
-			"loop": false,
-			"name": "reimu-up"
+			"fps": 24,
+			"name": "reimu-up",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [35, 38],
-			"indices": [],
-			"fps": 24,
 			"anim": "singUP-hold",
-			"loop": false,
-			"name": "reimu-up"
+			"fps": 24,
+			"name": "reimu-up",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [-59, 53],
-			"indices": [],
-			"fps": 24,
 			"anim": "singUPmiss",
-			"loop": false,
-			"name": "reimu-miss-up"
+			"fps": 24,
+			"name": "reimu-miss-up",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [90, 20],
-			"indices": [],
-			"fps": 24,
 			"anim": "singRIGHT",
-			"loop": false,
-			"name": "reimu-right"
+			"fps": 24,
+			"name": "reimu-right",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [90, 20],
-			"indices": [],
-			"fps": 24,
 			"anim": "singRIGHT-hold",
-			"loop": false,
-			"name": "reimu-right"
+			"fps": 24,
+			"name": "reimu-right",
+			"indices": []
 		},
 		{
-			"offsets": [-79, 3],
-			"indices": [],
-			"fps": 24,
-			"anim": "singRIGHTmiss",
 			"loop": false,
-			"name": "reimu-miss-right"
+			"offsets": [-79, 3],
+			"anim": "singRIGHTmiss",
+			"fps": 24,
+			"name": "reimu-miss-right",
+			"indices": []
 		}
 	],
 	"vocals_file": "",
@@ -112,7 +112,7 @@
 	"healthicon": "srpelo-reimu",
 	"flip_x": true,
 	"healthbar_colors": [255, 160, 198],
-	"camera_position": [0, 0],
+	"camera_position": [200, 50],
 	"sing_duration": 4,
 	"scale": 1,
 	"_editor_isPlayer": true

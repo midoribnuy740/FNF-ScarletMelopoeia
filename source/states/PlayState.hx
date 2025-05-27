@@ -525,10 +525,20 @@ class PlayState extends MusicBeatState
 
 		switch(songName)
 		{
+			case 'gensomooru':
+				bgmSong = 'Gensomooru';
+			case 'lowest-vibes':
+				bgmSong = 'Lowest Vibes';
 			case 'crimson-dream':
 				bgmSong = 'Crimson Dream';
 			case 'spiritual-dusk':
 				bgmSong = 'Spiritual Dusk';
+			case 'winter-paradise':
+				bgmSong = 'Winter Paradise';
+			case 'shanghai':
+				bgmSong = 'Shanghai';
+			case 'embodiment':
+				bgmSong = 'Embodiment';
 		}
 
 		bgmText = new Alphabet(FlxG.width, 0, 'BGM: $bgmSong', true, 'bgm-alphabet');

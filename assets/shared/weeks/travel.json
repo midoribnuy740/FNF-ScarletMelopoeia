@@ -1,5 +1,5 @@
 {
-	"storyName": "Arrival",
+	"storyName": "Travel",
 	"difficulties": "",
 	"hideFreeplay": false,
 	"weekBackground": "",
@@ -13,15 +13,24 @@
 	"hideStoryMode": false,
 	"songs": [
 		[
-			"Crimson Dream",
-			"reimu",
+			"Spiritual Dusk",
+			"rumia",
 			[
-				86,
-				13,
-				0
+				26,
+				0,
+				40
+			]
+		],
+		[
+			"Winter Paradise",
+			"cirno",
+			[
+				166,
+				213,
+				253
 			]
 		]
 	],
-	"weekName": "Custom Week",
+	"weekName": "",
 	"hiddenUntilUnlocked": false
 }

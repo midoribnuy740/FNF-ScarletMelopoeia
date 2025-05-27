@@ -1,17 +1,41 @@
 {
 	"animations": [
 		{
+			"offsets": [80, 10],
 			"loop": false,
-			"offsets": [0, 0],
-			"anim": "idle",
 			"fps": 24,
-			"name": "pelo-idle",
-			"indices": []
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "pelo-left"
+		},
+		{
+			"offsets": [30, -30],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "pelo-down"
+		},
+		{
+			"offsets": [88, 128],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "pelo-up"
+		},
+		{
+			"offsets": [-90, 100],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "pelo-right"
 		},
 		{
 			"loop": false,
 			"offsets": [80, 10],
-			"anim": "singLEFT",
+			"anim": "singLEFT-hold",
 			"fps": 24,
 			"name": "pelo-left",
 			"indices": []
@@ -19,7 +43,7 @@
 		{
 			"loop": false,
 			"offsets": [30, -30],
-			"anim": "singDOWN",
+			"anim": "singDOWN-hold",
 			"fps": 24,
 			"name": "pelo-down",
 			"indices": []
@@ -27,7 +51,7 @@
 		{
 			"loop": false,
 			"offsets": [88, 128],
-			"anim": "singUP",
+			"anim": "singUP-hold",
 			"fps": 24,
 			"name": "pelo-up",
 			"indices": []
@@ -35,42 +59,18 @@
 		{
 			"loop": false,
 			"offsets": [-90, 100],
-			"anim": "singRIGHT",
+			"anim": "singRIGHT-hold",
 			"fps": 24,
 			"name": "pelo-right",
 			"indices": []
 		},
 		{
-			"offsets": [80, 10],
+			"offsets": [0, 0],
 			"indices": [],
 			"fps": 24,
-			"anim": "singLEFT-hold",
-			"loop": false,
-			"name": "pelo-left"
-		},
-		{
-			"offsets": [30, -30],
-			"indices": [],
-			"fps": 24,
-			"anim": "singDOWN-hold",
-			"loop": false,
-			"name": "pelo-down"
-		},
-		{
-			"offsets": [88, 128],
-			"indices": [],
-			"fps": 24,
-			"anim": "singUP-hold",
-			"loop": false,
-			"name": "pelo-up"
-		},
-		{
-			"offsets": [-90, 100],
-			"indices": [],
-			"fps": 24,
-			"anim": "singRIGHT-hold",
-			"loop": false,
-			"name": "pelo-right"
+			"anim": "idle",
+			"loop": true,
+			"name": "pelo-idle"
 		}
 	],
 	"vocals_file": "",
@@ -80,7 +80,7 @@
 	"healthicon": "pelo",
 	"flip_x": false,
 	"healthbar_colors": [42, 15, 58],
-	"camera_position": [0, 0],
+	"camera_position": [150, -50],
 	"sing_duration": 4,
 	"scale": 1,
 	"_editor_isPlayer": false
