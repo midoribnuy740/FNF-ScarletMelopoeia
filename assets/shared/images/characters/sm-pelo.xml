@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="sm-pelo.png">
+	<!-- Created with Adobe Animate version 18.0.1.115 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="pelo-down0000" x="0" y="0" width="416" height="190" frameX="0" frameY="-19" frameWidth="416" frameHeight="210"/>
+	<SubTexture name="pelo-down0001" x="0" y="0" width="416" height="190" frameX="0" frameY="-19" frameWidth="416" frameHeight="210"/>
+	<SubTexture name="pelo-down0002" x="416" y="0" width="399" height="210" frameX="-15" frameY="0" frameWidth="416" frameHeight="210"/>
+	<SubTexture name="pelo-down0003" x="416" y="0" width="399" height="210" frameX="-15" frameY="0" frameWidth="416" frameHeight="210"/>
+	<SubTexture name="pelo-down0004" x="416" y="0" width="399" height="210" frameX="-15" frameY="0" frameWidth="416" frameHeight="210"/>
+	<SubTexture name="pelo-down0005" x="416" y="0" width="399" height="210" frameX="-15" frameY="0" frameWidth="416" frameHeight="210"/>
+	<SubTexture name="pelo-down0006" x="416" y="0" width="399" height="210" frameX="-15" frameY="0" frameWidth="416" frameHeight="210"/>
+	<SubTexture name="pelo-down0007" x="416" y="0" width="399" height="210" frameX="-15" frameY="0" frameWidth="416" frameHeight="210"/>
+	<SubTexture name="pelo-down0008" x="416" y="0" width="399" height="210" frameX="-15" frameY="0" frameWidth="416" frameHeight="210"/>
+	<SubTexture name="pelo-down0009" x="416" y="0" width="399" height="210" frameX="-15" frameY="0" frameWidth="416" frameHeight="210"/>
+	<SubTexture name="pelo-down0010" x="416" y="0" width="399" height="210" frameX="-15" frameY="0" frameWidth="416" frameHeight="210"/>
+	<SubTexture name="pelo-down0011" x="416" y="0" width="399" height="210" frameX="-15" frameY="0" frameWidth="416" frameHeight="210"/>
+	<SubTexture name="pelo-idle0000" x="0" y="210" width="354" height="240" frameX="-1" frameY="0" frameWidth="355" frameHeight="240"/>
+	<SubTexture name="pelo-idle0001" x="0" y="210" width="354" height="240" frameX="-1" frameY="0" frameWidth="355" frameHeight="240"/>
+	<SubTexture name="pelo-idle0002" x="0" y="210" width="354" height="240" frameX="-1" frameY="0" frameWidth="355" frameHeight="240"/>
+	<SubTexture name="pelo-idle0003" x="354" y="210" width="355" height="239" frameX="0" frameY="0" frameWidth="355" frameHeight="240"/>
+	<SubTexture name="pelo-idle0004" x="354" y="210" width="355" height="239" frameX="0" frameY="0" frameWidth="355" frameHeight="240"/>
+	<SubTexture name="pelo-idle0005" x="354" y="210" width="355" height="239" frameX="0" frameY="0" frameWidth="355" frameHeight="240"/>
+	<SubTexture name="pelo-idle0006" x="0" y="450" width="353" height="239" frameX="-1" frameY="-1" frameWidth="355" frameHeight="240"/>
+	<SubTexture name="pelo-idle0007" x="0" y="450" width="353" height="239" frameX="-1" frameY="-1" frameWidth="355" frameHeight="240"/>
+	<SubTexture name="pelo-idle0008" x="0" y="450" width="353" height="239" frameX="-1" frameY="-1" frameWidth="355" frameHeight="240"/>
+	<SubTexture name="pelo-left0000" x="353" y="450" width="364" height="262"/>
+	<SubTexture name="pelo-left0001" x="353" y="450" width="364" height="262"/>
+	<SubTexture name="pelo-left0002" x="0" y="712" width="342" height="247" frameX="-19" frameY="-7" frameWidth="364" frameHeight="262"/>
+	<SubTexture name="pelo-left0003" x="0" y="712" width="342" height="247" frameX="-19" frameY="-7" frameWidth="364" frameHeight="262"/>
+	<SubTexture name="pelo-left0004" x="0" y="712" width="342" height="247" frameX="-19" frameY="-7" frameWidth="364" frameHeight="262"/>
+	<SubTexture name="pelo-left0005" x="0" y="712" width="342" height="247" frameX="-19" frameY="-7" frameWidth="364" frameHeight="262"/>
+	<SubTexture name="pelo-left0006" x="0" y="712" width="342" height="247" frameX="-19" frameY="-7" frameWidth="364" frameHeight="262"/>
+	<SubTexture name="pelo-left0007" x="0" y="712" width="342" height="247" frameX="-19" frameY="-7" frameWidth="364" frameHeight="262"/>
+	<SubTexture name="pelo-left0008" x="0" y="712" width="342" height="247" frameX="-19" frameY="-7" frameWidth="364" frameHeight="262"/>
+	<SubTexture name="pelo-left0009" x="0" y="712" width="342" height="247" frameX="-19" frameY="-7" frameWidth="364" frameHeight="262"/>
+	<SubTexture name="pelo-left0010" x="0" y="712" width="342" height="247" frameX="-19" frameY="-7" frameWidth="364" frameHeight="262"/>
+	<SubTexture name="pelo-left0011" x="0" y="712" width="342" height="247" frameX="-19" frameY="-7" frameWidth="364" frameHeight="262"/>
+	<SubTexture name="pelo-right0000" x="342" y="712" width="418" height="390"/>
+	<SubTexture name="pelo-right0001" x="342" y="712" width="418" height="390"/>
+	<SubTexture name="pelo-right0002" x="0" y="1102" width="396" height="373" frameX="-1" frameY="-15" frameWidth="418" frameHeight="390"/>
+	<SubTexture name="pelo-right0003" x="0" y="1102" width="396" height="373" frameX="-1" frameY="-15" frameWidth="418" frameHeight="390"/>
+	<SubTexture name="pelo-right0004" x="0" y="1102" width="396" height="373" frameX="-1" frameY="-15" frameWidth="418" frameHeight="390"/>
+	<SubTexture name="pelo-right0005" x="0" y="1102" width="396" height="373" frameX="-1" frameY="-15" frameWidth="418" frameHeight="390"/>
+	<SubTexture name="pelo-right0006" x="0" y="1102" width="396" height="373" frameX="-1" frameY="-15" frameWidth="418" frameHeight="390"/>
+	<SubTexture name="pelo-right0007" x="0" y="1102" width="396" height="373" frameX="-1" frameY="-15" frameWidth="418" frameHeight="390"/>
+	<SubTexture name="pelo-right0008" x="0" y="1102" width="396" height="373" frameX="-1" frameY="-15" frameWidth="418" frameHeight="390"/>
+	<SubTexture name="pelo-right0009" x="0" y="1102" width="396" height="373" frameX="-1" frameY="-15" frameWidth="418" frameHeight="390"/>
+	<SubTexture name="pelo-right0010" x="0" y="1102" width="396" height="373" frameX="-1" frameY="-15" frameWidth="418" frameHeight="390"/>
+	<SubTexture name="pelo-right0011" x="0" y="1102" width="396" height="373" frameX="-1" frameY="-15" frameWidth="418" frameHeight="390"/>
+	<SubTexture name="pelo-up0000" x="396" y="1102" width="398" height="369" frameX="-6" frameY="0" frameWidth="411" frameHeight="369"/>
+	<SubTexture name="pelo-up0001" x="396" y="1102" width="398" height="369" frameX="-6" frameY="0" frameWidth="411" frameHeight="369"/>
+	<SubTexture name="pelo-up0002" x="0" y="1475" width="411" height="360" frameX="0" frameY="-9" frameWidth="411" frameHeight="369"/>
+	<SubTexture name="pelo-up0003" x="0" y="1475" width="411" height="360" frameX="0" frameY="-9" frameWidth="411" frameHeight="369"/>
+	<SubTexture name="pelo-up0004" x="0" y="1475" width="411" height="360" frameX="0" frameY="-9" frameWidth="411" frameHeight="369"/>
+	<SubTexture name="pelo-up0005" x="0" y="1475" width="411" height="360" frameX="0" frameY="-9" frameWidth="411" frameHeight="369"/>
+	<SubTexture name="pelo-up0006" x="0" y="1475" width="411" height="360" frameX="0" frameY="-9" frameWidth="411" frameHeight="369"/>
+	<SubTexture name="pelo-up0007" x="0" y="1475" width="411" height="360" frameX="0" frameY="-9" frameWidth="411" frameHeight="369"/>
+	<SubTexture name="pelo-up0008" x="0" y="1475" width="411" height="360" frameX="0" frameY="-9" frameWidth="411" frameHeight="369"/>
+	<SubTexture name="pelo-up0009" x="0" y="1475" width="411" height="360" frameX="0" frameY="-9" frameWidth="411" frameHeight="369"/>
+	<SubTexture name="pelo-up0010" x="0" y="1475" width="411" height="360" frameX="0" frameY="-9" frameWidth="411" frameHeight="369"/>
+	<SubTexture name="pelo-up0011" x="0" y="1475" width="411" height="360" frameX="0" frameY="-9" frameWidth="411" frameHeight="369"/>
+</TextureAtlas>

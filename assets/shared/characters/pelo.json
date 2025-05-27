@@ -1,0 +1,87 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [0, 0],
+			"anim": "idle",
+			"fps": 24,
+			"name": "pelo-idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [80, 10],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "pelo-left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [30, -30],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "pelo-down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [88, 128],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "pelo-up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [-90, 100],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "pelo-right",
+			"indices": []
+		},
+		{
+			"offsets": [80, 10],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT-hold",
+			"loop": false,
+			"name": "pelo-left"
+		},
+		{
+			"offsets": [30, -30],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWN-hold",
+			"loop": false,
+			"name": "pelo-down"
+		},
+		{
+			"offsets": [88, 128],
+			"indices": [],
+			"fps": 24,
+			"anim": "singUP-hold",
+			"loop": false,
+			"name": "pelo-up"
+		},
+		{
+			"offsets": [-90, 100],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT-hold",
+			"loop": false,
+			"name": "pelo-right"
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": false,
+	"image": "characters/sm-pelo",
+	"position": [0, 510],
+	"healthicon": "pelo",
+	"flip_x": false,
+	"healthbar_colors": [42, 15, 58],
+	"camera_position": [0, 0],
+	"sing_duration": 4,
+	"scale": 1,
+	"_editor_isPlayer": false
+}
