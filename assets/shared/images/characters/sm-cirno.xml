@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="sm-cirno.png">
+	<!-- Created with Adobe Animate version 18.0.1.115 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="cirno-down0000" x="0" y="0" width="328" height="428" frameX="0" frameY="0" frameWidth="330" frameHeight="431"/>
+	<SubTexture name="cirno-down0001" x="0" y="0" width="328" height="428" frameX="0" frameY="0" frameWidth="330" frameHeight="431"/>
+	<SubTexture name="cirno-down0002" x="328" y="0" width="326" height="423" frameX="-4" frameY="-8" frameWidth="330" frameHeight="431"/>
+	<SubTexture name="cirno-down0003" x="328" y="0" width="326" height="423" frameX="-4" frameY="-8" frameWidth="330" frameHeight="431"/>
+	<SubTexture name="cirno-down0004" x="328" y="0" width="326" height="423" frameX="-4" frameY="-8" frameWidth="330" frameHeight="431"/>
+	<SubTexture name="cirno-down0005" x="328" y="0" width="326" height="423" frameX="-4" frameY="-8" frameWidth="330" frameHeight="431"/>
+	<SubTexture name="cirno-down0006" x="328" y="0" width="326" height="423" frameX="-4" frameY="-8" frameWidth="330" frameHeight="431"/>
+	<SubTexture name="cirno-down0007" x="328" y="0" width="326" height="423" frameX="-4" frameY="-8" frameWidth="330" frameHeight="431"/>
+	<SubTexture name="cirno-down0008" x="328" y="0" width="326" height="423" frameX="-4" frameY="-8" frameWidth="330" frameHeight="431"/>
+	<SubTexture name="cirno-down0009" x="328" y="0" width="326" height="423" frameX="-4" frameY="-8" frameWidth="330" frameHeight="431"/>
+	<SubTexture name="cirno-down0010" x="328" y="0" width="326" height="423" frameX="-4" frameY="-8" frameWidth="330" frameHeight="431"/>
+	<SubTexture name="cirno-down0011" x="328" y="0" width="326" height="423" frameX="-4" frameY="-8" frameWidth="330" frameHeight="431"/>
+	<SubTexture name="cirno-idle0000" x="654" y="0" width="323" height="481" frameX="0" frameY="-3" frameWidth="323" frameHeight="486"/>
+	<SubTexture name="cirno-idle0001" x="654" y="0" width="323" height="481" frameX="0" frameY="-3" frameWidth="323" frameHeight="486"/>
+	<SubTexture name="cirno-idle0002" x="654" y="0" width="323" height="481" frameX="0" frameY="-3" frameWidth="323" frameHeight="486"/>
+	<SubTexture name="cirno-idle0003" x="977" y="0" width="322" height="481" frameX="-1" frameY="0" frameWidth="323" frameHeight="486"/>
+	<SubTexture name="cirno-idle0004" x="977" y="0" width="322" height="481" frameX="-1" frameY="0" frameWidth="323" frameHeight="486"/>
+	<SubTexture name="cirno-idle0005" x="977" y="0" width="322" height="481" frameX="-1" frameY="0" frameWidth="323" frameHeight="486"/>
+	<SubTexture name="cirno-idle0006" x="1299" y="0" width="320" height="474" frameX="-3" frameY="-11" frameWidth="323" frameHeight="486"/>
+	<SubTexture name="cirno-idle0007" x="1299" y="0" width="320" height="474" frameX="-3" frameY="-11" frameWidth="323" frameHeight="486"/>
+	<SubTexture name="cirno-idle0008" x="1299" y="0" width="320" height="474" frameX="-3" frameY="-11" frameWidth="323" frameHeight="486"/>
+	<SubTexture name="cirno-idle0009" x="1619" y="0" width="317" height="470" frameX="-6" frameY="-16" frameWidth="323" frameHeight="486"/>
+	<SubTexture name="cirno-idle0010" x="1619" y="0" width="317" height="470" frameX="-6" frameY="-16" frameWidth="323" frameHeight="486"/>
+	<SubTexture name="cirno-idle0011" x="1619" y="0" width="317" height="470" frameX="-6" frameY="-16" frameWidth="323" frameHeight="486"/>
+	<SubTexture name="cirno-idle0012" x="0" y="481" width="321" height="476" frameX="-2" frameY="-6" frameWidth="323" frameHeight="486"/>
+	<SubTexture name="cirno-idle0013" x="0" y="481" width="321" height="476" frameX="-2" frameY="-6" frameWidth="323" frameHeight="486"/>
+	<SubTexture name="cirno-idle0014" x="0" y="481" width="321" height="476" frameX="-2" frameY="-6" frameWidth="323" frameHeight="486"/>
+	<SubTexture name="cirno-left0000" x="321" y="481" width="345" height="469" frameX="0" frameY="-3" frameWidth="353" frameHeight="474"/>
+	<SubTexture name="cirno-left0001" x="321" y="481" width="345" height="469" frameX="0" frameY="-3" frameWidth="353" frameHeight="474"/>
+	<SubTexture name="cirno-left0002" x="666" y="481" width="341" height="474" frameX="-12" frameY="0" frameWidth="353" frameHeight="474"/>
+	<SubTexture name="cirno-left0003" x="666" y="481" width="341" height="474" frameX="-12" frameY="0" frameWidth="353" frameHeight="474"/>
+	<SubTexture name="cirno-left0004" x="666" y="481" width="341" height="474" frameX="-12" frameY="0" frameWidth="353" frameHeight="474"/>
+	<SubTexture name="cirno-left0005" x="666" y="481" width="341" height="474" frameX="-12" frameY="0" frameWidth="353" frameHeight="474"/>
+	<SubTexture name="cirno-left0006" x="666" y="481" width="341" height="474" frameX="-12" frameY="0" frameWidth="353" frameHeight="474"/>
+	<SubTexture name="cirno-left0007" x="666" y="481" width="341" height="474" frameX="-12" frameY="0" frameWidth="353" frameHeight="474"/>
+	<SubTexture name="cirno-left0008" x="666" y="481" width="341" height="474" frameX="-12" frameY="0" frameWidth="353" frameHeight="474"/>
+	<SubTexture name="cirno-left0009" x="666" y="481" width="341" height="474" frameX="-12" frameY="0" frameWidth="353" frameHeight="474"/>
+	<SubTexture name="cirno-left0010" x="666" y="481" width="341" height="474" frameX="-12" frameY="0" frameWidth="353" frameHeight="474"/>
+	<SubTexture name="cirno-left0011" x="666" y="481" width="341" height="474" frameX="-12" frameY="0" frameWidth="353" frameHeight="474"/>
+	<SubTexture name="cirno-right0000" x="1007" y="481" width="400" height="428" frameX="-3" frameY="-1" frameWidth="403" frameHeight="430"/>
+	<SubTexture name="cirno-right0001" x="1007" y="481" width="400" height="428" frameX="-3" frameY="-1" frameWidth="403" frameHeight="430"/>
+	<SubTexture name="cirno-right0002" x="1407" y="481" width="398" height="430" frameX="0" frameY="0" frameWidth="403" frameHeight="430"/>
+	<SubTexture name="cirno-right0003" x="1407" y="481" width="398" height="430" frameX="0" frameY="0" frameWidth="403" frameHeight="430"/>
+	<SubTexture name="cirno-right0004" x="1407" y="481" width="398" height="430" frameX="0" frameY="0" frameWidth="403" frameHeight="430"/>
+	<SubTexture name="cirno-right0005" x="1407" y="481" width="398" height="430" frameX="0" frameY="0" frameWidth="403" frameHeight="430"/>
+	<SubTexture name="cirno-right0006" x="1407" y="481" width="398" height="430" frameX="0" frameY="0" frameWidth="403" frameHeight="430"/>
+	<SubTexture name="cirno-right0007" x="1407" y="481" width="398" height="430" frameX="0" frameY="0" frameWidth="403" frameHeight="430"/>
+	<SubTexture name="cirno-right0008" x="1407" y="481" width="398" height="430" frameX="0" frameY="0" frameWidth="403" frameHeight="430"/>
+	<SubTexture name="cirno-right0009" x="1407" y="481" width="398" height="430" frameX="0" frameY="0" frameWidth="403" frameHeight="430"/>
+	<SubTexture name="cirno-right0010" x="1407" y="481" width="398" height="430" frameX="0" frameY="0" frameWidth="403" frameHeight="430"/>
+	<SubTexture name="cirno-right0011" x="1407" y="481" width="398" height="430" frameX="0" frameY="0" frameWidth="403" frameHeight="430"/>
+	<SubTexture name="cirno-up0000" x="0" y="957" width="340" height="502" frameX="-5" frameY="-4" frameWidth="350" frameHeight="509"/>
+	<SubTexture name="cirno-up0001" x="0" y="957" width="340" height="502" frameX="-5" frameY="-4" frameWidth="350" frameHeight="509"/>
+	<SubTexture name="cirno-up0002" x="340" y="957" width="350" height="509"/>
+	<SubTexture name="cirno-up0003" x="340" y="957" width="350" height="509"/>
+	<SubTexture name="cirno-up0004" x="340" y="957" width="350" height="509"/>
+	<SubTexture name="cirno-up0005" x="340" y="957" width="350" height="509"/>
+	<SubTexture name="cirno-up0006" x="340" y="957" width="350" height="509"/>
+	<SubTexture name="cirno-up0007" x="340" y="957" width="350" height="509"/>
+	<SubTexture name="cirno-up0008" x="340" y="957" width="350" height="509"/>
+	<SubTexture name="cirno-up0009" x="340" y="957" width="350" height="509"/>
+	<SubTexture name="cirno-up0010" x="340" y="957" width="350" height="509"/>
+	<SubTexture name="cirno-up0011" x="340" y="957" width="350" height="509"/>
+</TextureAtlas>

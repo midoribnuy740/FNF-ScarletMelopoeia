@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="sit-reimu.png">
+	<!-- Created with Adobe Animate version 18.0.1.115 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="sit-reimu0000" x="0" y="0" width="210" height="324" frameX="-5" frameY="0" frameWidth="215" frameHeight="324"/>
+	<SubTexture name="sit-reimu0001" x="0" y="0" width="210" height="324" frameX="-5" frameY="0" frameWidth="215" frameHeight="324"/>
+	<SubTexture name="sit-reimu0002" x="0" y="0" width="210" height="324" frameX="-5" frameY="0" frameWidth="215" frameHeight="324"/>
+	<SubTexture name="sit-reimu0003" x="0" y="0" width="210" height="324" frameX="-5" frameY="0" frameWidth="215" frameHeight="324"/>
+	<SubTexture name="sit-reimu0004" x="210" y="0" width="208" height="321" frameX="0" frameY="-1" frameWidth="215" frameHeight="324"/>
+	<SubTexture name="sit-reimu0005" x="210" y="0" width="208" height="321" frameX="0" frameY="-1" frameWidth="215" frameHeight="324"/>
+	<SubTexture name="sit-reimu0006" x="210" y="0" width="208" height="321" frameX="0" frameY="-1" frameWidth="215" frameHeight="324"/>
+	<SubTexture name="sit-reimu0007" x="210" y="0" width="208" height="321" frameX="0" frameY="-1" frameWidth="215" frameHeight="324"/>
+	<SubTexture name="sit-reimu0008" x="0" y="324" width="192" height="319" frameX="-4" frameY="-3" frameWidth="215" frameHeight="324"/>
+	<SubTexture name="sit-reimu0009" x="0" y="324" width="192" height="319" frameX="-4" frameY="-3" frameWidth="215" frameHeight="324"/>
+	<SubTexture name="sit-reimu0010" x="0" y="324" width="192" height="319" frameX="-4" frameY="-3" frameWidth="215" frameHeight="324"/>
+	<SubTexture name="sit-reimu0011" x="0" y="324" width="192" height="319" frameX="-4" frameY="-3" frameWidth="215" frameHeight="324"/>
+	<SubTexture name="sit-reimu0012" x="192" y="324" width="200" height="323" frameX="-9" frameY="-1" frameWidth="215" frameHeight="324"/>
+	<SubTexture name="sit-reimu0013" x="192" y="324" width="200" height="323" frameX="-9" frameY="-1" frameWidth="215" frameHeight="324"/>
+	<SubTexture name="sit-reimu0014" x="192" y="324" width="200" height="323" frameX="-9" frameY="-1" frameWidth="215" frameHeight="324"/>
+	<SubTexture name="sit-reimu0015" x="192" y="324" width="200" height="323" frameX="-9" frameY="-1" frameWidth="215" frameHeight="324"/>
+</TextureAtlas>
