@@ -25,8 +25,8 @@ typedef TitleData =
 	var titley:Float;
 	var startx:Float;
 	var starty:Float;
-	var gfx:Float;
-	var gfy:Float;
+	var reimux:Float;
+	var reimuy:Float;
 	var backgroundSprite:String;
 	var bpm:Float;
 	
@@ -50,7 +50,7 @@ class TitleState extends MusicBeatState
 	var credTextShit:Alphabet;
 	var ngSpr:FlxSprite;
 	
-	var titleTextColors:Array<FlxColor> = [0xFF33FFFF, 0xFF3333CC];
+	var titleTextColors:Array<FlxColor> = [0xFFFFCCCC, 0xFFCC3333];
 	var titleTextAlphas:Array<Float> = [1, .64];
 
 	var curWacky:Array<String> = [];
@@ -143,8 +143,7 @@ class TitleState extends MusicBeatState
 	}
 
 	var logoBl:FlxSprite;
-	var gfDance:FlxSprite;
-	var danceLeft:Bool = false;
+	var reimuSit:FlxSprite;
 	var titleText:FlxSprite;
 	var swagShader:ColorSwap = null;
 
@@ -162,52 +161,44 @@ class TitleState extends MusicBeatState
 		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
 		logoBl.antialiasing = ClientPrefs.data.antialiasing;
 
-		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24, false);
+		logoBl.animation.addByPrefix('bump', 'logo-bump', 24, false);
 		logoBl.animation.play('bump');
 		logoBl.updateHitbox();
 
-		gfDance = new FlxSprite(gfPosition.x, gfPosition.y);
-		gfDance.antialiasing = ClientPrefs.data.antialiasing;
+		reimuSit = new FlxSprite(reimuPosition.x, reimuPosition.y);
+		reimuSit.antialiasing = ClientPrefs.data.antialiasing;
 		
 		if(ClientPrefs.data.shaders)
 		{
 			swagShader = new ColorSwap();
-			gfDance.shader = swagShader.shader;
+			reimuSit.shader = swagShader.shader;
 			logoBl.shader = swagShader.shader;
 		}
 		
-		gfDance.frames = Paths.getSparrowAtlas(characterImage);
-		if(!useIdle)
-		{
-			gfDance.animation.addByIndices('danceLeft', animationName, danceLeftFrames, "", 24, false);
-			gfDance.animation.addByIndices('danceRight', animationName, danceRightFrames, "", 24, false);
-			gfDance.animation.play('danceRight');
-		}
-		else
-		{
-			gfDance.animation.addByPrefix('idle', animationName, 24, true);
-			gfDance.animation.play('idle');
-		}
+		reimuSit.frames = Paths.getSparrowAtlas(characterImage);
+		
+		reimuSit.animation.addByPrefix('idle', animationName, 24, true);
+		reimuSit.animation.play('idle');
 
 
 		var animFrames:Array<FlxFrame> = [];
-		titleText = new FlxSprite(enterPosition.x, enterPosition.y);
-		titleText.frames = Paths.getSparrowAtlas('titleEnter');
+		titleText = new FlxSprite(spacePosition.x, spacePosition.y);
+		titleText.frames = Paths.getSparrowAtlas('titleSpace');
 		@:privateAccess
 		{
-			titleText.animation.findByPrefix(animFrames, "ENTER IDLE");
-			titleText.animation.findByPrefix(animFrames, "ENTER FREEZE");
+			titleText.animation.findByPrefix(animFrames, "space-idle");
+			titleText.animation.findByPrefix(animFrames, "space-freeze");
 		}
 		
 		if (newTitle = animFrames.length > 0)
 		{
-			titleText.animation.addByPrefix('idle', "ENTER IDLE", 24);
-			titleText.animation.addByPrefix('press', ClientPrefs.data.flashing ? "ENTER PRESSED" : "ENTER FREEZE", 24);
+			titleText.animation.addByPrefix('idle', "space-idle", 24);
+			titleText.animation.addByPrefix('press', ClientPrefs.data.flashing ? "space-pressed" : "space-freeze", 24);
 		}
 		else
 		{
-			titleText.animation.addByPrefix('idle', "Press Enter to Begin", 24);
-			titleText.animation.addByPrefix('press', "ENTER PRESSED", 24);
+			titleText.animation.addByPrefix('idle', "Press Space", 24);
+			titleText.animation.addByPrefix('press', "space-pressed", 24);
 		}
 		titleText.animation.play('idle');
 		titleText.updateHitbox();
@@ -232,9 +223,9 @@ class TitleState extends MusicBeatState
 		ngSpr.screenCenter(X);
 		ngSpr.antialiasing = ClientPrefs.data.antialiasing;
 
-		add(gfDance);
-		add(logoBl); //FNF Logo
-		add(titleText); //"Press Enter to Begin" text
+		add(reimuSit);
+		add(logoBl); //SM Logo
+		add(titleText); //"Press Space" text
 		add(credGroup);
 		add(ngSpr);
 
@@ -250,14 +241,11 @@ class TitleState extends MusicBeatState
 	var characterImage:String = 'sit-reimu';
 	var animationName:String = 'sit-reimu';
 
-	var gfPosition:FlxPoint = FlxPoint.get(512, 40);
-	var logoPosition:FlxPoint = FlxPoint.get(-150, -100);
-	var enterPosition:FlxPoint = FlxPoint.get(100, 576);
+	var reimuPosition:FlxPoint = FlxPoint.get(534, 364);
+	var logoPosition:FlxPoint = FlxPoint.get(150, 100);
+	var spacePosition:FlxPoint = FlxPoint.get(800, 476);
 	
-	var useIdle:Bool = true;
 	var musicBPM:Float = 102;
-	var danceLeftFrames:Array<Int> = [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29];
-	var danceRightFrames:Array<Int> = [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 
 	function loadJsonData()
 	{
@@ -269,16 +257,12 @@ class TitleState extends MusicBeatState
 				try
 				{
 					var titleJSON:TitleData = tjson.TJSON.parse(titleRaw);
-					gfPosition.set(titleJSON.gfx, titleJSON.gfy);
+					reimuPosition.set(titleJSON.reimux, titleJSON.reimuy);
 					logoPosition.set(titleJSON.titlex, titleJSON.titley);
-					enterPosition.set(titleJSON.startx, titleJSON.starty);
+					spacePosition.set(titleJSON.startx, titleJSON.starty);
 					musicBPM = titleJSON.bpm;
 					
 					if(titleJSON.animation != null && titleJSON.animation.length > 0) animationName = titleJSON.animation;
-					if(titleJSON.dance_left != null && titleJSON.dance_left.length > 0) danceLeftFrames = titleJSON.dance_left;
-					if(titleJSON.dance_right != null && titleJSON.dance_right.length > 0) danceRightFrames = titleJSON.dance_right;
-					useIdle = (titleJSON.idle == true);
-	
 					if (titleJSON.backgroundSprite != null && titleJSON.backgroundSprite.trim().length > 0)
 					{
 						var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image(titleJSON.backgroundSprite));
@@ -305,29 +289,8 @@ class TitleState extends MusicBeatState
 			case 'SHADOW':
 				characterImage = 'ShadowBump';
 				animationName = 'Shadow Title Bump';
-				gfPosition.x += 210;
-				gfPosition.y += 40;
-				useIdle = true;
-			case 'RIVEREN':
-				characterImage = 'ZRiverBump';
-				animationName = 'River Title Bump';
-				gfPosition.x += 180;
-				gfPosition.y += 40;
-				useIdle = true;
-			case 'BBPANZU':
-				characterImage = 'BBBump';
-				animationName = 'BB Title Bump';
-				danceLeftFrames = [14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27];
-				danceRightFrames = [27, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
-				gfPosition.x += 45;
-				gfPosition.y += 100;
-			case 'PESSY':
-				characterImage = 'PessyBump';
-				animationName = 'Pessy Title Bump';
-				gfPosition.x += 165;
-				gfPosition.y += 60;
-				danceLeftFrames = [29, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
-				danceRightFrames = [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28];
+				reimuPosition.x += 210;
+				reimuPosition.y += 40;
 		}
 	}
 
@@ -361,14 +324,14 @@ class TitleState extends MusicBeatState
 			Conductor.songPosition = FlxG.sound.music.time;
 		// FlxG.watch.addQuick('amp', FlxG.sound.music.amplitude);
 
-		var pressedEnter:Bool = FlxG.keys.justPressed.ENTER || controls.ACCEPT;
+		var pressedSpace:Bool = FlxG.keys.justPressed.SPACE || controls.ACCEPT;
 
 		#if mobile
 		for (touch in FlxG.touches.list)
 		{
 			if (touch.justPressed)
 			{
-				pressedEnter = true;
+				pressedSpace = true;
 			}
 		}
 		#end
@@ -378,11 +341,11 @@ class TitleState extends MusicBeatState
 		if (gamepad != null)
 		{
 			if (gamepad.justPressed.START)
-				pressedEnter = true;
+				pressedSpace = true;
 
 			#if switch
 			if (gamepad.justPressed.B)
-				pressedEnter = true;
+				pressedSpace = true;
 			#end
 		}
 		
@@ -395,7 +358,7 @@ class TitleState extends MusicBeatState
 
 		if (initialized && !transitioning && skippedIntro)
 		{
-			if (newTitle && !pressedEnter)
+			if (newTitle && !pressedSpace)
 			{
 				var timer:Float = titleTimer;
 				if (timer >= 1)
@@ -407,7 +370,7 @@ class TitleState extends MusicBeatState
 				titleText.alpha = FlxMath.lerp(titleTextAlphas[0], titleTextAlphas[1], timer);
 			}
 			
-			if(pressedEnter)
+			if(pressedSpace)
 			{
 				titleText.color = FlxColor.WHITE;
 				titleText.alpha = 1;
@@ -485,7 +448,7 @@ class TitleState extends MusicBeatState
 			#end
 		}
 
-		if (initialized && pressedEnter && !skippedIntro)
+		if (initialized && pressedSpace && !skippedIntro)
 		{
 			skipIntro();
 		}
@@ -543,17 +506,9 @@ class TitleState extends MusicBeatState
 		if(logoBl != null)
 			logoBl.animation.play('bump', true);
 
-		if(gfDance != null)
+		if(reimuSit != null)
 		{
-			danceLeft = !danceLeft;
-			if(!useIdle)
-			{
-				if (danceLeft)
-					gfDance.animation.play('danceRight');
-				else
-					gfDance.animation.play('danceLeft');
-			}
-			else if(curBeat % 2 == 0) gfDance.animation.play('idle', true);
+			if(curBeat % 2 == 0) reimuSit.animation.play('idle', true);
 		}
 
 		if(!closedState)
@@ -625,7 +580,7 @@ class TitleState extends MusicBeatState
 					case 'PESSY':
 						sound = FlxG.sound.play(Paths.sound('JinglePessy'));
 
-					default: //Go back to normal ugly ass boring GF
+					default: //Go back to normal silly sittin raymoo
 						remove(ngSpr);
 						remove(credGroup);
 						FlxG.camera.flash(FlxColor.WHITE, 2);

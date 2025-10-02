@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="titleSpace.png">
+	<!-- Created with Adobe Animate version 18.0.1.115 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="space-freeze0000" x="0" y="0" width="421" height="159"/>
+	<SubTexture name="space-idle0000" x="0" y="159" width="421" height="159"/>
+	<SubTexture name="space-pressed0000" x="0" y="0" width="421" height="159"/>
+	<SubTexture name="space-pressed0001" x="0" y="318" width="421" height="159"/>
+</TextureAtlas>
