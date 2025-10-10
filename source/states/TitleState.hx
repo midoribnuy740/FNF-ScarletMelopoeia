@@ -9,6 +9,8 @@ import flixel.group.FlxGroup;
 import flixel.input.gamepad.FlxGamepad;
 import haxe.Json;
 
+import objects.SakuraPetal;
+
 import openfl.Assets;
 import openfl.display.Bitmap;
 import openfl.display.BitmapData;
@@ -147,6 +149,8 @@ class TitleState extends MusicBeatState
 	var titleText:FlxSprite;
 	var swagShader:ColorSwap = null;
 
+	var sakuraPetals:FlxTypedGroup<SakuraPetal>;
+
 	function startIntro()
 	{
 		persistentUpdate = true;
@@ -223,9 +227,19 @@ class TitleState extends MusicBeatState
 		ngSpr.screenCenter(X);
 		ngSpr.antialiasing = ClientPrefs.data.antialiasing;
 
+		sakuraPetals = new FlxTypedGroup<SakuraPetal>(20);
+
+		for(i in 0...sakuraPetals.maxSize)
+		{
+			var petal = new SakuraPetal(0, 0);
+			petal.kill();
+			sakuraPetals.add(petal);
+		}
+
 		add(reimuSit);
-		add(logoBl); //SM Logo
-		add(titleText); //"Press Space" text
+		add(sakuraPetals); // Flowing Petals
+		add(logoBl); // SM Logo
+		add(titleText); // "Press Space" text
 		add(credGroup);
 		add(ngSpr);
 
@@ -242,7 +256,7 @@ class TitleState extends MusicBeatState
 	var animationName:String = 'sit-reimu';
 
 	var reimuPosition:FlxPoint = FlxPoint.get(534, 364);
-	var logoPosition:FlxPoint = FlxPoint.get(150, 100);
+	var logoPosition:FlxPoint = FlxPoint.get(50, 100);
 	var spacePosition:FlxPoint = FlxPoint.get(800, 476);
 	
 	var musicBPM:Float = 102;
@@ -509,6 +523,23 @@ class TitleState extends MusicBeatState
 		if(reimuSit != null)
 		{
 			if(curBeat % 2 == 0) reimuSit.animation.play('idle', true);
+		}
+
+		for(i in 0...1)
+		{
+			var cherryPetal:SakuraPetal = cast(sakuraPetals.recycle(SakuraPetal), SakuraPetal);
+			cherryPetal.setPosition(-50, FlxG.random.float(20, 600));
+			cherryPetal.scale.set(FlxG.random.float(0.5, 1), FlxG.random.float(0.5, 1));
+			cherryPetal.velocity.x = FlxG.random.float(325, 425);
+			cherryPetal.velocity.y = FlxG.random.float(-10, 10);
+			cherryPetal.angularVelocity = FlxG.random.float(50, 75);
+			cherryPetal.alpha = 0.6;
+			sakuraPetals.add(cherryPetal);
+		
+			if(cherryPetal.x > FlxG.width)
+			{
+				cherryPetal.kill();
+			}
 		}
 
 		if(!closedState)
