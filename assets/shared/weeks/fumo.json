@@ -3,7 +3,7 @@
 	"difficulties": "",
 	"hideFreeplay": false,
 	"weekBackground": "",
-	"weekBefore": "tutorial",
+	"weekBefore": "",
 	"startUnlocked": true,
 	"songs": [
 		[
@@ -13,15 +13,6 @@
 				126,
 				13,
 				40
-			]
-		],
-		[
-			"Embodiment",
-			"pelo",
-			[
-				255,
-				195,
-				235
 			]
 		]
 	],

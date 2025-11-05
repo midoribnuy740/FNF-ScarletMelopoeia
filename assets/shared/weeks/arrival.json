@@ -3,7 +3,7 @@
 	"difficulties": "",
 	"hideFreeplay": false,
 	"weekBackground": "",
-	"weekBefore": "tutorial",
+	"weekBefore": "prologue",
 	"startUnlocked": true,
 	"weekCharacters": [
 		"",
@@ -22,6 +22,6 @@
 			]
 		]
 	],
-	"weekName": "Custom Week",
+	"weekName": "Arrival",
 	"hiddenUntilUnlocked": false
 }
