@@ -1,0 +1,55 @@
+{
+	"animations": [
+		{
+			"offsets": [0, 0],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle",
+			"loop": false,
+			"name": "remi-idle"
+		},
+		{
+			"offsets": [75, 46],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "remi-sing1"
+		},
+		{
+			"offsets": [4, 80],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWN",
+			"loop": false,
+			"name": "remi-sing2"
+		},
+		{
+			"offsets": [18, 60],
+			"indices": [],
+			"fps": 24,
+			"anim": "singUP",
+			"loop": false,
+			"name": "remi-sing3"
+		},
+		{
+			"offsets": [3, 66],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "remi-sing4"
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": false,
+	"image": "characters/spooky-remi",
+	"position": [110, 550],
+	"healthicon": "spooky-remi",
+	"flip_x": false,
+	"healthbar_colors": [82, 156, 245],
+	"camera_position": [0, 0],
+	"sing_duration": 4,
+	"scale": 1,
+	"_editor_isPlayer": false
+}

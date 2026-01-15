@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="spooky-flan.png">
+	<!-- Created with Adobe Animate version 18.0.1.115 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="flan-idle0000" x="0" y="0" width="204" height="197" frameX="0" frameY="-7" frameWidth="204" frameHeight="204"/>
+	<SubTexture name="flan-idle0001" x="0" y="0" width="204" height="197" frameX="0" frameY="-7" frameWidth="204" frameHeight="204"/>
+	<SubTexture name="flan-idle0002" x="204" y="0" width="190" height="193" frameX="-5" frameY="-10" frameWidth="204" frameHeight="204"/>
+	<SubTexture name="flan-idle0003" x="204" y="0" width="190" height="193" frameX="-5" frameY="-10" frameWidth="204" frameHeight="204"/>
+	<SubTexture name="flan-idle0004" x="394" y="0" width="196" height="204" frameX="-3" frameY="0" frameWidth="204" frameHeight="204"/>
+	<SubTexture name="flan-idle0005" x="394" y="0" width="196" height="204" frameX="-3" frameY="0" frameWidth="204" frameHeight="204"/>
+	<SubTexture name="flan-idle0006" x="394" y="0" width="196" height="204" frameX="-3" frameY="0" frameWidth="204" frameHeight="204"/>
+	<SubTexture name="flan-idle0007" x="394" y="0" width="196" height="204" frameX="-3" frameY="0" frameWidth="204" frameHeight="204"/>
+	<SubTexture name="flan-idle0008" x="394" y="0" width="196" height="204" frameX="-3" frameY="0" frameWidth="204" frameHeight="204"/>
+	<SubTexture name="flan-idle0009" x="394" y="0" width="196" height="204" frameX="-3" frameY="0" frameWidth="204" frameHeight="204"/>
+	<SubTexture name="flan-idle0010" x="394" y="0" width="196" height="204" frameX="-3" frameY="0" frameWidth="204" frameHeight="204"/>
+	<SubTexture name="flan-idle0011" x="394" y="0" width="196" height="204" frameX="-3" frameY="0" frameWidth="204" frameHeight="204"/>
+	<SubTexture name="flan-sing10000" x="590" y="0" width="224" height="295" frameX="0" frameY="0" frameWidth="229" frameHeight="295"/>
+	<SubTexture name="flan-sing10001" x="590" y="0" width="224" height="295" frameX="0" frameY="0" frameWidth="229" frameHeight="295"/>
+	<SubTexture name="flan-sing10002" x="0" y="295" width="225" height="280" frameX="-4" frameY="-15" frameWidth="229" frameHeight="295"/>
+	<SubTexture name="flan-sing10003" x="0" y="295" width="225" height="280" frameX="-4" frameY="-15" frameWidth="229" frameHeight="295"/>
+	<SubTexture name="flan-sing10004" x="0" y="295" width="225" height="280" frameX="-4" frameY="-15" frameWidth="229" frameHeight="295"/>
+	<SubTexture name="flan-sing10005" x="0" y="295" width="225" height="280" frameX="-4" frameY="-15" frameWidth="229" frameHeight="295"/>
+	<SubTexture name="flan-sing10006" x="0" y="295" width="225" height="280" frameX="-4" frameY="-15" frameWidth="229" frameHeight="295"/>
+	<SubTexture name="flan-sing10007" x="0" y="295" width="225" height="280" frameX="-4" frameY="-15" frameWidth="229" frameHeight="295"/>
+	<SubTexture name="flan-sing10008" x="0" y="295" width="225" height="280" frameX="-4" frameY="-15" frameWidth="229" frameHeight="295"/>
+	<SubTexture name="flan-sing10009" x="0" y="295" width="225" height="280" frameX="-4" frameY="-15" frameWidth="229" frameHeight="295"/>
+	<SubTexture name="flan-sing10010" x="0" y="295" width="225" height="280" frameX="-4" frameY="-15" frameWidth="229" frameHeight="295"/>
+	<SubTexture name="flan-sing10011" x="0" y="295" width="225" height="280" frameX="-4" frameY="-15" frameWidth="229" frameHeight="295"/>
+	<SubTexture name="flan-sing20000" x="225" y="295" width="181" height="286" frameX="0" frameY="0" frameWidth="186" frameHeight="286"/>
+	<SubTexture name="flan-sing20001" x="225" y="295" width="181" height="286" frameX="0" frameY="0" frameWidth="186" frameHeight="286"/>
+	<SubTexture name="flan-sing20002" x="406" y="295" width="179" height="271" frameX="-7" frameY="-15" frameWidth="186" frameHeight="286"/>
+	<SubTexture name="flan-sing20003" x="406" y="295" width="179" height="271" frameX="-7" frameY="-15" frameWidth="186" frameHeight="286"/>
+	<SubTexture name="flan-sing20004" x="406" y="295" width="179" height="271" frameX="-7" frameY="-15" frameWidth="186" frameHeight="286"/>
+	<SubTexture name="flan-sing20005" x="406" y="295" width="179" height="271" frameX="-7" frameY="-15" frameWidth="186" frameHeight="286"/>
+	<SubTexture name="flan-sing20006" x="406" y="295" width="179" height="271" frameX="-7" frameY="-15" frameWidth="186" frameHeight="286"/>
+	<SubTexture name="flan-sing20007" x="406" y="295" width="179" height="271" frameX="-7" frameY="-15" frameWidth="186" frameHeight="286"/>
+	<SubTexture name="flan-sing20008" x="406" y="295" width="179" height="271" frameX="-7" frameY="-15" frameWidth="186" frameHeight="286"/>
+	<SubTexture name="flan-sing20009" x="406" y="295" width="179" height="271" frameX="-7" frameY="-15" frameWidth="186" frameHeight="286"/>
+	<SubTexture name="flan-sing20010" x="406" y="295" width="179" height="271" frameX="-7" frameY="-15" frameWidth="186" frameHeight="286"/>
+	<SubTexture name="flan-sing20011" x="406" y="295" width="179" height="271" frameX="-7" frameY="-15" frameWidth="186" frameHeight="286"/>
+	<SubTexture name="flan-sing30000" x="585" y="295" width="181" height="311" frameX="0" frameY="0" frameWidth="186" frameHeight="311"/>
+	<SubTexture name="flan-sing30001" x="585" y="295" width="181" height="311" frameX="0" frameY="0" frameWidth="186" frameHeight="311"/>
+	<SubTexture name="flan-sing30002" x="766" y="295" width="179" height="296" frameX="-7" frameY="-15" frameWidth="186" frameHeight="311"/>
+	<SubTexture name="flan-sing30003" x="766" y="295" width="179" height="296" frameX="-7" frameY="-15" frameWidth="186" frameHeight="311"/>
+	<SubTexture name="flan-sing30004" x="766" y="295" width="179" height="296" frameX="-7" frameY="-15" frameWidth="186" frameHeight="311"/>
+	<SubTexture name="flan-sing30005" x="766" y="295" width="179" height="296" frameX="-7" frameY="-15" frameWidth="186" frameHeight="311"/>
+	<SubTexture name="flan-sing30006" x="766" y="295" width="179" height="296" frameX="-7" frameY="-15" frameWidth="186" frameHeight="311"/>
+	<SubTexture name="flan-sing30007" x="766" y="295" width="179" height="296" frameX="-7" frameY="-15" frameWidth="186" frameHeight="311"/>
+	<SubTexture name="flan-sing30008" x="766" y="295" width="179" height="296" frameX="-7" frameY="-15" frameWidth="186" frameHeight="311"/>
+	<SubTexture name="flan-sing30009" x="766" y="295" width="179" height="296" frameX="-7" frameY="-15" frameWidth="186" frameHeight="311"/>
+	<SubTexture name="flan-sing30010" x="766" y="295" width="179" height="296" frameX="-7" frameY="-15" frameWidth="186" frameHeight="311"/>
+	<SubTexture name="flan-sing30011" x="766" y="295" width="179" height="296" frameX="-7" frameY="-15" frameWidth="186" frameHeight="311"/>
+	<SubTexture name="flan-sing40000" x="0" y="606" width="256" height="294"/>
+	<SubTexture name="flan-sing40001" x="0" y="606" width="256" height="294"/>
+	<SubTexture name="flan-sing40002" x="256" y="606" width="245" height="279" frameX="-7" frameY="-15" frameWidth="256" frameHeight="294"/>
+	<SubTexture name="flan-sing40003" x="256" y="606" width="245" height="279" frameX="-7" frameY="-15" frameWidth="256" frameHeight="294"/>
+	<SubTexture name="flan-sing40004" x="256" y="606" width="245" height="279" frameX="-7" frameY="-15" frameWidth="256" frameHeight="294"/>
+	<SubTexture name="flan-sing40005" x="256" y="606" width="245" height="279" frameX="-7" frameY="-15" frameWidth="256" frameHeight="294"/>
+	<SubTexture name="flan-sing40006" x="256" y="606" width="245" height="279" frameX="-7" frameY="-15" frameWidth="256" frameHeight="294"/>
+	<SubTexture name="flan-sing40007" x="256" y="606" width="245" height="279" frameX="-7" frameY="-15" frameWidth="256" frameHeight="294"/>
+	<SubTexture name="flan-sing40008" x="256" y="606" width="245" height="279" frameX="-7" frameY="-15" frameWidth="256" frameHeight="294"/>
+	<SubTexture name="flan-sing40009" x="256" y="606" width="245" height="279" frameX="-7" frameY="-15" frameWidth="256" frameHeight="294"/>
+	<SubTexture name="flan-sing40010" x="256" y="606" width="245" height="279" frameX="-7" frameY="-15" frameWidth="256" frameHeight="294"/>
+	<SubTexture name="flan-sing40011" x="256" y="606" width="245" height="279" frameX="-7" frameY="-15" frameWidth="256" frameHeight="294"/>
+</TextureAtlas>

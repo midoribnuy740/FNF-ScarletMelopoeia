@@ -1,0 +1,36 @@
+{
+	"camera_boyfriend": [
+		-310,
+		50
+	],
+	"_editorMeta": {
+		"boyfriend": "sm-pump",
+		"gf": "sm-skid",
+		"dad": "spooky-flan"
+	},
+	"girlfriend": [
+		390,
+		25
+	],
+	"stageUI": "",
+	"boyfriend": [
+		925,
+		75
+	],
+	"camera_girlfriend": [
+		0,
+		0
+	],
+	"defaultZoom": 1.05,
+	"camera_speed": 1,
+	"directory": "",
+	"opponent": [
+		360,
+		40
+	],
+	"camera_opponent": [
+		0,
+		0
+	],
+	"hide_girlfriend": false
+}

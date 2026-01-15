@@ -1,0 +1,55 @@
+{
+	"animations": [
+		{
+			"offsets": [0, 0],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle",
+			"loop": false,
+			"name": "flan-idle"
+		},
+		{
+			"offsets": [47, 94],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "flan-sing1"
+		},
+		{
+			"offsets": [4, 84],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWN",
+			"loop": false,
+			"name": "flan-sing2"
+		},
+		{
+			"offsets": [5, 110],
+			"indices": [],
+			"fps": 24,
+			"anim": "singUP",
+			"loop": false,
+			"name": "flan-sing3"
+		},
+		{
+			"offsets": [4, 93],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "flan-sing4"
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": false,
+	"image": "characters/spooky-flan",
+	"position": [110, 550],
+	"healthicon": "spooky-flan",
+	"flip_x": false,
+	"healthbar_colors": [253, 192, 65],
+	"camera_position": [0, 0],
+	"sing_duration": 4,
+	"scale": 1,
+	"_editor_isPlayer": false
+}

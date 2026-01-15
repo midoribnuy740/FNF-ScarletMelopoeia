@@ -1,0 +1,87 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [-5, 0],
+			"anim": "idle",
+			"fps": 24,
+			"name": "skid_idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [46, -2],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "skid-left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [23, -48],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "skid-down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [-10, 35],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "skid-up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [-36, -6],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "skid-right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [-3, -21],
+			"anim": "singLEFTmiss",
+			"fps": 24,
+			"name": "skid-miss",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [-3, -21],
+			"anim": "singDOWNmiss",
+			"fps": 24,
+			"name": "skid-miss",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [-2, -21],
+			"anim": "singUPmiss",
+			"fps": 24,
+			"name": "skid-miss",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [-2, -21],
+			"anim": "singRIGHTmiss",
+			"fps": 24,
+			"name": "skid-miss",
+			"indices": []
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": false,
+	"image": "characters/sm-skid",
+	"position": [90, 520],
+	"healthicon": "skid",
+	"flip_x": true,
+	"healthbar_colors": [255, 255, 255],
+	"camera_position": [0, 0],
+	"sing_duration": 4,
+	"scale": 1,
+	"_editor_isPlayer": true
+}

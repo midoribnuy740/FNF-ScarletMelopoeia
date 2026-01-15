@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="spooky-sakuya.png">
+	<!-- Created with Adobe Animate version 18.0.1.115 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="sakuya-left0000" x="0" y="0" width="156" height="462" frameX="0" frameY="0" frameWidth="160" frameHeight="463"/>
+	<SubTexture name="sakuya-left0001" x="0" y="0" width="156" height="462" frameX="0" frameY="0" frameWidth="160" frameHeight="463"/>
+	<SubTexture name="sakuya-left0002" x="156" y="0" width="154" height="463" frameX="-2" frameY="0" frameWidth="160" frameHeight="463"/>
+	<SubTexture name="sakuya-left0003" x="156" y="0" width="154" height="463" frameX="-2" frameY="0" frameWidth="160" frameHeight="463"/>
+	<SubTexture name="sakuya-left0004" x="310" y="0" width="150" height="460" frameX="-7" frameY="-3" frameWidth="160" frameHeight="463"/>
+	<SubTexture name="sakuya-left0005" x="310" y="0" width="150" height="460" frameX="-7" frameY="-3" frameWidth="160" frameHeight="463"/>
+	<SubTexture name="sakuya-left0006" x="460" y="0" width="152" height="460" frameX="-7" frameY="-2" frameWidth="160" frameHeight="463"/>
+	<SubTexture name="sakuya-left0007" x="460" y="0" width="152" height="460" frameX="-7" frameY="-2" frameWidth="160" frameHeight="463"/>
+	<SubTexture name="sakuya-left0008" x="612" y="0" width="153" height="462" frameX="-7" frameY="0" frameWidth="160" frameHeight="463"/>
+	<SubTexture name="sakuya-left0009" x="612" y="0" width="153" height="462" frameX="-7" frameY="0" frameWidth="160" frameHeight="463"/>
+	<SubTexture name="sakuya-left0010" x="612" y="0" width="153" height="462" frameX="-7" frameY="0" frameWidth="160" frameHeight="463"/>
+	<SubTexture name="sakuya-left0011" x="612" y="0" width="153" height="462" frameX="-7" frameY="0" frameWidth="160" frameHeight="463"/>
+	<SubTexture name="sakuya-right0000" x="765" y="0" width="153" height="463" frameX="-9" frameY="0" frameWidth="162" frameHeight="463"/>
+	<SubTexture name="sakuya-right0001" x="765" y="0" width="153" height="463" frameX="-9" frameY="0" frameWidth="162" frameHeight="463"/>
+	<SubTexture name="sakuya-right0002" x="0" y="463" width="148" height="461" frameX="-9" frameY="-2" frameWidth="162" frameHeight="463"/>
+	<SubTexture name="sakuya-right0003" x="0" y="463" width="148" height="461" frameX="-9" frameY="-2" frameWidth="162" frameHeight="463"/>
+	<SubTexture name="sakuya-right0004" x="148" y="463" width="152" height="458" frameX="-6" frameY="-5" frameWidth="162" frameHeight="463"/>
+	<SubTexture name="sakuya-right0005" x="148" y="463" width="152" height="458" frameX="-6" frameY="-5" frameWidth="162" frameHeight="463"/>
+	<SubTexture name="sakuya-right0006" x="300" y="463" width="156" height="460" frameX="-2" frameY="-3" frameWidth="162" frameHeight="463"/>
+	<SubTexture name="sakuya-right0007" x="300" y="463" width="156" height="460" frameX="-2" frameY="-3" frameWidth="162" frameHeight="463"/>
+	<SubTexture name="sakuya-right0008" x="456" y="463" width="158" height="461" frameX="0" frameY="-2" frameWidth="162" frameHeight="463"/>
+	<SubTexture name="sakuya-right0009" x="456" y="463" width="158" height="461" frameX="0" frameY="-2" frameWidth="162" frameHeight="463"/>
+	<SubTexture name="sakuya-right0010" x="456" y="463" width="158" height="461" frameX="0" frameY="-2" frameWidth="162" frameHeight="463"/>
+	<SubTexture name="sakuya-right0011" x="456" y="463" width="158" height="461" frameX="0" frameY="-2" frameWidth="162" frameHeight="463"/>
+</TextureAtlas>

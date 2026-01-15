@@ -367,6 +367,13 @@ class PlayState extends MusicBeatState
 
 		switch (curStage)
 		{
+			case 'gensomooru':
+				new Gensomooru(); //Gensomooru
+				exchar = new Character(-415, -85, 'spooky-remilia');
+				startCharacterPos(exchar, true);
+				add(exchar);
+
+				exchar.recalculateDanceIdle();
 			case 'shrine': 
 				new Shrine();	//Shrine
 			case 'forest': 
@@ -2079,7 +2086,7 @@ class PlayState extends MusicBeatState
 				//trace('Anim to play: ' + value1);
 				var char:Character = dad;
 				switch(value2.toLowerCase().trim()) {
-					case 'tipsy' | 'dai' | 'daiyousei' | 'spooky-remi':
+					case 'tipsy' | 'spooky-remi':
 						char = exchar;
 					case 'bf' | 'boyfriend':
 						char = boyfriend;
@@ -2970,15 +2977,10 @@ class PlayState extends MusicBeatState
 			var char:Character = dad;
 			var animToPlay:String = singAnimations[Std.int(Math.abs(Math.min(singAnimations.length-1, note.noteData)))] + note.animSuffix;
 			if(note.gfNote) char = gf;
+			if(note.noteType == "EX Char Note") char = exchar;
 
 			if(char != null)
 			{
-				if (note.noteType == 'Dai Note' || note.noteType == 'Spooky Remi Note')
-				{
-					exchar.playAnim(animToPlay, true);
-					exchar.holdTimer = 0;
-				}
-
 				var canPlay:Bool = true;
 				if(note.isSustainNote)
 				{
@@ -3217,6 +3219,8 @@ class PlayState extends MusicBeatState
 			boyfriend.dance();
 		if (dad != null && beat % dad.danceEveryNumBeats == 0 && !dad.getAnimationName().startsWith('sing') && !dad.stunned)
 			dad.dance();
+		if (exchar != null && beat % exchar.danceEveryNumBeats == 0 && !exchar.getAnimationName().startsWith('sing') && !exchar.stunned)
+			exchar.dance();
 	}
 
 	public function playerDance():Void
