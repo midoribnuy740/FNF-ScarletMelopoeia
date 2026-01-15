@@ -36,6 +36,40 @@ class Gensomooru extends BaseStage
 	{
 		var boombox:BGSprite = new BGSprite('gensomooru/boombox', 594, 669, 1, 1);
 		add(boombox);
+
+		game.healthBar.visible = false;
+		game.overlayBar.visible = false;
+		game.timeTxt.visible = false;
+		game.iconP1.visible = false;
+		game.iconP2.visible = false;
+						
+		game.healthBar.alpha = 0;
+		game.overlayBar.alpha = 0;
+		game.timeTxt.alpha = 0;
+		game.iconP1.alpha = 0;
+		game.iconP2.alpha = 0;
+
+		if(!ClientPrefs.data.middleScroll)
+		{
+			for(i in 0...game.opponentStrums.length){
+				game.opponentStrums.members[i].visible = false;
+			}
+			game.strumEnemyBG.alpha = 0;
+
+			for(i in 0...game.playerStrums.length){
+				game.playerStrums.members[i].x -= 313;
+			}
+			game.strumPlayerBG.x = (FlxG.width / 2) - (game.strumPlayerBG.width / 2);
+
+			FlxTween.tween(game.scoreTxt, {x: (FlxG.width / 2) - (game.scoreTxt.width / 2)}, 1, {ease: FlxEase.circOut});
+			if(ClientPrefs.data.downScroll)
+			{
+				game.botplayTxt.y -= 100;
+			}
+			else{
+				game.botplayTxt.y += 100;
+			}
+		}
 	}
 
     override function beatHit()

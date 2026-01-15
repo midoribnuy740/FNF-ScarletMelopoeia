@@ -369,7 +369,7 @@ class PlayState extends MusicBeatState
 		{
 			case 'gensomooru':
 				new Gensomooru(); //Gensomooru
-				exchar = new Character(-415, -85, 'spooky-remilia');
+				exchar = new Character(670, 30, 'spooky-remi');
 				startCharacterPos(exchar, true);
 				add(exchar);
 
@@ -590,6 +590,8 @@ class PlayState extends MusicBeatState
 		uiGroup.add(scoreTxt);
 		if(ClientPrefs.data.downScroll)
 			scoreTxt.y = FlxG.height - 40;
+		if(ClientPrefs.data.middleScroll)
+			scoreTxt.x = (FlxG.width / 2) - (scoreTxt.width / 2);
 
 		botplayTxt = new FlxText(0, 100, FlxG.width - 800, Language.getPhrase("Botplay").toUpperCase(), 32);
 		botplayTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -600,6 +602,15 @@ class PlayState extends MusicBeatState
 		uiGroup.add(botplayTxt);
 		if(ClientPrefs.data.downScroll)
 			botplayTxt.y = FlxG.height - 100;
+
+		if(ClientPrefs.data.middleScroll)
+			if(ClientPrefs.data.downScroll)
+			{
+				botplayTxt.y -= 100;
+			}
+			else{
+				botplayTxt.y += 100;
+			}
 
 		uiGroup.cameras = [camHUD];
 		noteGroup.cameras = [camHUD];

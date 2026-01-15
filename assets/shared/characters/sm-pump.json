@@ -1,0 +1,87 @@
+{
+	"animations": [
+		{
+			"offsets": [-5, 0],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle",
+			"loop": false,
+			"name": "pump-idle"
+		},
+		{
+			"offsets": [89, -20],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "pump-left"
+		},
+		{
+			"offsets": [36, -89],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWN",
+			"loop": false,
+			"name": "pump-down"
+		},
+		{
+			"offsets": [20, 47],
+			"indices": [],
+			"fps": 24,
+			"anim": "singUP",
+			"loop": false,
+			"name": "pump-up"
+		},
+		{
+			"offsets": [-41, -23],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "pump-right"
+		},
+		{
+			"offsets": [7, -41],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFTmiss",
+			"loop": false,
+			"name": "pump-miss"
+		},
+		{
+			"offsets": [7, -41],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWNmiss",
+			"loop": false,
+			"name": "pump-miss"
+		},
+		{
+			"offsets": [7, -41],
+			"indices": [],
+			"fps": 24,
+			"anim": "singUPmiss",
+			"loop": false,
+			"name": "pump-miss"
+		},
+		{
+			"offsets": [7, -41],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHTmiss",
+			"loop": false,
+			"name": "pump-miss"
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": false,
+	"image": "characters/sm-pump",
+	"position": [70, 450],
+	"healthicon": "pump",
+	"flip_x": true,
+	"healthbar_colors": [246, 150, 59],
+	"camera_position": [0, 0],
+	"sing_duration": 4,
+	"scale": 1,
+	"_editor_isPlayer": true
+}
