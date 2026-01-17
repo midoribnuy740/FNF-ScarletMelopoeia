@@ -1,76 +1,84 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [-5, 0],
-			"indices": [],
-			"fps": 24,
 			"anim": "idle",
-			"loop": false,
-			"name": "pump-idle"
+			"fps": 24,
+			"name": "pump-idle",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [89, -20],
-			"indices": [],
-			"fps": 24,
 			"anim": "singLEFT",
-			"loop": false,
-			"name": "pump-left"
+			"fps": 24,
+			"name": "pump-left",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [36, -89],
-			"indices": [],
-			"fps": 24,
 			"anim": "singDOWN",
-			"loop": false,
-			"name": "pump-down"
+			"fps": 24,
+			"name": "pump-down",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [20, 47],
-			"indices": [],
-			"fps": 24,
 			"anim": "singUP",
-			"loop": false,
-			"name": "pump-up"
+			"fps": 24,
+			"name": "pump-up",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [-41, -23],
-			"indices": [],
-			"fps": 24,
 			"anim": "singRIGHT",
-			"loop": false,
-			"name": "pump-right"
+			"fps": 24,
+			"name": "pump-right",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [7, -41],
-			"indices": [],
-			"fps": 24,
 			"anim": "singLEFTmiss",
-			"loop": false,
-			"name": "pump-miss"
+			"fps": 24,
+			"name": "pump-miss",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [7, -41],
-			"indices": [],
-			"fps": 24,
 			"anim": "singDOWNmiss",
-			"loop": false,
-			"name": "pump-miss"
+			"fps": 24,
+			"name": "pump-miss",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [7, -41],
-			"indices": [],
-			"fps": 24,
 			"anim": "singUPmiss",
-			"loop": false,
-			"name": "pump-miss"
+			"fps": 24,
+			"name": "pump-miss",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [7, -41],
+			"anim": "singRIGHTmiss",
+			"fps": 24,
+			"name": "pump-miss",
+			"indices": []
+		},
+		{
+			"offsets": [62, 33],
 			"indices": [],
 			"fps": 24,
-			"anim": "singRIGHTmiss",
+			"anim": "hey",
 			"loop": false,
-			"name": "pump-miss"
+			"name": "pump-hey"
 		}
 	],
 	"vocals_file": "",

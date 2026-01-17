@@ -11,10 +11,10 @@ class Gensomooru extends BaseStage
 		var mall:BGSprite = new BGSprite('gensomooru/mall', 98, 149, 1, 1);
 		add(mall);
 
-        var flanShadow:BGSprite = new BGSprite('gensomooru/char-shadow', 520, 751, 1, 1);
+        var flanShadow:BGSprite = new BGSprite('gensomooru/char-shadow', 460, 751, 1, 1);
         flanShadow.blend = MULTIPLY;
 		add(flanShadow);
-        var remiShadow:BGSprite = new BGSprite('gensomooru/char-shadow', 740, 751, 1, 1);
+        var remiShadow:BGSprite = new BGSprite('gensomooru/char-shadow', 800, 751, 1, 1);
         remiShadow.blend = MULTIPLY;
 		add(remiShadow);
 
@@ -52,7 +52,7 @@ class Gensomooru extends BaseStage
 		if(!ClientPrefs.data.middleScroll)
 		{
 			for(i in 0...game.opponentStrums.length){
-				game.opponentStrums.members[i].visible = false;
+				game.opponentStrums.members[i].x -= 1000;
 			}
 			game.strumEnemyBG.alpha = 0;
 

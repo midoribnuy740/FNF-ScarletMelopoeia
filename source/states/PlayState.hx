@@ -369,7 +369,7 @@ class PlayState extends MusicBeatState
 		{
 			case 'gensomooru':
 				new Gensomooru(); //Gensomooru
-				exchar = new Character(670, 30, 'spooky-remi');
+				exchar = new Character(700, 30, 'spooky-remi');
 				startCharacterPos(exchar, true);
 				add(exchar);
 

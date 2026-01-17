@@ -1,76 +1,84 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [-5, 0],
+			"loop": false,
+			"fps": 24,
 			"anim": "idle",
-			"fps": 24,
-			"name": "skid_idle",
-			"indices": []
+			"indices": [],
+			"name": "skid_idle"
 		},
 		{
-			"loop": false,
 			"offsets": [31, -49],
+			"loop": false,
+			"fps": 24,
 			"anim": "singDOWN",
-			"fps": 24,
-			"name": "skid-down",
-			"indices": []
+			"indices": [],
+			"name": "skid-down"
 		},
 		{
-			"loop": false,
 			"offsets": [40, 35],
+			"loop": false,
+			"fps": 24,
 			"anim": "singUP",
-			"fps": 24,
-			"name": "skid-up",
-			"indices": []
+			"indices": [],
+			"name": "skid-up"
 		},
 		{
-			"loop": false,
 			"offsets": [22, -21],
+			"loop": false,
+			"fps": 24,
 			"anim": "singLEFTmiss",
-			"fps": 24,
-			"name": "skid-miss",
-			"indices": []
+			"indices": [],
+			"name": "skid-miss"
 		},
 		{
-			"loop": false,
 			"offsets": [22, -21],
+			"loop": false,
+			"fps": 24,
 			"anim": "singDOWNmiss",
-			"fps": 24,
-			"name": "skid-miss",
-			"indices": []
+			"indices": [],
+			"name": "skid-miss"
 		},
 		{
-			"loop": false,
 			"offsets": [23, -21],
+			"loop": false,
+			"fps": 24,
 			"anim": "singUPmiss",
-			"fps": 24,
-			"name": "skid-miss",
-			"indices": []
+			"indices": [],
+			"name": "skid-miss"
 		},
 		{
-			"loop": false,
 			"offsets": [23, -21],
-			"anim": "singRIGHTmiss",
+			"loop": false,
 			"fps": 24,
-			"name": "skid-miss",
+			"anim": "singRIGHTmiss",
+			"indices": [],
+			"name": "skid-miss"
+		},
+		{
+			"loop": false,
+			"offsets": [52, -7],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "skid-right",
 			"indices": []
 		},
 		{
-			"offsets": [52, -7],
-			"indices": [],
-			"fps": 24,
-			"anim": "singLEFT",
 			"loop": false,
-			"name": "skid-right"
+			"offsets": [-26, -1],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "skid-left",
+			"indices": []
 		},
 		{
-			"offsets": [-26, -1],
+			"offsets": [57, 20],
 			"indices": [],
 			"fps": 24,
-			"anim": "singRIGHT",
+			"anim": "hey",
 			"loop": false,
-			"name": "skid-left"
+			"name": "skid-hey"
 		}
 	],
 	"vocals_file": "",

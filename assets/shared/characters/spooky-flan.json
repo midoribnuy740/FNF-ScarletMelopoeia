@@ -1,44 +1,44 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [0, 0],
-			"indices": [],
-			"fps": 24,
 			"anim": "idle",
-			"loop": false,
-			"name": "flan-idle"
+			"fps": 24,
+			"name": "flan-idle",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [47, 94],
-			"indices": [],
-			"fps": 24,
 			"anim": "singLEFT",
-			"loop": false,
-			"name": "flan-sing1"
+			"fps": 24,
+			"name": "flan-sing1",
+			"indices": []
 		},
 		{
-			"offsets": [4, 84],
-			"indices": [],
-			"fps": 24,
+			"loop": false,
+			"offsets": [-12, 52],
 			"anim": "singDOWN",
-			"loop": false,
-			"name": "flan-sing2"
+			"fps": 24,
+			"name": "flan-sing2",
+			"indices": []
 		},
 		{
-			"offsets": [5, 110],
-			"indices": [],
-			"fps": 24,
+			"loop": false,
+			"offsets": [-15, 110],
 			"anim": "singUP",
-			"loop": false,
-			"name": "flan-sing3"
+			"fps": 24,
+			"name": "flan-sing3",
+			"indices": []
 		},
 		{
-			"offsets": [4, 93],
-			"indices": [],
-			"fps": 24,
-			"anim": "singRIGHT",
 			"loop": false,
-			"name": "flan-sing4"
+			"offsets": [-41, 89],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "flan-sing4",
+			"indices": []
 		}
 	],
 	"vocals_file": "",
