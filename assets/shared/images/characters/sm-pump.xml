@@ -69,16 +69,20 @@
 	<SubTexture name="pump-right0009" x="316" y="1364" width="301" height="265" frameX="0" frameY="-8" frameWidth="317" frameHeight="273"/>
 	<SubTexture name="pump-right0010" x="316" y="1364" width="301" height="265" frameX="0" frameY="-8" frameWidth="317" frameHeight="273"/>
 	<SubTexture name="pump-right0011" x="316" y="1364" width="301" height="265" frameX="0" frameY="-8" frameWidth="317" frameHeight="273"/>
-	<SubTexture name="pump-up0000" x="617" y="1364" width="271" height="342" frameX="-6" frameY="0" frameWidth="281" frameHeight="342"/>
-	<SubTexture name="pump-up0001" x="617" y="1364" width="271" height="342" frameX="-6" frameY="0" frameWidth="281" frameHeight="342"/>
-	<SubTexture name="pump-up0002" x="0" y="1706" width="281" height="328" frameX="0" frameY="-14" frameWidth="281" frameHeight="342"/>
-	<SubTexture name="pump-up0003" x="0" y="1706" width="281" height="328" frameX="0" frameY="-14" frameWidth="281" frameHeight="342"/>
-	<SubTexture name="pump-up0004" x="0" y="1706" width="281" height="328" frameX="0" frameY="-14" frameWidth="281" frameHeight="342"/>
-	<SubTexture name="pump-up0005" x="0" y="1706" width="281" height="328" frameX="0" frameY="-14" frameWidth="281" frameHeight="342"/>
-	<SubTexture name="pump-up0006" x="0" y="1706" width="281" height="328" frameX="0" frameY="-14" frameWidth="281" frameHeight="342"/>
-	<SubTexture name="pump-up0007" x="0" y="1706" width="281" height="328" frameX="0" frameY="-14" frameWidth="281" frameHeight="342"/>
-	<SubTexture name="pump-up0008" x="0" y="1706" width="281" height="328" frameX="0" frameY="-14" frameWidth="281" frameHeight="342"/>
-	<SubTexture name="pump-up0009" x="0" y="1706" width="281" height="328" frameX="0" frameY="-14" frameWidth="281" frameHeight="342"/>
-	<SubTexture name="pump-up0010" x="0" y="1706" width="281" height="328" frameX="0" frameY="-14" frameWidth="281" frameHeight="342"/>
-	<SubTexture name="pump-up0011" x="0" y="1706" width="281" height="328" frameX="0" frameY="-14" frameWidth="281" frameHeight="342"/>
+	<SubTexture name="pump-scare0000" x="617" y="1364" width="402" height="328"/>
+	<SubTexture name="pump-scare0001" x="617" y="1364" width="402" height="328"/>
+	<SubTexture name="pump-scare0002" x="0" y="1692" width="357" height="317" frameX="-33" frameY="-11" frameWidth="402" frameHeight="328"/>
+	<SubTexture name="pump-scare0003" x="0" y="1692" width="357" height="317" frameX="-33" frameY="-11" frameWidth="402" frameHeight="328"/>
+	<SubTexture name="pump-up0000" x="357" y="1692" width="271" height="342" frameX="-6" frameY="0" frameWidth="281" frameHeight="342"/>
+	<SubTexture name="pump-up0001" x="357" y="1692" width="271" height="342" frameX="-6" frameY="0" frameWidth="281" frameHeight="342"/>
+	<SubTexture name="pump-up0002" x="628" y="1692" width="281" height="328" frameX="0" frameY="-14" frameWidth="281" frameHeight="342"/>
+	<SubTexture name="pump-up0003" x="628" y="1692" width="281" height="328" frameX="0" frameY="-14" frameWidth="281" frameHeight="342"/>
+	<SubTexture name="pump-up0004" x="628" y="1692" width="281" height="328" frameX="0" frameY="-14" frameWidth="281" frameHeight="342"/>
+	<SubTexture name="pump-up0005" x="628" y="1692" width="281" height="328" frameX="0" frameY="-14" frameWidth="281" frameHeight="342"/>
+	<SubTexture name="pump-up0006" x="628" y="1692" width="281" height="328" frameX="0" frameY="-14" frameWidth="281" frameHeight="342"/>
+	<SubTexture name="pump-up0007" x="628" y="1692" width="281" height="328" frameX="0" frameY="-14" frameWidth="281" frameHeight="342"/>
+	<SubTexture name="pump-up0008" x="628" y="1692" width="281" height="328" frameX="0" frameY="-14" frameWidth="281" frameHeight="342"/>
+	<SubTexture name="pump-up0009" x="628" y="1692" width="281" height="328" frameX="0" frameY="-14" frameWidth="281" frameHeight="342"/>
+	<SubTexture name="pump-up0010" x="628" y="1692" width="281" height="328" frameX="0" frameY="-14" frameWidth="281" frameHeight="342"/>
+	<SubTexture name="pump-up0011" x="628" y="1692" width="281" height="328" frameX="0" frameY="-14" frameWidth="281" frameHeight="342"/>
 </TextureAtlas>

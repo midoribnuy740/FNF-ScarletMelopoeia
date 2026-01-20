@@ -17,10 +17,26 @@
 			"name": "skid-left"
 		},
 		{
+			"offsets": [46, -2],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT-hold",
+			"indices": [],
+			"name": "skid-left"
+		},
+		{
 			"offsets": [23, -48],
 			"loop": false,
 			"fps": 24,
 			"anim": "singDOWN",
+			"indices": [],
+			"name": "skid-down"
+		},
+		{
+			"offsets": [23, -48],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN-hold",
 			"indices": [],
 			"name": "skid-down"
 		},
@@ -33,10 +49,26 @@
 			"name": "skid-up"
 		},
 		{
+			"offsets": [-10, 35],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP-hold",
+			"indices": [],
+			"name": "skid-up"
+		},
+		{
 			"offsets": [-36, -6],
 			"loop": false,
 			"fps": 24,
 			"anim": "singRIGHT",
+			"indices": [],
+			"name": "skid-right"
+		},
+		{
+			"offsets": [-36, -6],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT-hold",
 			"indices": [],
 			"name": "skid-right"
 		},
@@ -79,6 +111,14 @@
 			"anim": "hey",
 			"loop": false,
 			"name": "skid-hey"
+		},
+		{
+			"offsets": [32, 19],
+			"indices": [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2],
+			"fps": 24,
+			"anim": "scare",
+			"loop": false,
+			"name": "skid-scare"
 		}
 	],
 	"vocals_file": "",

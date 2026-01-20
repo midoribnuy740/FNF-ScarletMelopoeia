@@ -18,8 +18,24 @@
 		},
 		{
 			"loop": false,
+			"offsets": [89, -20],
+			"anim": "singLEFT-hold",
+			"fps": 24,
+			"name": "pump-left",
+			"indices": []
+		},
+		{
+			"loop": false,
 			"offsets": [36, -89],
 			"anim": "singDOWN",
+			"fps": 24,
+			"name": "pump-down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [36, -89],
+			"anim": "singDOWN-hold",
 			"fps": 24,
 			"name": "pump-down",
 			"indices": []
@@ -34,8 +50,24 @@
 		},
 		{
 			"loop": false,
+			"offsets": [20, 47],
+			"anim": "singUP-hold",
+			"fps": 24,
+			"name": "pump-up",
+			"indices": []
+		},
+		{
+			"loop": false,
 			"offsets": [-41, -23],
 			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "pump-right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [-41, -23],
+			"anim": "singRIGHT-hold",
 			"fps": 24,
 			"name": "pump-right",
 			"indices": []
@@ -79,6 +111,14 @@
 			"anim": "hey",
 			"loop": false,
 			"name": "pump-hey"
+		},
+		{
+			"offsets": [62, 33],
+			"indices": [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2],
+			"fps": 24,
+			"anim": "scare",
+			"loop": false,
+			"name": "pump-scare"
 		}
 	],
 	"vocals_file": "",

@@ -1,84 +1,132 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [-5, 0],
-			"loop": false,
-			"fps": 24,
 			"anim": "idle",
-			"indices": [],
-			"name": "skid_idle"
-		},
-		{
-			"offsets": [31, -49],
-			"loop": false,
 			"fps": 24,
-			"anim": "singDOWN",
-			"indices": [],
-			"name": "skid-down"
-		},
-		{
-			"offsets": [40, 35],
-			"loop": false,
-			"fps": 24,
-			"anim": "singUP",
-			"indices": [],
-			"name": "skid-up"
-		},
-		{
-			"offsets": [22, -21],
-			"loop": false,
-			"fps": 24,
-			"anim": "singLEFTmiss",
-			"indices": [],
-			"name": "skid-miss"
-		},
-		{
-			"offsets": [22, -21],
-			"loop": false,
-			"fps": 24,
-			"anim": "singDOWNmiss",
-			"indices": [],
-			"name": "skid-miss"
-		},
-		{
-			"offsets": [23, -21],
-			"loop": false,
-			"fps": 24,
-			"anim": "singUPmiss",
-			"indices": [],
-			"name": "skid-miss"
-		},
-		{
-			"offsets": [23, -21],
-			"loop": false,
-			"fps": 24,
-			"anim": "singRIGHTmiss",
-			"indices": [],
-			"name": "skid-miss"
-		},
-		{
-			"loop": false,
-			"offsets": [52, -7],
-			"anim": "singLEFT",
-			"fps": 24,
-			"name": "skid-right",
+			"name": "skid_idle",
 			"indices": []
 		},
 		{
 			"loop": false,
-			"offsets": [-26, -1],
-			"anim": "singRIGHT",
+			"offsets": [31, -49],
+			"anim": "singDOWN",
 			"fps": 24,
-			"name": "skid-left",
+			"name": "skid-down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [31, -49],
+			"anim": "singDOWN-hold",
+			"fps": 24,
+			"name": "skid-down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [40, 35],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "skid-up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [40, 35],
+			"anim": "singUP-hold",
+			"fps": 24,
+			"name": "skid-up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [22, -21],
+			"anim": "singLEFTmiss",
+			"fps": 24,
+			"name": "skid-miss",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [22, -21],
+			"anim": "singDOWNmiss",
+			"fps": 24,
+			"name": "skid-miss",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [23, -21],
+			"anim": "singUPmiss",
+			"fps": 24,
+			"name": "skid-miss",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [23, -21],
+			"anim": "singRIGHTmiss",
+			"fps": 24,
+			"name": "skid-miss",
+			"indices": []
+		},
+		{
+			"offsets": [52, -7],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "skid-right"
+		},
+		{
+			"offsets": [52, -7],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT-hold",
+			"indices": [],
+			"name": "skid-right"
+		},
+		{
+			"offsets": [-26, -1],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "skid-left"
+		},
+		{
+			"offsets": [-26, -1],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT-hold",
+			"indices": [],
+			"name": "skid-left"
+		},
+		{
+			"loop": true,
+			"offsets": [57, 20],
+			"anim": "hey",
+			"fps": 24,
+			"name": "skid-hey",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [57, 20],
+			"anim": "cheer",
+			"fps": 24,
+			"name": "skid-hey",
 			"indices": []
 		},
 		{
 			"offsets": [57, 20],
-			"indices": [],
+			"indices": [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2],
 			"fps": 24,
-			"anim": "hey",
+			"anim": "scare",
 			"loop": false,
-			"name": "skid-hey"
+			"name": "skid-scare"
 		}
 	],
 	"vocals_file": "",

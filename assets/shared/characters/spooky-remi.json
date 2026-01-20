@@ -1,44 +1,76 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [0, 0],
-			"indices": [],
-			"fps": 24,
 			"anim": "idle",
-			"loop": false,
-			"name": "remi-idle"
+			"fps": 24,
+			"name": "remi-idle",
+			"indices": []
 		},
 		{
-			"offsets": [75, 46],
-			"indices": [],
-			"fps": 24,
+			"loop": false,
+			"offsets": [68, 43],
 			"anim": "singLEFT",
-			"loop": false,
-			"name": "remi-sing1"
+			"fps": 24,
+			"name": "remi-sing1",
+			"indices": []
 		},
 		{
-			"offsets": [4, 80],
-			"indices": [],
+			"loop": false,
+			"offsets": [68, 43],
+			"anim": "singLEFT-hold",
 			"fps": 24,
+			"name": "remi-sing1",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [2, 30],
 			"anim": "singDOWN",
-			"loop": false,
-			"name": "remi-sing2"
+			"fps": 24,
+			"name": "remi-sing2",
+			"indices": []
 		},
 		{
-			"offsets": [18, 60],
-			"indices": [],
+			"loop": false,
+			"offsets": [2, 30],
+			"anim": "singDOWN-hold",
 			"fps": 24,
+			"name": "remi-sing2",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [-4, 86],
 			"anim": "singUP",
-			"loop": false,
-			"name": "remi-sing3"
+			"fps": 24,
+			"name": "remi-sing3",
+			"indices": []
 		},
 		{
-			"offsets": [3, 66],
-			"indices": [],
-			"fps": 24,
-			"anim": "singRIGHT",
 			"loop": false,
-			"name": "remi-sing4"
+			"offsets": [-4, 86],
+			"anim": "singUP-hold",
+			"fps": 24,
+			"name": "remi-sing3",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [-27, 46],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "remi-sing4",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [-27, 46],
+			"anim": "singRIGHT-hold",
+			"fps": 24,
+			"name": "remi-sing4",
+			"indices": []
 		}
 	],
 	"vocals_file": "",

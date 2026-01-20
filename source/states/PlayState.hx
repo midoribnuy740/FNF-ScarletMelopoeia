@@ -412,9 +412,18 @@ class PlayState extends MusicBeatState
 		}
 		else
 		{
-			add(gfGroup);
-			add(dadGroup);
-			add(boyfriendGroup);
+			if(songName == 'gensomooru')
+			{
+				add(dadGroup);
+				add(gfGroup);
+				add(boyfriendGroup);
+			}
+			else
+			{
+				add(gfGroup);
+				add(dadGroup);
+				add(boyfriendGroup);
+			}
 		}
 		
 		#if (LUA_ALLOWED || HSCRIPT_ALLOWED)
@@ -2988,7 +2997,7 @@ class PlayState extends MusicBeatState
 			var char:Character = dad;
 			var animToPlay:String = singAnimations[Std.int(Math.abs(Math.min(singAnimations.length-1, note.noteData)))] + note.animSuffix;
 			if(note.gfNote) char = gf;
-			if(note.noteType == "EX Char Note") char = exchar;
+			if(note.exCharNote) char = exchar;
 
 			if(char != null)
 			{
@@ -2998,10 +3007,22 @@ class PlayState extends MusicBeatState
 					var holdAnim:String = animToPlay + '-hold';
 					if(char.animation.exists(holdAnim)) animToPlay = holdAnim;
 					if(char.getAnimationName() == holdAnim || char.getAnimationName() == holdAnim + '-loop') canPlay = false;
+
+					if(note.duetNote)
+					{
+						if(exchar.animation.exists(holdAnim)) animToPlay = holdAnim;
+						if(exchar.getAnimationName() == holdAnim || exchar.getAnimationName() == holdAnim + '-loop') canPlay = false;
+					}
 				}
 
 				if(canPlay) char.playAnim(animToPlay, true);
 				char.holdTimer = 0;
+
+				if(note.duetNote)
+				{
+					if(canPlay) exchar.playAnim(animToPlay, true);
+					exchar.holdTimer = 0;
+				}
 			}
 		}
 
@@ -3057,10 +3078,22 @@ class PlayState extends MusicBeatState
 						var holdAnim:String = animToPlay + '-hold';
 						if(char.animation.exists(holdAnim)) animToPlay = holdAnim;
 						if(char.getAnimationName() == holdAnim || char.getAnimationName() == holdAnim + '-loop') canPlay = false;
+
+						if(note.duetNote)
+						{
+							if(gf.animation.exists(holdAnim)) animToPlay = holdAnim;
+							if(gf.getAnimationName() == holdAnim || gf.getAnimationName() == holdAnim + '-loop') canPlay = false;
+						}
 					}
 	
 					if(canPlay) char.playAnim(animToPlay, true);
 					char.holdTimer = 0;
+
+					if(note.duetNote)
+					{
+						if(canPlay) gf.playAnim(animToPlay, true);
+						gf.holdTimer = 0;
+					}
 
 					if(note.noteType == 'Hey!')
 					{

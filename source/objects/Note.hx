@@ -45,7 +45,8 @@ class Note extends FlxSprite
 		'GF Sing',
 		'No Animation',
 		'Tipsy Attack',
-		'EX Char Note'
+		'EX Char Note',
+		'Duet'
 	];
 
 	public var extraData:Map<String, Dynamic> = new Map<String, Dynamic>();
@@ -88,6 +89,8 @@ class Note extends FlxSprite
 
 	public var animSuffix:String = '';
 	public var gfNote:Bool = false;
+	public var exCharNote:Bool = false;
+	public var duetNote:Bool = false;
 	public var earlyHitMult:Float = 1;
 	public var lateHitMult:Float = 1;
 	public var lowPriority:Bool = false;
@@ -221,6 +224,10 @@ class Note extends FlxSprite
 					noMissAnimation = true;
 				case 'GF Sing':
 					gfNote = true;
+				case 'EX Char Note':
+					exCharNote = true;
+				case 'Duet':
+					duetNote = true;
 				case 'Tipsy Attack':
 					ignoreNote = true;
 					noAnimation = true;

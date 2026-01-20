@@ -18,8 +18,24 @@
 		},
 		{
 			"loop": false,
+			"offsets": [47, 94],
+			"anim": "singLEFT-hold",
+			"fps": 24,
+			"name": "flan-sing1",
+			"indices": []
+		},
+		{
+			"loop": false,
 			"offsets": [-12, 52],
 			"anim": "singDOWN",
+			"fps": 24,
+			"name": "flan-sing2",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [-12, 52],
+			"anim": "singDOWN-hold",
 			"fps": 24,
 			"name": "flan-sing2",
 			"indices": []
@@ -34,8 +50,24 @@
 		},
 		{
 			"loop": false,
+			"offsets": [-15, 110],
+			"anim": "singUP-hold",
+			"fps": 24,
+			"name": "flan-sing3",
+			"indices": []
+		},
+		{
+			"loop": false,
 			"offsets": [-41, 89],
 			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "flan-sing4",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [-41, 89],
+			"anim": "singRIGHT-hold",
 			"fps": 24,
 			"name": "flan-sing4",
 			"indices": []
