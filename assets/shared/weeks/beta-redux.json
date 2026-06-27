@@ -1,0 +1,27 @@
+{
+	"storyName": "Beta Redux",
+	"difficulties": "Hard",
+	"hideFreeplay": false,
+	"weekBackground": "",
+	"weekBefore": "Travel",
+	"startUnlocked": true,
+	"weekCharacters": [
+		"",
+		"bf",
+		""
+	],
+	"hideStoryMode": true,
+	"songs": [
+		[
+			"Eternal Pray",
+			"reimu",
+			[
+				86,
+				13,
+				0
+			]
+		]
+	],
+	"weekName": "Beta-Redux",
+	"hiddenUntilUnlocked": false
+}

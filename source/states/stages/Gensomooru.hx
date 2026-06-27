@@ -59,12 +59,23 @@ class Gensomooru extends BaseStage
 		var boombox:BGSprite = new BGSprite('gensomooru/boombox', 594, 669, 1, 1);
 		add(boombox);
 
-		title = new BGSprite('shrine/week-intro/arrival-title', 298, -1011, 1, 1.5);
+		title = new BGSprite('gensomooru/week-intro/prologue-title', 0, 0, 0, 0);
 		title.alpha = 0;
+		title.setGraphicSize(Std.int(title.width * 0.75));
+		title.updateHitbox();
+		title.x = (FlxG.width / 2) - (title.width / 2);
+		title.y = (FlxG.height / 2) - (title.height - 10);
+		title.cameras = [game.camHUD];
 		add(title);
 
-		quote = new BGSprite('shrine/week-intro/arrival-quote', 71, -642, 1, 1.45);
+		quote = new BGSprite('gensomooru/week-intro/prologue-quote', 0, 0, 0, 0);
 		quote.alpha = 0;
+		quote.setGraphicSize(Std.int(quote.width * 0.75));
+		quote.updateHitbox();
+		quote.x = (FlxG.width / 2) - (quote.width / 2);
+		quote.y = (FlxG.height / 2) + (quote.height + 10);
+		quote.updateHitbox();
+		quote.cameras = [game.camHUD];
 		add(quote);
 
 		game.healthBar.visible = false;

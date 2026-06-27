@@ -374,6 +374,8 @@ class PlayState extends MusicBeatState
 				add(exchar);
 
 				exchar.recalculateDanceIdle();
+			case 'subway':
+				new Subway();   //Subway
 			case 'shrine': 
 				new Shrine();	//Shrine
 			case 'forest': 
@@ -615,10 +617,10 @@ class PlayState extends MusicBeatState
 		if(ClientPrefs.data.middleScroll)
 			if(ClientPrefs.data.downScroll)
 			{
-				botplayTxt.y -= 100;
+				botplayTxt.y -= 60;
 			}
 			else{
-				botplayTxt.y += 100;
+				botplayTxt.y += 60;
 			}
 
 		uiGroup.cameras = [camHUD];
@@ -2454,7 +2456,7 @@ class PlayState extends MusicBeatState
 				if (storyPlaylist.length <= 0)
 				{
 					Mods.loadTopMod();
-					FlxG.sound.playMusic(Paths.music('freakyMenu'));
+					FlxG.sound.playMusic(Paths.music('red-melody'));
 					#if DISCORD_ALLOWED DiscordClient.resetClientID(); #end
 
 					canResync = false;
@@ -2497,7 +2499,7 @@ class PlayState extends MusicBeatState
 
 				canResync = false;
 				MusicBeatState.switchState(new FreeplayState());
-				FlxG.sound.playMusic(Paths.music('freakyMenu'));
+				FlxG.sound.playMusic(Paths.music('red-melody'));
 				changedDifficulty = false;
 			}
 			transitioning = true;
