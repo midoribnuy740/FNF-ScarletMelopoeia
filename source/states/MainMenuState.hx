@@ -69,7 +69,7 @@ class MainMenuState extends MusicBeatState
 		for (num => option in optionShit)
 		{
 			var offset:Float = 350 - (Math.max(optionShit.length, 4) - 4) * 80;
-			var item:FlxSprite = createMenuItem(option, 1280, (num * 80) + offset);
+			var item:FlxSprite = createMenuItem(option, 1360, (num * 80) + offset);
 			FlxTween.tween(item, {x: 850 - (num * 35)}, 0.6, {ease: FlxEase.quadOut, startDelay: 0.5});
 		}
 
