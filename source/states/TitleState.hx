@@ -220,7 +220,7 @@ class TitleState extends MusicBeatState
 		credTextShit.screenCenter();
 		credTextShit.visible = false;
 
-		ngSpr = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('ng-tsa-logo'));
+		ngSpr = new FlxSprite(0, FlxG.height * 0.57).loadGraphic(Paths.image('ng-tsa-logo'));
 		ngSpr.visible = false;
 		ngSpr.setGraphicSize(Std.int(ngSpr.width * 0.8));
 		ngSpr.updateHitbox();
@@ -480,9 +480,9 @@ class TitleState extends MusicBeatState
 	{
 		for (i in 0...textArray.length)
 		{
-			var money:Alphabet = new Alphabet(0, 0, textArray[i], true);
+			var money:Alphabet = new Alphabet(0, 0, textArray[i], false, 'intro-alphabet');
 			money.screenCenter(X);
-			money.y += (i * 60) + 200 + offset;
+			money.y += (i * 100) + 125 + offset;
 			if(credGroup != null && textGroup != null)
 			{
 				credGroup.add(money);
@@ -494,9 +494,9 @@ class TitleState extends MusicBeatState
 	function addMoreText(text:String, ?offset:Float = 0)
 	{
 		if(textGroup != null && credGroup != null) {
-			var coolText:Alphabet = new Alphabet(0, 0, text, true);
+			var coolText:Alphabet = new Alphabet(0, 0, text, false, 'intro-alphabet');
 			coolText.screenCenter(X);
-			coolText.y += (textGroup.length * 60) + 200 + offset;
+			coolText.y += (textGroup.length * 100) + 125 + offset;
 			credGroup.add(coolText);
 			textGroup.add(coolText);
 		}
@@ -548,7 +548,7 @@ class TitleState extends MusicBeatState
 			switch (sickBeats)
 			{
 				case 1:
-					//FlxG.sound.music.stop();
+					//FlxG.sound.music.stocreateCoolText40p();
 					FlxG.sound.playMusic(Paths.music('red-melody'), 0);
 					FlxG.sound.music.fadeIn(4, 0, 0.7);
 				case 2:
